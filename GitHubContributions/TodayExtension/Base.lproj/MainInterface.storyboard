@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6GQ-eb-cj3" customClass="JZCommitImageView">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="EXg-Vh-Ttj"/>
+                                </constraints>
+                            </imageView>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgV-S2-IQL" customClass="JZCommitSceneView">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="Jis-nb-mVa"/>
+                                </constraints>
+                            </sceneKitView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="6GQ-eb-cj3" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="F6E-Dh-zVN"/>
+                            <constraint firstItem="JgV-S2-IQL" firstAttribute="top" secondItem="6GQ-eb-cj3" secondAttribute="bottom" id="HUF-6f-JAE"/>
+                            <constraint firstItem="JgV-S2-IQL" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="QfX-XS-2tR"/>
+                            <constraint firstAttribute="trailing" secondItem="JgV-S2-IQL" secondAttribute="trailing" id="Slu-0q-0GN"/>
+                            <constraint firstItem="6GQ-eb-cj3" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="sX4-3f-rdm"/>
+                            <constraint firstAttribute="trailing" secondItem="6GQ-eb-cj3" secondAttribute="trailing" id="wqv-n4-5hr"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="106"/>
+                    <connections>
+                        <outlet property="commitImageView" destination="6GQ-eb-cj3" id="oJr-hm-uGc"/>
+                        <outlet property="commitImageViewTopConstraint" destination="sX4-3f-rdm" id="ZHM-Su-h9q"/>
+                        <outlet property="commitSceneView" destination="JgV-S2-IQL" id="xzb-Mt-DMl"/>
+                        <outlet property="commitSceneViewTopCinstraint" destination="HUF-6f-JAE" id="pxm-Qj-Bhw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36.799999999999997" y="48.575712143928037"/>
+        </scene>
+    </scenes>
+</document>
