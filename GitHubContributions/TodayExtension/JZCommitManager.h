@@ -14,6 +14,6 @@
 
 @property (nonatomic,strong) NSMutableArray *commits;
 - (NSMutableArray *)getCommits;
-- (void)refresh;
+- (NSMutableArray *)refresh;
 
 @end

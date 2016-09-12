@@ -50,12 +50,18 @@ alpha:1.0]
 }
 
 #pragma mark Web Task
-- (void)refresh
+- (NSMutableArray *)refresh
 {
     [_commits removeAllObjects];
+    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"]  objectForKey:@"GitHubContributionsName"];
+    
+    if (name == nil)
+    {
+        return nil;
+    }
     
     NSMutableArray *tempArray = [NSMutableArray array];
-    NSURL *url = [NSURL URLWithString:@"https://github.com/users/JustinFincher/contributions"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://github.com/users/%@/contributions",name]];
     NSString *webData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     NSRange   searchedRange = NSMakeRange(0, [webData length]);
     NSString *pattern = @"(fill=\")(#[^\"]{6})(\" data-count=\")([^\"]{1,})(\" data-date=\")([^\"]{10})(\"/>)";
@@ -101,8 +107,7 @@ alpha:1.0]
         }
         [_commits addObject:thatWeekArray];
     }
-    
-    
+    return _commits;
 }
 
 - (NSMutableArray *)getCommits
@@ -116,7 +121,12 @@ alpha:1.0]
     NSScanner *scanner = [NSScanner scannerWithString:hexString];
     [scanner setScanLocation:1]; // bypass '#' character
     [scanner scanHexInt:&rgbValue];
-    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
+    float red= ((rgbValue & 0xFF0000) >> 16)/255.0;
+    float green = ((rgbValue & 0xFF00) >> 8)/255.0 ;
+    float blue = (rgbValue & 0xFF)/255.0 ;
+//    float alpha = 1.0 - (red + blue) / 5;
+//    UIColor *color = [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
+    return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
 @end

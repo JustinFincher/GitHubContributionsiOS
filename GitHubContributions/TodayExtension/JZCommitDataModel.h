@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface JZCommitDataModel : NSObject
+@interface JZCommitDataModel : NSObject <NSCoding>
 
 @property (nonatomic,strong) NSDate * date;
 @property (nonatomic,strong) UIColor *color;
@@ -19,7 +19,7 @@
 
 @end
 
-@interface JZCommitWeekDataModel : NSObject
+@interface JZCommitWeekDataModel : NSObject <NSCoding>
 
 @property (nonatomic,strong) NSMutableArray *commits;
 

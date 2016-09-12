@@ -23,23 +23,38 @@
 
 - (void)initScene
 {
-
+    
 }
 
 - (void)refreshFromCommits:(NSMutableArray *)array
 {
     self.scene = [SCNScene scene];
     
-    self.autoenablesDefaultLighting = YES;
+    //    self.autoenablesDefaultLighting = YES;
+    SCNLight *light = [SCNLight light];
+    light.type = SCNLightTypeDirectional;
+//    light.color = [UIColor colorWithWhite:1.0 alpha:0.3];
+//    light.shadowColor = (__bridge id _Nonnull)([UIColor colorWithWhite:0.0 alpha:0.4].CGColor);
+    SCNNode *lightNode = [SCNNode node];
+    lightNode.eulerAngles = SCNVector3Make(-M_PI / 3, M_PI_4 * 3,0);
+    lightNode.light = light;
+    [self.scene.rootNode addChildNode:lightNode];
+    
+    SCNLight *ambientLight = [SCNLight light];
+    ambientLight.type = SCNLightTypeAmbient;
+    ambientLight.color = [UIColor colorWithWhite:0.8 alpha:0.4];
+    SCNNode *ambientLightNode = [SCNNode node];
+    ambientLightNode.light = ambientLight;
+    [self.scene.rootNode addChildNode:ambientLightNode];
     
     SCNNode *cameraNode = [SCNNode node];
     cameraNode.camera = [SCNCamera camera];
     cameraNode.camera.automaticallyAdjustsZRange= YES;
     cameraNode.camera.usesOrthographicProjection = YES;
-    cameraNode.camera.orthographicScale = 12.0;
+    cameraNode.camera.orthographicScale = 15.0 - self.frame.size.width / 120.0f;
     [self.scene.rootNode addChildNode:cameraNode];
-    cameraNode.position = SCNVector3Make(-9, 15, 20);
-    cameraNode.eulerAngles = SCNVector3Make(-M_PI_4, +M_PI_4,0);
+    cameraNode.position = SCNVector3Make(-5.0, 15, 24);
+    cameraNode.eulerAngles = SCNVector3Make(-M_PI / 6, +M_PI_4,0);
     
     self.pointOfView = cameraNode;
     
@@ -57,6 +72,6 @@
             [self.scene.rootNode addChildNode:node];
         }
     }
-
+    
 }
 @end

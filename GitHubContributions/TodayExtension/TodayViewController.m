@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet JZCommitSceneView *commitSceneView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commitImageViewTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commitSceneViewTopCinstraint;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
 @end
 
@@ -29,16 +30,64 @@
     // Do any additional setup after loading the view from its nib.
     self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
     
-    [[JZCommitManager sharedManager] refresh];
     
-    
+}
+#pragma mark - UI
+- (IBAction)goSettingsButtonPressed:(UIButton *)sender
+{
+    NSURL *url = [NSURL URLWithString:@"com.JustZht.GitHubContributions://"];
+    [self.extensionContext openURL:url completionHandler:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSMutableArray *weeks = [[JZCommitManager sharedManager] getCommits];
-    [_commitSceneView refreshFromCommits:weeks];
-    [_commitImageView refreshFromCommits:weeks];
+    _settingsButton.hidden = YES;
+    
+//     [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] removeObjectForKey:@"GitHubContributionsArray"];
+//     [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] removeObjectForKey:@"GitHubContributionsName"];
+    
+    NSMutableArray *weeks;
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"]  objectForKey:@"GitHubContributionsArray"];
+    if (data != nil)
+    {
+        weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        if (!weeks)
+        {
+            NSLog(@"NSUserDefaults DO NOT HAVE weeks DATA");
+        }else
+        {
+            NSLog(@"NSUserDefaults DO HAVE weeks DATA");
+            [_commitSceneView refreshFromCommits:weeks];
+            [_commitImageView refreshFromCommits:weeks];
+        }
+    }else
+    {
+        NSLog(@"NSUserDefaults DO NOT HAVE DATA");
+         weeks = [[JZCommitManager sharedManager] refresh];
+        if (!weeks)
+        {
+            [self showError];
+            return;
+        }
+        [_commitSceneView refreshFromCommits:weeks];
+        [_commitImageView refreshFromCommits:weeks];
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:weeks] ;
+        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] setObject:data forKey:@"GitHubContributionsArray"];
+        if ([[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] synchronize])
+        {
+            NSLog(@"viewWillAppearDataTaskNewData");
+        }else
+        {
+            NSLog(@"viewWillAppearDataTakskFailed");
+        }
+        
+    }
+}
+
+- (void)showError
+{
+    _settingsButton.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +105,6 @@
     completionHandler(NCUpdateResultNewData);
 }
 
-#pragma mark - UI
 
 #pragma mark - NCWidgetProviding
 - (void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode
@@ -65,7 +113,7 @@
     if (activeDisplayMode == NCWidgetDisplayModeCompact)
     {
         self.preferredContentSize = maxSize;
-        _commitSceneViewTopCinstraint.constant = 0.0f;
+        _commitSceneViewTopCinstraint.constant = -210.0f;
         [UIView animateWithDuration:0.2
                          animations:^{
                              _commitImageView.alpha = 1.0f;
@@ -75,7 +123,7 @@
     }
     else {
         self.preferredContentSize = CGSizeMake(0, 200.0);
-        _commitSceneViewTopCinstraint.constant = - 115.0f;
+        _commitSceneViewTopCinstraint.constant = - 0.0;
         [UIView animateWithDuration:0.2
                          animations:^{
                              _commitImageView.alpha = 0.0f;

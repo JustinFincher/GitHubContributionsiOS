@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "Reachability.h"
+#import "JZCommitManager.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic) Reachability *hostReachability;
 
 @end
 
@@ -20,12 +24,109 @@
     
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     
+    
+    /*
+     Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the method reachabilityChanged will be called.
+     */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    //Change the host name here to change the server you want to monitor.
+    NSString *remoteHostName = @"github.com";
+    
+    self.hostReachability = [Reachability reachabilityWithHostName:remoteHostName];
+    [self.hostReachability startNotifier];
+    [self updateInterfaceWithReachability:self.hostReachability];
+    
     return YES;
 }
 
+
+/*!
+ * Called by Reachability whenever status changes.
+ */
+- (void) reachabilityChanged:(NSNotification *)note
+{
+    Reachability* curReach = [note object];
+    NSParameterAssert([curReach isKindOfClass:[Reachability class]]);
+    [self updateInterfaceWithReachability:curReach];
+}
+
+
+- (void)updateInterfaceWithReachability:(Reachability *)reachability
+{
+    if (reachability == self.hostReachability)
+    {
+        NetworkStatus netStatus = [reachability currentReachabilityStatus];
+//        BOOL connectionRequired = [reachability connectionRequired];
+        
+        switch (netStatus)
+        {
+            case NotReachable:
+            {
+                
+                break;
+            }
+                
+            case ReachableViaWWAN:
+            {
+                
+                break;
+            }
+            case ReachableViaWiFi:
+            {
+                break;
+            }
+        }
+    }
+    
+}
+
+
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    completionHandler(UIBackgroundFetchResultNewData);
+    NetworkStatus netStatus = [self.hostReachability currentReachabilityStatus];
+    switch (netStatus)
+    {
+        case NotReachable:
+        {
+            NSLog(@"NetworkStatus NotReachable");
+            NSLog(@"UIBackgroundFetchResultFailed");
+            completionHandler(UIBackgroundFetchResultFailed);
+            return;
+            break;
+        }
+        case ReachableViaWWAN:
+        {
+            NSLog(@"NetworkStatus ReachableViaWWAN");
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            NSLog(@"NetworkStatus ReachableViaWiFi");
+            break;
+        }
+    }
+
+//    NSMutableArray * oldArray = [[[NSUserDefaults alloc] initWithSuiteName:@"UYK8GY9WS7.group.com.JustZht.GitHubContributions"] objectForKey:@"GitHubContributionsArray"];
+    NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
+    if (array)
+    {
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
+        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] setObject:data forKey:@"GitHubContributionsArray"];
+        if ([[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] synchronize])
+        {
+            NSLog(@"UIBackgroundFetchResultNewData");
+            completionHandler(UIBackgroundFetchResultNewData);
+        }else
+        {
+            NSLog(@"UIBackgroundFetchResultFailed");
+            completionHandler(UIBackgroundFetchResultFailed);
+        }
+    }
+    else
+    {
+        NSLog(@"UIBackgroundFetchResultFailed");
+        completionHandler(UIBackgroundFetchResultFailed);
+    }
 }
 
 

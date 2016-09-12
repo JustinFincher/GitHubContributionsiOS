@@ -6,7 +6,8 @@ target 'GitHubContributions' do
   # use_frameworks!
 
   # Pods for GitHubContributions
-
+pod 'IQKeyboardManager'
+pod 'DateTools'
 end
 
 target 'TodayExtension' do
@@ -14,5 +15,5 @@ target 'TodayExtension' do
   # use_frameworks!
 
   # Pods for TodayExtension
-	pod 'DateTools'
+pod 'DateTools'
 end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036F632D267B073666A2AE01 /* libPods-GitHubContributions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FF73B72CF8CE6258D62013 /* libPods-GitHubContributions.a */; };
+		0D014C1F1D86AAE400212FF1 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB5569A1D85A1710042275E /* SceneKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0D565F9D1D85CAC5006C0324 /* JZCommitSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */; };
 		0DB5566E1D859A120042275E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB5566D1D859A120042275E /* main.m */; };
 		0DB556711D859A120042275E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556701D859A120042275E /* AppDelegate.m */; };
@@ -18,13 +20,15 @@
 		0DB5568E1D859A430042275E /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB5568D1D859A430042275E /* TodayViewController.m */; };
 		0DB556911D859A430042275E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB5568F1D859A430042275E /* MainInterface.storyboard */; };
 		0DB556951D859A430042275E /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0DB556871D859A430042275E /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0DB5569B1D85A1710042275E /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB5569A1D85A1710042275E /* SceneKit.framework */; };
 		0DB5569D1D85A9F20042275E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB5569C1D85A9F20042275E /* Assets.xcassets */; };
 		0DB556A31D85AB940042275E /* JZCommitImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A21D85AB940042275E /* JZCommitImageView.m */; };
 		0DB556A71D85B4970042275E /* JZCommitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A51D85B4970042275E /* JZCommitManager.m */; };
 		0DB556AC1D85B52D0042275E /* JZCommitDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556AA1D85B52D0042275E /* JZCommitDataModel.m */; };
-		46C85205372E1539042FAF9A /* libPods-TodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6DFB9146E0C258539AB2C5 /* libPods-TodayExtension.a */; };
-		9B578AA3790D9255A94608FB /* libPods-GitHubContributions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81601E22AF32E518E051BC7A /* libPods-GitHubContributions.a */; };
+		0DEF7A471D85FE7A00761555 /* JZCommitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A51D85B4970042275E /* JZCommitManager.m */; };
+		0DEF7A481D85FE7D00761555 /* JZCommitDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556AA1D85B52D0042275E /* JZCommitDataModel.m */; };
+		0DEF7A521D86812000761555 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF7A511D86812000761555 /* Reachability.m */; };
+		0DEF7A531D86812000761555 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF7A511D86812000761555 /* Reachability.m */; };
+		952731AEB4CB6F421E020BFB /* libPods-TodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1FBCD065571765C1D4B127 /* libPods-TodayExtension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01881A84E6066C9B7BFAB953 /* Pods-TodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.release.xcconfig"; sourceTree = "<group>"; };
 		0D565F9B1D85CAC5006C0324 /* JZCommitSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitSceneView.h; sourceTree = "<group>"; };
 		0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitSceneView.m; sourceTree = "<group>"; };
 		0DB556691D859A120042275E /* GitHubContributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubContributions.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,12 +85,13 @@
 		0DB556AA1D85B52D0042275E /* JZCommitDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitDataModel.m; sourceTree = "<group>"; };
 		0DEF7A451D85FC2B00761555 /* GitHubContributions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHubContributions.entitlements; sourceTree = "<group>"; };
 		0DEF7A461D85FC7E00761555 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
-		51FC12F4AE1B6859CD079316 /* Pods-TodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.release.xcconfig"; sourceTree = "<group>"; };
-		7E6DFB9146E0C258539AB2C5 /* libPods-TodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81601E22AF32E518E051BC7A /* libPods-GitHubContributions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitHubContributions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B2A80171F7CBDDE350AA8A9 /* Pods-GitHubContributions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubContributions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubContributions/Pods-GitHubContributions.debug.xcconfig"; sourceTree = "<group>"; };
-		AA12798C8D960481B117029A /* Pods-GitHubContributions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubContributions.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubContributions/Pods-GitHubContributions.release.xcconfig"; sourceTree = "<group>"; };
-		FE7D6529BA182D93ADF80646 /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		0DEF7A501D86812000761555 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		0DEF7A511D86812000761555 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		2237E1EDAB39F7AA0EA47331 /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		5B1FBCD065571765C1D4B127 /* libPods-TodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE94186F89229304926B28EC /* Pods-GitHubContributions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubContributions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubContributions/Pods-GitHubContributions.debug.xcconfig"; sourceTree = "<group>"; };
+		C77384543F54CDE4CC88222F /* Pods-GitHubContributions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubContributions.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubContributions/Pods-GitHubContributions.release.xcconfig"; sourceTree = "<group>"; };
+		F6FF73B72CF8CE6258D62013 /* libPods-GitHubContributions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitHubContributions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B578AA3790D9255A94608FB /* libPods-GitHubContributions.a in Frameworks */,
+				036F632D267B073666A2AE01 /* libPods-GitHubContributions.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,9 +107,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DB5569B1D85A1710042275E /* SceneKit.framework in Frameworks */,
+				0D014C1F1D86AAE400212FF1 /* SceneKit.framework in Frameworks */,
 				0DB5568A1D859A430042275E /* NotificationCenter.framework in Frameworks */,
-				46C85205372E1539042FAF9A /* libPods-TodayExtension.a in Frameworks */,
+				952731AEB4CB6F421E020BFB /* libPods-TodayExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +143,7 @@
 				0DB5568B1D859A430042275E /* TodayExtension */,
 				0DB556881D859A430042275E /* Frameworks */,
 				0DB5566A1D859A120042275E /* Products */,
-				625AE949EAB7D61D1138690A /* Pods */,
+				102F0CAF98808953597A6685 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +162,8 @@
 				0DEF7A451D85FC2B00761555 /* GitHubContributions.entitlements */,
 				0DB5566F1D859A120042275E /* AppDelegate.h */,
 				0DB556701D859A120042275E /* AppDelegate.m */,
+				0DEF7A501D86812000761555 /* Reachability.h */,
+				0DEF7A511D86812000761555 /* Reachability.m */,
 				0DB556721D859A120042275E /* ViewController.h */,
 				0DB556731D859A120042275E /* ViewController.m */,
 				0DB556751D859A120042275E /* Main.storyboard */,
@@ -180,8 +188,8 @@
 			children = (
 				0DB5569A1D85A1710042275E /* SceneKit.framework */,
 				0DB556891D859A430042275E /* NotificationCenter.framework */,
-				81601E22AF32E518E051BC7A /* libPods-GitHubContributions.a */,
-				7E6DFB9146E0C258539AB2C5 /* libPods-TodayExtension.a */,
+				F6FF73B72CF8CE6258D62013 /* libPods-GitHubContributions.a */,
+				5B1FBCD065571765C1D4B127 /* libPods-TodayExtension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -211,13 +219,13 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		625AE949EAB7D61D1138690A /* Pods */ = {
+		102F0CAF98808953597A6685 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9B2A80171F7CBDDE350AA8A9 /* Pods-GitHubContributions.debug.xcconfig */,
-				AA12798C8D960481B117029A /* Pods-GitHubContributions.release.xcconfig */,
-				FE7D6529BA182D93ADF80646 /* Pods-TodayExtension.debug.xcconfig */,
-				51FC12F4AE1B6859CD079316 /* Pods-TodayExtension.release.xcconfig */,
+				BE94186F89229304926B28EC /* Pods-GitHubContributions.debug.xcconfig */,
+				C77384543F54CDE4CC88222F /* Pods-GitHubContributions.release.xcconfig */,
+				2237E1EDAB39F7AA0EA47331 /* Pods-TodayExtension.debug.xcconfig */,
+				01881A84E6066C9B7BFAB953 /* Pods-TodayExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 				0DB556851D859A430042275E /* Resources */,
 				56AAC5656CC03C74294A7DD9 /* [CP] Embed Pods Frameworks */,
 				794B7EF0240FD54F964B2E51 /* [CP] Copy Pods Resources */,
+				0D6BD12D1D86AF470041C5FD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -343,6 +352,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D6BD12D1D86AF470041C5FD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi";
+		};
 		2FD285DC7976C18C276D1D2A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,8 +462,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEF7A481D85FE7D00761555 /* JZCommitDataModel.m in Sources */,
+				0DEF7A471D85FE7A00761555 /* JZCommitManager.m in Sources */,
 				0DB556741D859A120042275E /* ViewController.m in Sources */,
 				0DB556711D859A120042275E /* AppDelegate.m in Sources */,
+				0DEF7A521D86812000761555 /* Reachability.m in Sources */,
 				0DB5566E1D859A120042275E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +479,7 @@
 				0DB5568E1D859A430042275E /* TodayViewController.m in Sources */,
 				0DB556AC1D85B52D0042275E /* JZCommitDataModel.m in Sources */,
 				0DB556A31D85AB940042275E /* JZCommitImageView.m in Sources */,
+				0DEF7A531D86812000761555 /* Reachability.m in Sources */,
 				0D565F9D1D85CAC5006C0324 /* JZCommitSceneView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,7 +614,7 @@
 		};
 		0DB556811D859A120042275E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B2A80171F7CBDDE350AA8A9 /* Pods-GitHubContributions.debug.xcconfig */;
+			baseConfigurationReference = BE94186F89229304926B28EC /* Pods-GitHubContributions.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitHubContributions/GitHubContributions.entitlements;
@@ -604,7 +630,7 @@
 		};
 		0DB556821D859A120042275E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA12798C8D960481B117029A /* Pods-GitHubContributions.release.xcconfig */;
+			baseConfigurationReference = C77384543F54CDE4CC88222F /* Pods-GitHubContributions.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitHubContributions/GitHubContributions.entitlements;
@@ -620,7 +646,7 @@
 		};
 		0DB556971D859A430042275E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE7D6529BA182D93ADF80646 /* Pods-TodayExtension.debug.xcconfig */;
+			baseConfigurationReference = 2237E1EDAB39F7AA0EA47331 /* Pods-TodayExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				DEVELOPMENT_TEAM = 9QJ8M25J77;
@@ -635,7 +661,7 @@
 		};
 		0DB556981D859A430042275E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51FC12F4AE1B6859CD079316 /* Pods-TodayExtension.release.xcconfig */;
+			baseConfigurationReference = 01881A84E6066C9B7BFAB953 /* Pods-TodayExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				DEVELOPMENT_TEAM = 9QJ8M25J77;
