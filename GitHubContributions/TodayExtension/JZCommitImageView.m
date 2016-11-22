@@ -49,17 +49,20 @@
                 CGContextFillRect(context,rect);
             }
             
-            
             JZCommitDataModel *firstDayOfWeek = [week firstObject];
-            NSString* monthName = [self monthName:[firstDayOfWeek.month intValue]];
-            // Setup the font specific variables
-            NSDictionary *attributes = @{
-                                         NSFontAttributeName   : [UIFont fontWithName:@"Helvetica" size:8],
-                                         NSStrokeWidthAttributeName    : @(0),
-                                         NSForegroundColorAttributeName    : [UIColor whiteColor]
-                                         };
-            // Draw text with CGPoint and attributes
-            [monthName drawAtPoint:CGPointMake(self.frame.size.width - weekFromNow * 12 - 24 + 1,8 * 12 - 6) withAttributes:attributes];
+            NSDateComponents *firstDayComponents = [[NSCalendar currentCalendar] components: NSCalendarUnitDay fromDate: [firstDayOfWeek date]];
+            if ([self isFirstWeekOfMonth: [firstDayComponents day]])
+            {
+                NSString* monthName = [self monthName:[firstDayOfWeek.month intValue]];
+                // Setup the font specific variables
+                NSDictionary *attributes = @{
+                                             NSFontAttributeName   : [UIFont fontWithName:@"Helvetica" size:8],
+                                             NSStrokeWidthAttributeName    : @(0),
+                                             NSForegroundColorAttributeName    : [UIColor whiteColor]
+                                             };
+                // Draw text with CGPoint and attributes
+                [monthName drawAtPoint:CGPointMake(self.frame.size.width - weekFromNow * 12 - 24 + 1,8 * 12 - 6) withAttributes:attributes];
+            }
         }
         
         UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
@@ -72,9 +75,13 @@
 
 - (NSString *)monthName:(int)month
 {
-    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"J",@"F",@"M",@"A",@"M",@"J",@"J",@"A",@"S",@"O",@"N",@"D", nil];
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"Jan",@"Feb",@"Mar",@"Apr",@"May",@"Jun",@"Jul",@"Aug",@"Sep",@"Oct",@"Nov",@"Dec", nil];
     return [array objectAtIndex:month - 1];
 }
 
+- (BOOL)isFirstWeekOfMonth:(NSInteger)day
+{
+    return day <= 7;
+}
 
 @end

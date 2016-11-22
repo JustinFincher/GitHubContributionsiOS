@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet JZCommitImageView *commitImageView;
 @property (weak, nonatomic) IBOutlet JZCommitSceneView *commitSceneView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commitImageViewTopConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commitSceneViewTopCinstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commitSceneViewTopConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
 @end
@@ -113,7 +113,7 @@
     if (activeDisplayMode == NCWidgetDisplayModeCompact)
     {
         self.preferredContentSize = maxSize;
-        _commitSceneViewTopCinstraint.constant = -210.0f;
+        _commitSceneViewTopConstraint.constant = -210.0f;
         [UIView animateWithDuration:0.2
                          animations:^{
                              _commitImageView.alpha = 1.0f;
@@ -123,7 +123,7 @@
     }
     else {
         self.preferredContentSize = CGSizeMake(0, 200.0);
-        _commitSceneViewTopCinstraint.constant = - 0.0;
+        _commitSceneViewTopConstraint.constant = - 0.0;
         [UIView animateWithDuration:0.2
                          animations:^{
                              _commitImageView.alpha = 0.0f;
