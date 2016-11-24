@@ -27,6 +27,11 @@
     return self;
 }
 
+- (void)layerWillDraw:(CALayer *)layer {
+    [super layerWillDraw:layer];
+    layer.contentsFormat = kCAContentsFormatRGBA8Uint;
+}
+
 - (void)refreshFromCommits:(NSMutableArray *)array
 {
     
