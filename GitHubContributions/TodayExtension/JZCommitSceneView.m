@@ -26,6 +26,11 @@
     
 }
 
+- (void)layerWillDraw:(CALayer *)layer {
+    [super layerWillDraw:layer];
+    layer.contentsFormat = kCAContentsFormatRGBA8Uint;
+}
+
 - (void)refreshFromCommits:(NSMutableArray *)array
 {
     self.scene = [SCNScene scene];
