@@ -53,16 +53,16 @@
         weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         if (!weeks)
         {
-            NSLog(@"NSUserDefaults DO NOT HAVE weeks DATA");
+            JZLog(@"NSUserDefaults DO NOT HAVE weeks DATA");
         }else
         {
-            NSLog(@"NSUserDefaults DO HAVE weeks DATA");
+            JZLog(@"NSUserDefaults DO HAVE weeks DATA");
             [_commitSceneView refreshFromCommits:weeks];
             [_commitImageView refreshFromCommits:weeks];
         }
     }else
     {
-        NSLog(@"NSUserDefaults DO NOT HAVE DATA");
+        JZLog(@"NSUserDefaults DO NOT HAVE DATA");
          weeks = [[JZCommitManager sharedManager] refresh];
         if (!weeks)
         {
@@ -76,10 +76,10 @@
         [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] setObject:data forKey:@"GitHubContributionsArray"];
         if ([[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] synchronize])
         {
-            NSLog(@"viewWillAppearDataTaskNewData");
+            JZLog(@"viewWillAppearDataTaskNewData");
         }else
         {
-            NSLog(@"viewWillAppearDataTakskFailed");
+            JZLog(@"viewWillAppearDataTakskFailed");
         }
         
     }

@@ -17,3 +17,9 @@ target 'TodayExtension' do
   # Pods for TodayExtension
 pod 'DateTools'
 end
+
+target 'ContributionsOnWatch Extension' do
+
+pod 'DateTools'
+
+end

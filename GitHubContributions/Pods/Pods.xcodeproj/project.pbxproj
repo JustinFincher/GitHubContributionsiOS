@@ -1,2923 +1,1224 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>017D32C4980DC223912E56CC511FD33F</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>FD0400CB3962F4E9ADD6B71677B4E11A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>APPLICATION_EXTENSION_API_ONLY</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>01B7F02F1D0E394401AA39AC266C520F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.plug-in</string>
-			<key>name</key>
-			<string>DateTools.bundle</string>
-			<key>path</key>
-			<string>DateTools/DateTools.bundle</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>08DDB39F398641BB7B5DE3E676A8170F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B355B0E9F2BCF0AE6565F08C3476E843</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>0A07AE0293FA6209569D6477CC4F0A7F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6A8E729AD3889882340921138F88D386</string>
-				<string>F0DF45110295F12AD52D5E8DC9B33AC0</string>
-				<string>216D359A93ECB391A1757399C9EBBC3B</string>
-				<string>7E32B8C219DCA2E13D325710567D42C8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0A68FE8A6158D395EC4CB10F8472F165</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B4CCDF0ACEE37ED4308724E62FCDE939</string>
-				<string>3C9854452B704969D40D932335DEE0FF</string>
-				<string>0F2331BAF78D4EDDCD400CF6388C7978</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0C118EA84A58649A57D7BDE7CF5BC9A7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>14082CDE8ABDC2B4DA1792740E3704C0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>0D1690A937DB4A6E2AC7F1F1A50FF489</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DTTimePeriod.m</string>
-			<key>path</key>
-			<string>DateTools/DTTimePeriod.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0D9C4F535F241A6BD49D106B6BB1918A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQUIScrollView+Additions.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUIScrollView+Additions.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0F2331BAF78D4EDDCD400CF6388C7978</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>0F9DBB180812BDD1DBDA222A2B44DA67</key>
-		<dict>
-			<key>fileRef</key>
-			<string>601C4D715553EAAB271C552108FD0517</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>101B9B80F95A07814BDC452A30F8DE06</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>EB86A7590E9EBC489B39935239EE6211</string>
-				<string>251FA365B74AC33538A84A9D3BC40AFD</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>122DA2E5084A4393C29BE363C764795C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0A68FE8A6158D395EC4CB10F8472F165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>14082CDE8ABDC2B4DA1792740E3704C0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSDate+DateTools.m</string>
-			<key>path</key>
-			<string>DateTools/NSDate+DateTools.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>14E783C83E7E64A073E91F784409D0E9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQBarButtonItem.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQBarButtonItem.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>15EBB938CDC714B74318D4A24FEB9A36</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DateTools.h</string>
-			<key>path</key>
-			<string>DateTools/DateTools.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>17A24A030D214995416377FFE48E15C2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQUITextFieldView+Additions.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUITextFieldView+Additions.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1C9A0E8EE17C8D72FD9E3914D85B86FB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C78BF70EB43897F996CC767532551CFC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1CF37E9BCE91DEEBF2AE657AEFF896A5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQUIViewController+Additions.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUIViewController+Additions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1FDFA7E404C9B33C636E8124E2731E95</key>
-		<dict>
-			<key>fileRef</key>
-			<string>17A24A030D214995416377FFE48E15C2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>216D359A93ECB391A1757399C9EBBC3B</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods-GitHubContributions.a</string>
-			<key>path</key>
-			<string>libPods-GitHubContributions.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>24B64DA299478C9D72D53D8CE0CF7BCB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C702B89A599C66B22B3DF0325302E90E</string>
-				<string>9CCC2B81E0AFCC223370C6A77209FCD6</string>
-				<string>7F79273A9AED1365FB7AB8ABC8818758</string>
-				<string>B02AF1B6080A8722CD96D02BB1A22704</string>
-				<string>BEDCE0C878BA1B009D0EABA615564C8A</string>
-				<string>DF81AB8E7454E0C5CBD4BA3C99BB3157</string>
-				<string>FD0400CB3962F4E9ADD6B71677B4E11A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-TodayExtension</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-TodayExtension</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>251FA365B74AC33538A84A9D3BC40AFD</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F43DAB6B2F37B374E2E17ED93895AB02</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>29B46CBF12ED112647D9A8BCC27FA4D0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3C9854452B704969D40D932335DEE0FF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2C4AD9BA7A9049D68F51BBE5D6DF73E6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQUIWindow+Hierarchy.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUIWindow+Hierarchy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2C5C8CF215F50A266577682A11A013D9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>29B46CBF12ED112647D9A8BCC27FA4D0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AE9439C22469D35336242DD983DB5C5F</string>
-				<string>42287DDF97330524BA3EF220F0276DA6</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2DA48C87B11DAEB90B3CBFDBB2B984FE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQKeyboardReturnKeyHandler.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQKeyboardReturnKeyHandler.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2F6FE6DFADB803598AA4DA02C388948D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2DA48C87B11DAEB90B3CBFDBB2B984FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2FFAA6458DBEA302927B903A27A21372</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQBarButtonItem.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQBarButtonItem.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>301ACD99F69B48491FE5EB4CCF77C8A0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-GitHubContributions-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>31FF44B5E2FF8CF00090950A8B67AFF6</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>D080F77A97056851915A3DCE6F7F6EA5</string>
-			<key>buildPhases</key>
-			<array>
-				<string>A862A599170D3CC6A194F9C6C9EB7143</string>
-				<string>530FD65C498B21E3CC0C04855EB59B4C</string>
-				<string>5B7C15A3768ACB7BE38A3DD453625300</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>DateTools</string>
-			<key>productName</key>
-			<string>DateTools</string>
-			<key>productReference</key>
-			<string>6A8E729AD3889882340921138F88D386</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>32FBD69800971F6773DA0DDF2EB9B560</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>9C9DEB677D20D3C830448B8094F2687C</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/IQKeyboardManager/IQKeyboardManager-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3362778752AB4D381EAC3B05C2B6A608</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>DF81AB8E7454E0C5CBD4BA3C99BB3157</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>APPLICATION_EXTENSION_API_ONLY</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3671B6E4324B29C6AA963C53F7F12A17</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B604CA4F8CB63AA48F0CAF216C7A24BA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>379912F8F5C2177FFB76D28E3D2FA718</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CFABB4B0AC8306EBB7FC0E49641B28F9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>37AF680583DB8F06398A64AECB0A514F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>DateTools</string>
-			<key>target</key>
-			<string>31FF44B5E2FF8CF00090950A8B67AFF6</string>
-			<key>targetProxy</key>
-			<string>B16A658917BFB83E0724A80AB314FE7C</string>
-		</dict>
-		<key>3971D598267558B94FF665FECDA82111</key>
-		<dict>
-			<key>fileRef</key>
-			<string>ED53B336EEBBBDAF23A17AEBDE087C31</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>39FADBD543A035E4AC64FE968523E026</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.plug-in</string>
-			<key>name</key>
-			<string>IQKeyboardManager.bundle</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Resources/IQKeyboardManager.bundle</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3B49CE6A498935A68B451FBD97F3C780</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSDate+DateTools.h</string>
-			<key>path</key>
-			<string>DateTools/NSDate+DateTools.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3C032C7555D4C6D3E8DA69A25A631C49</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3C9854452B704969D40D932335DEE0FF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3C9854452B704969D40D932335DEE0FF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>3E8C0221A0D0448FD18105B278BE4BC7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQUIView+IQKeyboardToolbar.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3FBE22697E35604A4F7163CC303007D2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-GitHubContributions-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4184EED3AB1280CAF83C7D9DA9274560</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7778E7A063D2D170F764958E6CF0323A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>42287DDF97330524BA3EF220F0276DA6</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>POD_CONFIGURATION_RELEASE=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>42946F0F96CFF7E9BD0A8934A1E1D726</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3362778752AB4D381EAC3B05C2B6A608</string>
-				<string>017D32C4980DC223912E56CC511FD33F</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>462A52C0A9A1C569E3BD8C0B52A92109</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DTConstants.h</string>
-			<key>path</key>
-			<string>DateTools/DTConstants.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>474C4F22F9166E9B431ABF0598F21443</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C99FF1A755A4ED3EF2FEA116D86BF287</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>49AFCED96ACDEDFDCCB1F2184CDD624F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C1302CA3439FC19C63C05CA582819EA5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4A77C3092E2C4DC85D2657B662F074B5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>67EB37A30970DF01E5E5E7AE9F7959A6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4F6FA774B85EBE3134E19DA7B5F08D9B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5909745BE8EE01F90D21D651658FC3EF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4FB3BB7F3B9B5697A1E7BBC9FC14CC53</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>783A5D1E4EA73E85763F9EDBC0EE3F46</string>
-				<string>1C9A0E8EE17C8D72FD9E3914D85B86FB</string>
-				<string>A7A9539BFD94AB2E4FF366FC90888288</string>
-				<string>2F6FE6DFADB803598AA4DA02C388948D</string>
-				<string>A87A423ED415255AD9BFE1C081C16040</string>
-				<string>B2DCE2B1AEA776B0DA57023E13088EEE</string>
-				<string>4A77C3092E2C4DC85D2657B662F074B5</string>
-				<string>0F9DBB180812BDD1DBDA222A2B44DA67</string>
-				<string>76469FA0CFB3A5B28231C61B8DB1133A</string>
-				<string>C6CD759292D7A987B77F35929BA609D2</string>
-				<string>1FDFA7E404C9B33C636E8124E2731E95</string>
-				<string>4F6FA774B85EBE3134E19DA7B5F08D9B</string>
-				<string>4184EED3AB1280CAF83C7D9DA9274560</string>
-				<string>474C4F22F9166E9B431ABF0598F21443</string>
-				<string>58941DFF62DA7553DB9AEB8F1EB0E508</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>501A8CB41866FA8BE62B89D8896EE0C2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQUIScrollView+Additions.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUIScrollView+Additions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>530FD65C498B21E3CC0C04855EB59B4C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C735B987C58B6A963062380943203B3F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>58636760DBA59B19CEC75F17C4060A34</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>15EBB938CDC714B74318D4A24FEB9A36</string>
-				<string>462A52C0A9A1C569E3BD8C0B52A92109</string>
-				<string>81E7DC797C45BCAE07647E4D5A3268CC</string>
-				<string>6EE714B45FA12A43334866FF207126E3</string>
-				<string>7CB14D1D4AA9E4506542EECC098BCCFA</string>
-				<string>C101B86B63DA0B8CC2177DBB8C634A0D</string>
-				<string>0D1690A937DB4A6E2AC7F1F1A50FF489</string>
-				<string>6AB7071B63FD9917513642310063F1D7</string>
-				<string>ED53B336EEBBBDAF23A17AEBDE087C31</string>
-				<string>F3300D1DA2D816ED8D21707E98577413</string>
-				<string>B355B0E9F2BCF0AE6565F08C3476E843</string>
-				<string>A923B3A73CB0722CC1FA686641161D81</string>
-				<string>CF5DFC55F990CDF77459C704EA74AA5C</string>
-				<string>3B49CE6A498935A68B451FBD97F3C780</string>
-				<string>14082CDE8ABDC2B4DA1792740E3704C0</string>
-				<string>E962407852C022F54E0BE325E7BAC3D8</string>
-				<string>8332EC34DBCC30E2E99A2FDC24B38A38</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>DateTools</string>
-			<key>path</key>
-			<string>DateTools</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>58941DFF62DA7553DB9AEB8F1EB0E508</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2C4AD9BA7A9049D68F51BBE5D6DF73E6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5909745BE8EE01F90D21D651658FC3EF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQUIView+Hierarchy.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUIView+Hierarchy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5B7C15A3768ACB7BE38A3DD453625300</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C6E277CA70064AE2D1F7361009CEB41B</string>
-				<string>DE6303DE14BD8A3A264FE96645E8075A</string>
-				<string>70528E7EBDD7860D6CD13AB83B5FD74A</string>
-				<string>9C3E095663A91660777D0C284588F704</string>
-				<string>9DA2609B71A9860982B0687802F8D6CB</string>
-				<string>B41E7D31B34527CF5A001926809E5DC8</string>
-				<string>6C8E458BA1C159DDB8D24C215B0CFEE7</string>
-				<string>EAD8F7B9B19071EB9D3EAA582AD7FAAF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5CAE2ADB5AFCFB3D0DAD024E8A821F03</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQToolbar.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQToolbar.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5D12660F6178A86735638E063D750217</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2FFAA6458DBEA302927B903A27A21372</string>
-				<string>14E783C83E7E64A073E91F784409D0E9</string>
-				<string>CFABB4B0AC8306EBB7FC0E49641B28F9</string>
-				<string>D803ACD7DFE5B1F3B2C3198E35D1E36B</string>
-				<string>D30C36B735A66D64E7092F7168C4C47A</string>
-				<string>DDF9D776DB37B8A3A4117EB804C478F1</string>
-				<string>6591C04AE0083B57BA366EBC335D83F8</string>
-				<string>2DA48C87B11DAEB90B3CBFDBB2B984FE</string>
-				<string>DBC8894B0CAA270E611179304C84553E</string>
-				<string>78F926F5F9FEA0C7C8F90262E51E8058</string>
-				<string>FBEB6B06BFBCAC6C1E8C06B1C887B29F</string>
-				<string>C22CB5A93F1DF197808746A2018D434A</string>
-				<string>B604CA4F8CB63AA48F0CAF216C7A24BA</string>
-				<string>67EB37A30970DF01E5E5E7AE9F7959A6</string>
-				<string>BC3D5C35D71FA67F10C064206BD3ECE6</string>
-				<string>601C4D715553EAAB271C552108FD0517</string>
-				<string>5CAE2ADB5AFCFB3D0DAD024E8A821F03</string>
-				<string>CBE810245F529962F802ED033801150E</string>
-				<string>501A8CB41866FA8BE62B89D8896EE0C2</string>
-				<string>0D9C4F535F241A6BD49D106B6BB1918A</string>
-				<string>80EF2E0A0D0B17D3B0AA0A3AE89C7DA9</string>
-				<string>17A24A030D214995416377FFE48E15C2</string>
-				<string>A8C8FF0205F1CBB00DCE04A878980676</string>
-				<string>5909745BE8EE01F90D21D651658FC3EF</string>
-				<string>3E8C0221A0D0448FD18105B278BE4BC7</string>
-				<string>7778E7A063D2D170F764958E6CF0323A</string>
-				<string>1CF37E9BCE91DEEBF2AE657AEFF896A5</string>
-				<string>C99FF1A755A4ED3EF2FEA116D86BF287</string>
-				<string>F79A671A9B7F21758F6669326EDC15C3</string>
-				<string>2C4AD9BA7A9049D68F51BBE5D6DF73E6</string>
-				<string>BE00C6CD39B174FA77B858BD06128AF9</string>
-				<string>C0D6D70E81C9753498B86084C22D610C</string>
-				<string>925A91CE0BE76B314D12469D07444FDD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>IQKeyboardManager</string>
-			<key>path</key>
-			<string>IQKeyboardManager</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5DDD21A8280A6287FF11EF63AA543373</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-GitHubContributions.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5E32928F92D3B7B7132C2BDB16E6C4D7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A2BED183C5D4749EB8E10A5AE7130C6D</string>
-				<string>301ACD99F69B48491FE5EB4CCF77C8A0</string>
-				<string>C1302CA3439FC19C63C05CA582819EA5</string>
-				<string>3FBE22697E35604A4F7163CC303007D2</string>
-				<string>AD7F90086088590E92AE57CC657343CA</string>
-				<string>5DDD21A8280A6287FF11EF63AA543373</string>
-				<string>F43DAB6B2F37B374E2E17ED93895AB02</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-GitHubContributions</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-GitHubContributions</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5EF7F5C629042ED97A43395ED515CD87</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3C032C7555D4C6D3E8DA69A25A631C49</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>601C4D715553EAAB271C552108FD0517</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQTitleBarButtonItem.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>605017ED36D34AD966ADE3A27BAC77DE</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>BB852708B2509B7D1056BBCC91EB6605</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>APPLICATION_EXTENSION_API_ONLY</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/DateTools/DateTools-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>4.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>63A5EB7B8005256326E69C339D293044</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC3D5C35D71FA67F10C064206BD3ECE6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>655915B2DDAFB638774BDE19B3AAE8ED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E8C0221A0D0448FD18105B278BE4BC7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>6591C04AE0083B57BA366EBC335D83F8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQKeyboardReturnKeyHandler.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQKeyboardReturnKeyHandler.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67EB37A30970DF01E5E5E7AE9F7959A6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQTextView.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQTextView/IQTextView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>68901C28BB2C0AE96CF3CB3B7BC9EBB7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0F2331BAF78D4EDDCD400CF6388C7978</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6A8E729AD3889882340921138F88D386</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libDateTools.a</string>
-			<key>path</key>
-			<string>libDateTools.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>6AB7071B63FD9917513642310063F1D7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DTTimePeriodChain.h</string>
-			<key>path</key>
-			<string>DateTools/DTTimePeriodChain.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C8E458BA1C159DDB8D24C215B0CFEE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A923B3A73CB0722CC1FA686641161D81</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>6EE714B45FA12A43334866FF207126E3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DTError.h</string>
-			<key>path</key>
-			<string>DateTools/DTError.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>70528E7EBDD7860D6CD13AB83B5FD74A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6EE714B45FA12A43334866FF207126E3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>706B941F591C5E310380270187C010C7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2FFAA6458DBEA302927B903A27A21372</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>72185C50570CC802935EAE77F7284B02</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>9C9DEB677D20D3C830448B8094F2687C</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/IQKeyboardManager/IQKeyboardManager-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>76469FA0CFB3A5B28231C61B8DB1133A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CBE810245F529962F802ED033801150E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7778E7A063D2D170F764958E6CF0323A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQUIView+IQKeyboardToolbar.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>783A5D1E4EA73E85763F9EDBC0EE3F46</key>
-		<dict>
-			<key>fileRef</key>
-			<string>14E783C83E7E64A073E91F784409D0E9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>78F926F5F9FEA0C7C8F90262E51E8058</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQNSArray+Sort.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQNSArray+Sort.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7B8F3E2255C9464599B8AF082886A729</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B4CCDF0ACEE37ED4308724E62FCDE939</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7C588893D0085CDC243D5430368269B9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>49AFCED96ACDEDFDCCB1F2184CDD624F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>7CB14D1D4AA9E4506542EECC098BCCFA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DTError.m</string>
-			<key>path</key>
-			<string>DateTools/DTError.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>93A4A3777CF96A4AAC1D13BA6DCCEA73</string>
-				<string>122DA2E5084A4393C29BE363C764795C</string>
-				<string>8263D961F9CE232355EB33FE6039F42E</string>
-				<string>0A07AE0293FA6209569D6477CC4F0A7F</string>
-				<string>CB6D1BF2D2A276848B735EF43403F107</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7E32B8C219DCA2E13D325710567D42C8</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods-TodayExtension.a</string>
-			<key>path</key>
-			<string>libPods-TodayExtension.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>7F79273A9AED1365FB7AB8ABC8818758</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-TodayExtension-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>80198C029FE56A23A38E541E6EC7C499</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DDF9D776DB37B8A3A4117EB804C478F1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>80EF2E0A0D0B17D3B0AA0A3AE89C7DA9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQUITextFieldView+Additions.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUITextFieldView+Additions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>81E7DC797C45BCAE07647E4D5A3268CC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DTConstants.m</string>
-			<key>path</key>
-			<string>DateTools/DTConstants.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8263D961F9CE232355EB33FE6039F42E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>58636760DBA59B19CEC75F17C4060A34</string>
-				<string>5D12660F6178A86735638E063D750217</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8332EC34DBCC30E2E99A2FDC24B38A38</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BB852708B2509B7D1056BBCC91EB6605</string>
-				<string>9D33E9848361679A57702F269ADD16DF</string>
-				<string>D9A4ED703FD79E22D5C604935A02ACC5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/DateTools</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>84B527CE31FE045E3C567672FF352C11</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>DateTools</string>
-			<key>target</key>
-			<string>31FF44B5E2FF8CF00090950A8B67AFF6</string>
-			<key>targetProxy</key>
-			<string>ED0A43A3B552C6E0ACD829B185A5F197</string>
-		</dict>
-		<key>877F418C8DFBAE62003FA3889A551D11</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>42946F0F96CFF7E9BD0A8934A1E1D726</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F302DE1A90A20C7FA98505B99C24BB51</string>
-				<string>2C5C8CF215F50A266577682A11A013D9</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>37AF680583DB8F06398A64AECB0A514F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-TodayExtension</string>
-			<key>productName</key>
-			<string>Pods-TodayExtension</string>
-			<key>productReference</key>
-			<string>7E32B8C219DCA2E13D325710567D42C8</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>89825FA1D17090932D08AA1AA9E56EC5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1CF37E9BCE91DEEBF2AE657AEFF896A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>8BAE6961D466C5B4C6E280F348F8E97A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FBEB6B06BFBCAC6C1E8C06B1C887B29F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>8DBAE4BE8A114ED7FA30E5811C7C9F15</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF5DFC55F990CDF77459C704EA74AA5C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>925A91CE0BE76B314D12469D07444FDD</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9C9DEB677D20D3C830448B8094F2687C</string>
-				<string>C78BF70EB43897F996CC767532551CFC</string>
-				<string>9D2FB84FCB51D7F3992501996FE961DE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/IQKeyboardManager</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>931F7C4F90A8A69398B43904FD2EAE3D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DBC8894B0CAA270E611179304C84553E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>93A4A3777CF96A4AAC1D13BA6DCCEA73</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>text.script.ruby</string>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>9B1738BF7F252D0537BAF7A31A5CCA2C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BE00C6CD39B174FA77B858BD06128AF9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>9C3E095663A91660777D0C284588F704</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C101B86B63DA0B8CC2177DBB8C634A0D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>9C9DEB677D20D3C830448B8094F2687C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>IQKeyboardManager.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9CCC2B81E0AFCC223370C6A77209FCD6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-TodayExtension-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9D2FB84FCB51D7F3992501996FE961DE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9D33E9848361679A57702F269ADD16DF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>DateTools-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9DA2609B71A9860982B0687802F8D6CB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6AB7071B63FD9917513642310063F1D7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>9FB36E066944D3370A42F9B427CC530D</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>C743C42395D3C33F9883CB4690B475A0</string>
-			<key>remoteInfo</key>
-			<string>IQKeyboardManager</string>
-		</dict>
-		<key>A16DECFC6809E7007339CF4FF2F1D20A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3C9854452B704969D40D932335DEE0FF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A2BED183C5D4749EB8E10A5AE7130C6D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-GitHubContributions-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A6B1DF59915B1E66F5B492E3DC382FBD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9D33E9848361679A57702F269ADD16DF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A7A9539BFD94AB2E4FF366FC90888288</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D803ACD7DFE5B1F3B2C3198E35D1E36B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A862A599170D3CC6A194F9C6C9EB7143</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A6B1DF59915B1E66F5B492E3DC382FBD</string>
-				<string>AEF39CCCA47BF107AEC783739E8D6844</string>
-				<string>ECDC9BE70EBB30AFA33016F779BB7E3D</string>
-				<string>EF8197F179C59888AD8DC30DF746D15E</string>
-				<string>3971D598267558B94FF665FECDA82111</string>
-				<string>08DDB39F398641BB7B5DE3E676A8170F</string>
-				<string>8DBAE4BE8A114ED7FA30E5811C7C9F15</string>
-				<string>0C118EA84A58649A57D7BDE7CF5BC9A7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A87A423ED415255AD9BFE1C081C16040</key>
-		<dict>
-			<key>fileRef</key>
-			<string>78F926F5F9FEA0C7C8F90262E51E8058</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A8C8FF0205F1CBB00DCE04A878980676</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQUIView+Hierarchy.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUIView+Hierarchy.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A923B3A73CB0722CC1FA686641161D81</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DTTimePeriodGroup.h</string>
-			<key>path</key>
-			<string>DateTools/DTTimePeriodGroup.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AD7F90086088590E92AE57CC657343CA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-GitHubContributions-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AD9BB06B8AE33058E193992CD2FBB7CA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>501A8CB41866FA8BE62B89D8896EE0C2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>AE9439C22469D35336242DD983DB5C5F</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>POD_CONFIGURATION_DEBUG=1</string>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AEE045FE63F6F4F05C41FC65E78D81E8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6591C04AE0083B57BA366EBC335D83F8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>AEF39CCCA47BF107AEC783739E8D6844</key>
-		<dict>
-			<key>fileRef</key>
-			<string>81E7DC797C45BCAE07647E4D5A3268CC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>B02AF1B6080A8722CD96D02BB1A22704</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-TodayExtension-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B16A658917BFB83E0724A80AB314FE7C</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>31FF44B5E2FF8CF00090950A8B67AFF6</string>
-			<key>remoteInfo</key>
-			<string>DateTools</string>
-		</dict>
-		<key>B2791B11F9548020276267AAAA996071</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>IQKeyboardManager</string>
-			<key>target</key>
-			<string>C743C42395D3C33F9883CB4690B475A0</string>
-			<key>targetProxy</key>
-			<string>9FB36E066944D3370A42F9B427CC530D</string>
-		</dict>
-		<key>B2DCE2B1AEA776B0DA57023E13088EEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C22CB5A93F1DF197808746A2018D434A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B355B0E9F2BCF0AE6565F08C3476E843</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DTTimePeriodCollection.m</string>
-			<key>path</key>
-			<string>DateTools/DTTimePeriodCollection.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B41E7D31B34527CF5A001926809E5DC8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F3300D1DA2D816ED8D21707E98577413</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>B4CCDF0ACEE37ED4308724E62FCDE939</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>B604CA4F8CB63AA48F0CAF216C7A24BA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQTextView.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQTextView/IQTextView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BB852708B2509B7D1056BBCC91EB6605</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>DateTools.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC3D5C35D71FA67F10C064206BD3ECE6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQTitleBarButtonItem.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BE00C6CD39B174FA77B858BD06128AF9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>KeyboardManager.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/KeyboardManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEDCE0C878BA1B009D0EABA615564C8A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-TodayExtension-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C0D6D70E81C9753498B86084C22D610C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>39FADBD543A035E4AC64FE968523E026</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C101B86B63DA0B8CC2177DBB8C634A0D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DTTimePeriod.h</string>
-			<key>path</key>
-			<string>DateTools/DTTimePeriod.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C1302CA3439FC19C63C05CA582819EA5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-GitHubContributions-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C19D040D84850E2CBCDB7D999CE288E8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7F79273A9AED1365FB7AB8ABC8818758</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C22CB5A93F1DF197808746A2018D434A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQPreviousNextView.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQPreviousNextView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C4A92991A9B0DD4BD29C610A27A27150</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5CAE2ADB5AFCFB3D0DAD024E8A821F03</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>C6CD759292D7A987B77F35929BA609D2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0D9C4F535F241A6BD49D106B6BB1918A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C6E277CA70064AE2D1F7361009CEB41B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>15EBB938CDC714B74318D4A24FEB9A36</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>C702B89A599C66B22B3DF0325302E90E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-TodayExtension-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C735B987C58B6A963062380943203B3F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3C9854452B704969D40D932335DEE0FF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C743C42395D3C33F9883CB4690B475A0</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>E15F12AD560582224D8AEDCD680513E9</string>
-			<key>buildPhases</key>
-			<array>
-				<string>4FB3BB7F3B9B5697A1E7BBC9FC14CC53</string>
-				<string>E48110DE0BC8FCB94400708AF33950E3</string>
-				<string>F52928BD67347CC6527F506A9F93DF92</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>IQKeyboardManager</string>
-			<key>productName</key>
-			<string>IQKeyboardManager</string>
-			<key>productReference</key>
-			<string>F0DF45110295F12AD52D5E8DC9B33AC0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>C78BF70EB43897F996CC767532551CFC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>IQKeyboardManager-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C99FF1A755A4ED3EF2FEA116D86BF287</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQUIViewController+Additions.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUIViewController+Additions.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB6D1BF2D2A276848B735EF43403F107</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5E32928F92D3B7B7132C2BDB16E6C4D7</string>
-				<string>24B64DA299478C9D72D53D8CE0CF7BCB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CBE810245F529962F802ED033801150E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQToolbar.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQToolbar.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE34E0EA31A3A6DF537D378A9ECDFA5C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F79A671A9B7F21758F6669326EDC15C3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CF5DFC55F990CDF77459C704EA74AA5C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DTTimePeriodGroup.m</string>
-			<key>path</key>
-			<string>DateTools/DTTimePeriodGroup.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFABB4B0AC8306EBB7FC0E49641B28F9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQKeyboardManager.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQKeyboardManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D080F77A97056851915A3DCE6F7F6EA5</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>605017ED36D34AD966ADE3A27BAC77DE</string>
-				<string>EDD0FCF2302A603270F5304A150D1FED</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D30C36B735A66D64E7092F7168C4C47A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQKeyboardManagerConstants.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Constants/IQKeyboardManagerConstants.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D41D8CD98F00B204E9800998ECF8427E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0700</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>7DB346D0F39D3F0E887471402A8071AB</string>
-			<key>productRefGroup</key>
-			<string>0A07AE0293FA6209569D6477CC4F0A7F</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>31FF44B5E2FF8CF00090950A8B67AFF6</string>
-				<string>C743C42395D3C33F9883CB4690B475A0</string>
-				<string>E3A621DFD2C3A352E4E4E86E867DBC6A</string>
-				<string>877F418C8DFBAE62003FA3889A551D11</string>
-			</array>
-		</dict>
-		<key>D803ACD7DFE5B1F3B2C3198E35D1E36B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>IQKeyboardManager.m</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQKeyboardManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D9A4ED703FD79E22D5C604935A02ACC5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>DateTools-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DBC8894B0CAA270E611179304C84553E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQNSArray+Sort.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQNSArray+Sort.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DDF9D776DB37B8A3A4117EB804C478F1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQKeyboardManagerConstantsInternal.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Constants/IQKeyboardManagerConstantsInternal.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DE6303DE14BD8A3A264FE96645E8075A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>462A52C0A9A1C569E3BD8C0B52A92109</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>DF81AB8E7454E0C5CBD4BA3C99BB3157</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-TodayExtension.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E15F12AD560582224D8AEDCD680513E9</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>32FBD69800971F6773DA0DDF2EB9B560</string>
-				<string>72185C50570CC802935EAE77F7284B02</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>E361BE1922FEFA88023C81465A1B1912</key>
-		<dict>
-			<key>fileRef</key>
-			<string>80EF2E0A0D0B17D3B0AA0A3AE89C7DA9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>E3A621DFD2C3A352E4E4E86E867DBC6A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>101B9B80F95A07814BDC452A30F8DE06</string>
-			<key>buildPhases</key>
-			<array>
-				<string>7C588893D0085CDC243D5430368269B9</string>
-				<string>5EF7F5C629042ED97A43395ED515CD87</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>84B527CE31FE045E3C567672FF352C11</string>
-				<string>B2791B11F9548020276267AAAA996071</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-GitHubContributions</string>
-			<key>productName</key>
-			<string>Pods-GitHubContributions</string>
-			<key>productReference</key>
-			<string>216D359A93ECB391A1757399C9EBBC3B</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>E48110DE0BC8FCB94400708AF33950E3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>7B8F3E2255C9464599B8AF082886A729</string>
-				<string>A16DECFC6809E7007339CF4FF2F1D20A</string>
-				<string>68901C28BB2C0AE96CF3CB3B7BC9EBB7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E962407852C022F54E0BE325E7BAC3D8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>01B7F02F1D0E394401AA39AC266C520F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EAD8F7B9B19071EB9D3EAA582AD7FAAF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3B49CE6A498935A68B451FBD97F3C780</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>EB86A7590E9EBC489B39935239EE6211</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>5DDD21A8280A6287FF11EF63AA543373</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>ECDC9BE70EBB30AFA33016F779BB7E3D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7CB14D1D4AA9E4506542EECC098BCCFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>ED0A43A3B552C6E0ACD829B185A5F197</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>31FF44B5E2FF8CF00090950A8B67AFF6</string>
-			<key>remoteInfo</key>
-			<string>DateTools</string>
-		</dict>
-		<key>ED53B336EEBBBDAF23A17AEBDE087C31</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DTTimePeriodChain.m</string>
-			<key>path</key>
-			<string>DateTools/DTTimePeriodChain.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EDD0FCF2302A603270F5304A150D1FED</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>BB852708B2509B7D1056BBCC91EB6605</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>APPLICATION_EXTENSION_API_ONLY</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/DateTools/DateTools-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>4.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>EF8197F179C59888AD8DC30DF746D15E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0D1690A937DB4A6E2AC7F1F1A50FF489</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>EFF920C82FBA1114BDB96617F5050501</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D30C36B735A66D64E7092F7168C4C47A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>F0DF45110295F12AD52D5E8DC9B33AC0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libIQKeyboardManager.a</string>
-			<key>path</key>
-			<string>libIQKeyboardManager.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F302DE1A90A20C7FA98505B99C24BB51</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C19D040D84850E2CBCDB7D999CE288E8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F3300D1DA2D816ED8D21707E98577413</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DTTimePeriodCollection.h</string>
-			<key>path</key>
-			<string>DateTools/DTTimePeriodCollection.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F43DAB6B2F37B374E2E17ED93895AB02</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-GitHubContributions.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F52928BD67347CC6527F506A9F93DF92</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>706B941F591C5E310380270187C010C7</string>
-				<string>379912F8F5C2177FFB76D28E3D2FA718</string>
-				<string>EFF920C82FBA1114BDB96617F5050501</string>
-				<string>80198C029FE56A23A38E541E6EC7C499</string>
-				<string>AEE045FE63F6F4F05C41FC65E78D81E8</string>
-				<string>931F7C4F90A8A69398B43904FD2EAE3D</string>
-				<string>8BAE6961D466C5B4C6E280F348F8E97A</string>
-				<string>3671B6E4324B29C6AA963C53F7F12A17</string>
-				<string>63A5EB7B8005256326E69C339D293044</string>
-				<string>C4A92991A9B0DD4BD29C610A27A27150</string>
-				<string>AD9BB06B8AE33058E193992CD2FBB7CA</string>
-				<string>E361BE1922FEFA88023C81465A1B1912</string>
-				<string>FE7DC1B80172FCD9B0CF3A9542E49691</string>
-				<string>655915B2DDAFB638774BDE19B3AAE8ED</string>
-				<string>89825FA1D17090932D08AA1AA9E56EC5</string>
-				<string>CE34E0EA31A3A6DF537D378A9ECDFA5C</string>
-				<string>9B1738BF7F252D0537BAF7A31A5CCA2C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F79A671A9B7F21758F6669326EDC15C3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQUIWindow+Hierarchy.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/Categories/IQUIWindow+Hierarchy.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FBEB6B06BFBCAC6C1E8C06B1C887B29F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>IQPreviousNextView.h</string>
-			<key>path</key>
-			<string>IQKeyboardManager/IQToolbar/IQPreviousNextView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FD0400CB3962F4E9ADD6B71677B4E11A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-TodayExtension.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FE7DC1B80172FCD9B0CF3A9542E49691</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A8C8FF0205F1CBB00DCE04A878980676</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D41D8CD98F00B204E9800998ECF8427E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0144FEA4570CF5B767E287CA13D3B76A /* IQKeyboardManagerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = D30C36B735A66D64E7092F7168C4C47A /* IQKeyboardManagerConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02A438C4726F13B398FA2EAD6CBFEEC4 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5909745BE8EE01F90D21D651658FC3EF /* IQUIView+Hierarchy.m */; };
+		0374D5D7A29C1D2BE3592423F241AD53 /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 601C4D715553EAAB271C552108FD0517 /* IQTitleBarButtonItem.m */; };
+		0733F14BEE55A6A915BC9EBDA4D3DB4B /* IQKeyboardReturnKeyHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 6591C04AE0083B57BA366EBC335D83F8 /* IQKeyboardReturnKeyHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B0BAE70353BADF0D3B174FFAF7B589A /* DTTimePeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D78302FD871E6C4C59B4321C37C2B4A /* DTTimePeriod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D779F21B9A7E80B7D111F0A8487ECD7 /* DTError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4116BFA9277FD86247A9F0E0A72A90 /* DTError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1442A0EB52C1295BF3CDEE73DEC583C2 /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 198CBCBA68CB1CEA74B3C3F925ECE0DE /* NSDate+DateTools.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1B388B2220FED50AD2FA58BF5E09F6B3 /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C99FF1A755A4ED3EF2FEA116D86BF287 /* IQUIViewController+Additions.m */; };
+		2039716D77BD347CC7388E381C71523A /* IQUIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = A8C8FF0205F1CBB00DCE04A878980676 /* IQUIView+Hierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20866087328DBC363860F56A4052672C /* NSDate+DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 929C3D8578C880CD3CACAFB922435ED3 /* NSDate+DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C542A77E66ECBCAFA72937FF0ADE619 /* DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = EFE37C5F245FAF236A0D0166F258AD0D /* DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D9903D15DA6857CDA311B2138C5B93D /* DTConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 34F57765819AFB05F9A3D47E37503B99 /* DTConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E97AE4122857DDC1FEAC92271F6683C /* DTTimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B8A61FB89A6A0FC74253B651EF755E /* DTTimePeriod.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2FDC0E349132AAEFF64EAEB307BA8F01 /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 198CBCBA68CB1CEA74B3C3F925ECE0DE /* NSDate+DateTools.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		32B7A98390CB181E5BDADA689F5A1626 /* DTError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9040C224A1C0431D4A933A123825958B /* DTError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37B339CDB4C5C81895302D50F41A987F /* IQPreviousNextView.h in Headers */ = {isa = PBXBuildFile; fileRef = FBEB6B06BFBCAC6C1E8C06B1C887B29F /* IQPreviousNextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D673E26BFE1F69EA50A159E7E843A5F /* IQToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CAE2ADB5AFCFB3D0DAD024E8A821F03 /* IQToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E2D2095FD35A0017EA404FBF60BD457 /* DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = EFE37C5F245FAF236A0D0166F258AD0D /* DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		429275C05A7EA67580668BF91D04C4F7 /* Pods-GitHubContributions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F185452634696AAB6331781B0F8F04 /* Pods-GitHubContributions-dummy.m */; };
+		4758838AAFCBBEA51D25E8A5B59C7DFC /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE810245F529962F802ED033801150E /* IQToolbar.m */; };
+		4994440EF9C1500B7DC3E56C6B395F22 /* IQPreviousNextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22CB5A93F1DF197808746A2018D434A /* IQPreviousNextView.m */; };
+		4BF720880C0E6047A75E7B631EBE9C42 /* IQKeyboardManagerConstantsInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF9D776DB37B8A3A4117EB804C478F1 /* IQKeyboardManagerConstantsInternal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FC72BCE4E697E2507DEF95BA7257F42 /* IQUIWindow+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = F79A671A9B7F21758F6669326EDC15C3 /* IQUIWindow+Hierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56D659DAD4DA7C0FFAA8CD347FFD74FA /* DTTimePeriodGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB7D383F74FD098138A8804B6121A63 /* DTTimePeriodGroup.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5A18FFA189D2BA5F2DFF97E2A5282354 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C143B2FDAB80BC8948A50A8895EAC23 /* UIKit.framework */; };
+		5C9893617C55CB9CDC0AEF4E52E4530A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
+		5DA27B9113FFF415ECA708BEEB275421 /* DTTimePeriodGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB7C1FC83BE4534B9ADD5B0C03179A8 /* DTTimePeriodGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63C33842519E12DD29E315D3506A9B59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
+		67016DBB0A12E9C112292854B756D7C6 /* DTTimePeriodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3249553C571D7FB91EEEBCE80198 /* DTTimePeriodCollection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		68B8386881C46298375D3D08308A971B /* DTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 55025ECF4082684522C496078B6CF6B0 /* DTConstants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6FB869D919EEC6EF54E8C98FDE929BBC /* IQTitleBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = BC3D5C35D71FA67F10C064206BD3ECE6 /* IQTitleBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7683F9F11FDC5805653DCC079BE78D5C /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D803ACD7DFE5B1F3B2C3198E35D1E36B /* IQKeyboardManager.m */; };
+		770210E893A6082721971546D7DD759B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD825AE4FB7CFA5697713AD3A20FFDC /* Foundation.framework */; };
+		77F54A48D92AD7934952BF17994C5B9D /* KeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BE00C6CD39B174FA77B858BD06128AF9 /* KeyboardManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7943D5966706DFA70607FFEAA0BC7B72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD825AE4FB7CFA5697713AD3A20FFDC /* Foundation.framework */; };
+		7ACA49202EF8AF3CFDC81B602B99E386 /* IQKeyboardManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C78BF70EB43897F996CC767532551CFC /* IQKeyboardManager-dummy.m */; };
+		7E2A8C7B4D34A767950AA56A6D1CBAB4 /* DateTools-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66394428703AD199417C4A8C88BE263A /* DateTools-iOS-dummy.m */; };
+		814C233001C3A07A809E5731553FD4F9 /* DTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 55025ECF4082684522C496078B6CF6B0 /* DTConstants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		82A458B5D04B70B5500533E5EBCB73A3 /* DTError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4116BFA9277FD86247A9F0E0A72A90 /* DTError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		83BB039B3342B00148D10079D56B55CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038AEA9241DE2FAC0660DB66150F5BA7 /* CoreGraphics.framework */; };
+		83CAE1FFEBDB98A83552856166BA90FF /* DateTools-watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3AD13D26920D94B3792620F3331045 /* DateTools-watchOS-dummy.m */; };
+		842D587B321D8220206171B69486BE27 /* DTTimePeriodChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5422BAFB476E52ECF397357C406728 /* DTTimePeriodChain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8E68CAD627D8A7905968F3EF07AA0C94 /* DTTimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B8A61FB89A6A0FC74253B651EF755E /* DTTimePeriod.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		907951F745A1A23B3C153511126ED426 /* DTTimePeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D78302FD871E6C4C59B4321C37C2B4A /* DTTimePeriod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94C13DF609EA157D82EBFCBD14BEA7A8 /* DTTimePeriodGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB7D383F74FD098138A8804B6121A63 /* DTTimePeriodGroup.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9865C0DF204A2E3E2699FB2E009D2A47 /* DTTimePeriodChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5422BAFB476E52ECF397357C406728 /* DTTimePeriodChain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9B741ED459D1EC9F7B22D71299224C7B /* NSDate+DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 929C3D8578C880CD3CACAFB922435ED3 /* NSDate+DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D1F80F75A7DFB4321914A7E0B11D9D5 /* IQTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = B604CA4F8CB63AA48F0CAF216C7A24BA /* IQTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E0C9FFC4F71CC0DD638F14D2D19B613 /* IQUITextFieldView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 80EF2E0A0D0B17D3B0AA0A3AE89C7DA9 /* IQUITextFieldView+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5D9E34B03FDBAC3E0338E66F579EBEC /* DTTimePeriodChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D250E716A0B5C3E7D06A649DC59464C /* DTTimePeriodChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A813007F41418FDFDF8C37BC383E5EC1 /* DTTimePeriodChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D250E716A0B5C3E7D06A649DC59464C /* DTTimePeriodChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8390EF828C7D1C499C96BE93F8BBA31 /* DTTimePeriodCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFAF676B27FE32E76004EB7B0C5CD1 /* DTTimePeriodCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA3BC17D299E0B0A9A231848F746BE27 /* DTError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9040C224A1C0431D4A933A123825958B /* DTError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEE3042D9382DE3703925875EBA6F982 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA48C87B11DAEB90B3CBFDBB2B984FE /* IQKeyboardReturnKeyHandler.m */; };
+		B04A8947059CE5E74B5302A97D0ECF15 /* IQBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FFAA6458DBEA302927B903A27A21372 /* IQBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4F76157EC0674750E9DC363EFA2FBE1 /* IQKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CFABB4B0AC8306EBB7FC0E49641B28F9 /* IQKeyboardManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5917D7F6C5EADFD520A527451F7683A /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E783C83E7E64A073E91F784409D0E9 /* IQBarButtonItem.m */; };
+		B7DB27F916BB919AC2A0A6E96893D6D9 /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A24A030D214995416377FFE48E15C2 /* IQUITextFieldView+Additions.m */; };
+		BBDFC1A345F442AC2DF655382B42A8C9 /* DTTimePeriodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3249553C571D7FB91EEEBCE80198 /* DTTimePeriodCollection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		BCDF84B77036F8CA5F4BBB508BF64EB5 /* IQUIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD9BA7A9049D68F51BBE5D6DF73E6 /* IQUIWindow+Hierarchy.m */; };
+		CC00A9672766D8AF015C0382DB042B82 /* IQUIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C4F535F241A6BD49D106B6BB1918A /* IQUIScrollView+Additions.m */; };
+		CCAADEC20D1BDB31D90DE689200731D9 /* IQNSArray+Sort.h in Headers */ = {isa = PBXBuildFile; fileRef = DBC8894B0CAA270E611179304C84553E /* IQNSArray+Sort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEE05BCEB6086CB9F263D2BCB091C9E6 /* Pods-ContributionsOnWatch Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8BB588C71CD3C80CB436EADA011E48 /* Pods-ContributionsOnWatch Extension-dummy.m */; };
+		D08740B07FDAB8CBB68EFB6F1858FA81 /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EB37A30970DF01E5E5E7AE9F7959A6 /* IQTextView.m */; };
+		D0D935A58F393AD5B96B6C6063544194 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F926F5F9FEA0C7C8F90262E51E8058 /* IQNSArray+Sort.m */; };
+		D2DDAC5622D883B84FF5F84C5B4403DB /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778E7A063D2D170F764958E6CF0323A /* IQUIView+IQKeyboardToolbar.m */; };
+		D89C13559DFF80DDBCD21CA0B21E3D03 /* DTConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 34F57765819AFB05F9A3D47E37503B99 /* DTConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8CC9B8B378F192DBC2AAC79911DA410 /* IQUIScrollView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 501A8CB41866FA8BE62B89D8896EE0C2 /* IQUIScrollView+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D99FA2B131D7F6388F163F1059D3F4A5 /* Pods-TodayExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA64BB8428C93B8BD084E076BD7702A0 /* Pods-TodayExtension-dummy.m */; };
+		DC5AD281D4A5E806D5771413DE1D571F /* DTTimePeriodCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFAF676B27FE32E76004EB7B0C5CD1 /* DTTimePeriodCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7BD75BE41DEBE78E23E1C356D6CE187 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD825AE4FB7CFA5697713AD3A20FFDC /* Foundation.framework */; };
+		EA40DBFA537997C0417F6A7A7B877693 /* IQUIViewController+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF37E9BCE91DEEBF2AE657AEFF896A5 /* IQUIViewController+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB265A71ED9486032E878994DC613005 /* DTTimePeriodGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB7C1FC83BE4534B9ADD5B0C03179A8 /* DTTimePeriodGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB7A06F7AD410B989BD19C5A4BCE01D1 /* IQUIView+IQKeyboardToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8C0221A0D0448FD18105B278BE4BC7 /* IQUIView+IQKeyboardToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F04C91D58E6895F2940DD4767949E999 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD825AE4FB7CFA5697713AD3A20FFDC /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19CCD856CE9E48FAF286E12D6D731F11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACFBB91D8DE4FC38E13D237381C65A1;
+			remoteInfo = "DateTools-iOS";
+		};
+		68FBBA6A3FE26721BCFA0BE115BC32E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC474E8C7CC822888E45AEFC17F4B827;
+			remoteInfo = IQKeyboardManager;
+		};
+		B4DB1AB148D129DCDACE2616048D1AE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACFBB91D8DE4FC38E13D237381C65A1;
+			remoteInfo = "DateTools-iOS";
+		};
+		CD2FBB292A4C37D727C42791F5A5DAE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF38D837C4E5DAB77E0E53073AF32CA5;
+			remoteInfo = "DateTools-watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0030CB81D553DDBCA1FCF4D73C7B80A6 /* DateTools.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = DateTools/DateTools.bundle; sourceTree = "<group>"; };
+		0324B020543083F69DE9D09F95995CF6 /* libPods-ContributionsOnWatch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ContributionsOnWatch Extension.a"; path = "libPods-ContributionsOnWatch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		038AEA9241DE2FAC0660DB66150F5BA7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		081A9BF1783CD9B44EE6CFE4048B3281 /* Pods-ContributionsOnWatch Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ContributionsOnWatch Extension-resources.sh"; sourceTree = "<group>"; };
+		0AD825AE4FB7CFA5697713AD3A20FFDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0D9C4F535F241A6BD49D106B6BB1918A /* IQUIScrollView+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIScrollView+Additions.m"; path = "IQKeyboardManager/Categories/IQUIScrollView+Additions.m"; sourceTree = "<group>"; };
+		0E1183CEA53A8E2B80548E1F9C56DEFF /* Pods-TodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TodayExtension.release.xcconfig"; sourceTree = "<group>"; };
+		14E783C83E7E64A073E91F784409D0E9 /* IQBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQBarButtonItem.m; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.m; sourceTree = "<group>"; };
+		17A24A030D214995416377FFE48E15C2 /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUITextFieldView+Additions.m"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
+		198CBCBA68CB1CEA74B3C3F925ECE0DE /* NSDate+DateTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DateTools.m"; path = "DateTools/NSDate+DateTools.m"; sourceTree = "<group>"; };
+		1CF37E9BCE91DEEBF2AE657AEFF896A5 /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIViewController+Additions.h"; path = "IQKeyboardManager/Categories/IQUIViewController+Additions.h"; sourceTree = "<group>"; };
+		1ECAAA9E77F4D9FA399796DB32FD46B3 /* Pods-ContributionsOnWatch Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ContributionsOnWatch Extension-frameworks.sh"; sourceTree = "<group>"; };
+		233E277F68497292B6EC7C6E46EA07F2 /* Pods-GitHubContributions-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GitHubContributions-resources.sh"; sourceTree = "<group>"; };
+		25D989AD4E0F87563B8CE41537351D3E /* DateTools-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DateTools-watchOS-prefix.pch"; path = "../DateTools-watchOS/DateTools-watchOS-prefix.pch"; sourceTree = "<group>"; };
+		289B48BB52D8716F58F88B03D9DCB7E1 /* Pods-ContributionsOnWatch Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ContributionsOnWatch Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		2C4AD9BA7A9049D68F51BBE5D6DF73E6 /* IQUIWindow+Hierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIWindow+Hierarchy.m"; path = "IQKeyboardManager/Categories/IQUIWindow+Hierarchy.m"; sourceTree = "<group>"; };
+		2CB7C1FC83BE4534B9ADD5B0C03179A8 /* DTTimePeriodGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodGroup.h; path = DateTools/DTTimePeriodGroup.h; sourceTree = "<group>"; };
+		2DA48C87B11DAEB90B3CBFDBB2B984FE /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardReturnKeyHandler.m; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
+		2FFAA6458DBEA302927B903A27A21372 /* IQBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQBarButtonItem.h; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.h; sourceTree = "<group>"; };
+		34F2E5A15ED4AFA292065EBA0D2512A9 /* Pods-ContributionsOnWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ContributionsOnWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		34F57765819AFB05F9A3D47E37503B99 /* DTConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTConstants.h; path = DateTools/DTConstants.h; sourceTree = "<group>"; };
+		3816EEB0D27B481266ACAC1EC4E76989 /* Pods-ContributionsOnWatch Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ContributionsOnWatch Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		39FADBD543A035E4AC64FE968523E026 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = IQKeyboardManager/Resources/IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		3C143B2FDAB80BC8948A50A8895EAC23 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3DFE755259D5DC1D6573D6B09189E68A /* libDateTools-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libDateTools-iOS.a"; path = "libDateTools-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8C0221A0D0448FD18105B278BE4BC7 /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+IQKeyboardToolbar.h"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		4368268D81E597E5561885278FEA7BC4 /* Pods-GitHubContributions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GitHubContributions.debug.xcconfig"; sourceTree = "<group>"; };
+		4A4ACC20B973EDBD9FDD19547EEE2341 /* DateTools-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DateTools-iOS.xcconfig"; sourceTree = "<group>"; };
+		501A8CB41866FA8BE62B89D8896EE0C2 /* IQUIScrollView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIScrollView+Additions.h"; path = "IQKeyboardManager/Categories/IQUIScrollView+Additions.h"; sourceTree = "<group>"; };
+		55025ECF4082684522C496078B6CF6B0 /* DTConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTConstants.m; path = DateTools/DTConstants.m; sourceTree = "<group>"; };
+		5909745BE8EE01F90D21D651658FC3EF /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+Hierarchy.m"; path = "IQKeyboardManager/Categories/IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
+		5C44501940F0905AA59377EBC9E02BDA /* libIQKeyboardManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libIQKeyboardManager.a; path = libIQKeyboardManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CAE2ADB5AFCFB3D0DAD024E8A821F03 /* IQToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQToolbar.h; path = IQKeyboardManager/IQToolbar/IQToolbar.h; sourceTree = "<group>"; };
+		5D250E716A0B5C3E7D06A649DC59464C /* DTTimePeriodChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodChain.h; path = DateTools/DTTimePeriodChain.h; sourceTree = "<group>"; };
+		601C4D715553EAAB271C552108FD0517 /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTitleBarButtonItem.m; path = IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.m; sourceTree = "<group>"; };
+		6591C04AE0083B57BA366EBC335D83F8 /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardReturnKeyHandler.h; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
+		66394428703AD199417C4A8C88BE263A /* DateTools-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DateTools-iOS-dummy.m"; sourceTree = "<group>"; };
+		67EB37A30970DF01E5E5E7AE9F7959A6 /* IQTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTextView.m; path = IQKeyboardManager/IQTextView/IQTextView.m; sourceTree = "<group>"; };
+		6D78302FD871E6C4C59B4321C37C2B4A /* DTTimePeriod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriod.h; path = DateTools/DTTimePeriod.h; sourceTree = "<group>"; };
+		6F3AD13D26920D94B3792620F3331045 /* DateTools-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DateTools-watchOS-dummy.m"; path = "../DateTools-watchOS/DateTools-watchOS-dummy.m"; sourceTree = "<group>"; };
+		70F185452634696AAB6331781B0F8F04 /* Pods-GitHubContributions-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GitHubContributions-dummy.m"; sourceTree = "<group>"; };
+		76B70B638DE78F2E0145CA2957BDDA4C /* Pods-TodayExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TodayExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7778E7A063D2D170F764958E6CF0323A /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+IQKeyboardToolbar.m"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
+		785935F9804528D2A74C6134514822AB /* Pods-TodayExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TodayExtension-acknowledgements.plist"; sourceTree = "<group>"; };
+		78F926F5F9FEA0C7C8F90262E51E8058 /* IQNSArray+Sort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQNSArray+Sort.m"; path = "IQKeyboardManager/Categories/IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		7BB7D383F74FD098138A8804B6121A63 /* DTTimePeriodGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodGroup.m; path = DateTools/DTTimePeriodGroup.m; sourceTree = "<group>"; };
+		7D7EF679E21091287300F57528F6480A /* libPods-GitHubContributions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GitHubContributions.a"; path = "libPods-GitHubContributions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F4116BFA9277FD86247A9F0E0A72A90 /* DTError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTError.m; path = DateTools/DTError.m; sourceTree = "<group>"; };
+		80EF2E0A0D0B17D3B0AA0A3AE89C7DA9 /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUITextFieldView+Additions.h"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
+		87ACA05DB4EAFAAADEF1A220A9139BB8 /* Pods-GitHubContributions-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GitHubContributions-acknowledgements.plist"; sourceTree = "<group>"; };
+		89B8A61FB89A6A0FC74253B651EF755E /* DTTimePeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriod.m; path = DateTools/DTTimePeriod.m; sourceTree = "<group>"; };
+		8D5422BAFB476E52ECF397357C406728 /* DTTimePeriodChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodChain.m; path = DateTools/DTTimePeriodChain.m; sourceTree = "<group>"; };
+		9040C224A1C0431D4A933A123825958B /* DTError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTError.h; path = DateTools/DTError.h; sourceTree = "<group>"; };
+		9155D92005F08C7A9F177557C4C3731B /* DateTools-watchOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "DateTools-watchOS.xcconfig"; path = "../DateTools-watchOS/DateTools-watchOS.xcconfig"; sourceTree = "<group>"; };
+		929C3D8578C880CD3CACAFB922435ED3 /* NSDate+DateTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+DateTools.h"; path = "DateTools/NSDate+DateTools.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9413211198AAA3CC200B861DB9B60D04 /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		982838AE1803FB1DB5BB3CFADCAB55FF /* Pods-GitHubContributions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GitHubContributions.release.xcconfig"; sourceTree = "<group>"; };
+		9C9DEB677D20D3C830448B8094F2687C /* IQKeyboardManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManager.xcconfig; sourceTree = "<group>"; };
+		9D2D283DD0CC0BB25AD6894DDFC0A28D /* DateTools-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTools-iOS-prefix.pch"; sourceTree = "<group>"; };
+		9D2FB84FCB51D7F3992501996FE961DE /* IQKeyboardManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManager-prefix.pch"; sourceTree = "<group>"; };
+		A8C8FF0205F1CBB00DCE04A878980676 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+Hierarchy.h"; path = "IQKeyboardManager/Categories/IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
+		B604CA4F8CB63AA48F0CAF216C7A24BA /* IQTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTextView.h; path = IQKeyboardManager/IQTextView/IQTextView.h; sourceTree = "<group>"; };
+		B7B30059775D058E3BE7230DB29A30E0 /* libDateTools-watchOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libDateTools-watchOS.a"; path = "libDateTools-watchOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA64BB8428C93B8BD084E076BD7702A0 /* Pods-TodayExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TodayExtension-dummy.m"; sourceTree = "<group>"; };
+		BC3D5C35D71FA67F10C064206BD3ECE6 /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTitleBarButtonItem.h; path = IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.h; sourceTree = "<group>"; };
+		BE00C6CD39B174FA77B858BD06128AF9 /* KeyboardManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeyboardManager.h; path = IQKeyboardManager/KeyboardManager.h; sourceTree = "<group>"; };
+		C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C22CB5A93F1DF197808746A2018D434A /* IQPreviousNextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQPreviousNextView.m; path = IQKeyboardManager/IQToolbar/IQPreviousNextView.m; sourceTree = "<group>"; };
+		C78BF70EB43897F996CC767532551CFC /* IQKeyboardManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManager-dummy.m"; sourceTree = "<group>"; };
+		C99FF1A755A4ED3EF2FEA116D86BF287 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIViewController+Additions.m"; path = "IQKeyboardManager/Categories/IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		CA8BB588C71CD3C80CB436EADA011E48 /* Pods-ContributionsOnWatch Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ContributionsOnWatch Extension-dummy.m"; sourceTree = "<group>"; };
+		CBE810245F529962F802ED033801150E /* IQToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQToolbar.m; path = IQKeyboardManager/IQToolbar/IQToolbar.m; sourceTree = "<group>"; };
+		CFABB4B0AC8306EBB7FC0E49641B28F9 /* IQKeyboardManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManager.h; path = IQKeyboardManager/IQKeyboardManager.h; sourceTree = "<group>"; };
+		D30C36B735A66D64E7092F7168C4C47A /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstants.h; path = IQKeyboardManager/Constants/IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
+		D444F4722493B7048E8EF11EE47C4B71 /* libPods-TodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-TodayExtension.a"; path = "libPods-TodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7D64620C83401A0029042192C9D9714 /* Pods-TodayExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TodayExtension-resources.sh"; sourceTree = "<group>"; };
+		D803ACD7DFE5B1F3B2C3198E35D1E36B /* IQKeyboardManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardManager.m; path = IQKeyboardManager/IQKeyboardManager.m; sourceTree = "<group>"; };
+		DBC8894B0CAA270E611179304C84553E /* IQNSArray+Sort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQNSArray+Sort.h"; path = "IQKeyboardManager/Categories/IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		DC050B9969A5B47479A698BF60DF74A0 /* Pods-ContributionsOnWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ContributionsOnWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		DDF9D776DB37B8A3A4117EB804C478F1 /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstantsInternal.h; path = IQKeyboardManager/Constants/IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
+		E29132AFE2C2B4DBE01AC0F2C475C919 /* Pods-GitHubContributions-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GitHubContributions-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EABFAF676B27FE32E76004EB7B0C5CD1 /* DTTimePeriodCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodCollection.h; path = DateTools/DTTimePeriodCollection.h; sourceTree = "<group>"; };
+		ED3E3249553C571D7FB91EEEBCE80198 /* DTTimePeriodCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodCollection.m; path = DateTools/DTTimePeriodCollection.m; sourceTree = "<group>"; };
+		EFE37C5F245FAF236A0D0166F258AD0D /* DateTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateTools.h; path = DateTools/DateTools.h; sourceTree = "<group>"; };
+		F79A671A9B7F21758F6669326EDC15C3 /* IQUIWindow+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIWindow+Hierarchy.h"; path = "IQKeyboardManager/Categories/IQUIWindow+Hierarchy.h"; sourceTree = "<group>"; };
+		FB6D34F9B6BAFEA4CAFFB1A5B9E1C4DA /* Pods-GitHubContributions-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GitHubContributions-frameworks.sh"; sourceTree = "<group>"; };
+		FBEB6B06BFBCAC6C1E8C06B1C887B29F /* IQPreviousNextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQPreviousNextView.h; path = IQKeyboardManager/IQToolbar/IQPreviousNextView.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07EB5D6465532BCA5ED1FA0E5BC084F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C9893617C55CB9CDC0AEF4E52E4530A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E727CA0027DB87689AD54E1F89E8742 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770210E893A6082721971546D7DD759B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3250FF75DF8A40DB22F60CD2870FD47A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7BD75BE41DEBE78E23E1C356D6CE187 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94289C61AC61CF734D8191BFBA6AAA31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83BB039B3342B00148D10079D56B55CD /* CoreGraphics.framework in Frameworks */,
+				F04C91D58E6895F2940DD4767949E999 /* Foundation.framework in Frameworks */,
+				5A18FFA189D2BA5F2DFF97E2A5282354 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C11503B4015DFCEDBBCE38556C4AEA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C33842519E12DD29E315D3506A9B59 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF8AFCF80A0B8DFEB1A60AE64015B930 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7943D5966706DFA70607FFEAA0BC7B72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A1BF190F3E8502885A3A521F39CFFCC /* Pods-ContributionsOnWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3816EEB0D27B481266ACAC1EC4E76989 /* Pods-ContributionsOnWatch Extension-acknowledgements.markdown */,
+				289B48BB52D8716F58F88B03D9DCB7E1 /* Pods-ContributionsOnWatch Extension-acknowledgements.plist */,
+				CA8BB588C71CD3C80CB436EADA011E48 /* Pods-ContributionsOnWatch Extension-dummy.m */,
+				1ECAAA9E77F4D9FA399796DB32FD46B3 /* Pods-ContributionsOnWatch Extension-frameworks.sh */,
+				081A9BF1783CD9B44EE6CFE4048B3281 /* Pods-ContributionsOnWatch Extension-resources.sh */,
+				DC050B9969A5B47479A698BF60DF74A0 /* Pods-ContributionsOnWatch Extension.debug.xcconfig */,
+				34F2E5A15ED4AFA292065EBA0D2512A9 /* Pods-ContributionsOnWatch Extension.release.xcconfig */,
+			);
+			name = "Pods-ContributionsOnWatch Extension";
+			path = "Target Support Files/Pods-ContributionsOnWatch Extension";
+			sourceTree = "<group>";
+		};
+		2FB5C0E7D6AC37C22288FC9C0A3E8EF2 /* Pods-TodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				76B70B638DE78F2E0145CA2957BDDA4C /* Pods-TodayExtension-acknowledgements.markdown */,
+				785935F9804528D2A74C6134514822AB /* Pods-TodayExtension-acknowledgements.plist */,
+				BA64BB8428C93B8BD084E076BD7702A0 /* Pods-TodayExtension-dummy.m */,
+				D7D64620C83401A0029042192C9D9714 /* Pods-TodayExtension-resources.sh */,
+				9413211198AAA3CC200B861DB9B60D04 /* Pods-TodayExtension.debug.xcconfig */,
+				0E1183CEA53A8E2B80548E1F9C56DEFF /* Pods-TodayExtension.release.xcconfig */,
+			);
+			name = "Pods-TodayExtension";
+			path = "Target Support Files/Pods-TodayExtension";
+			sourceTree = "<group>";
+		};
+		3C723D601F99B2E804616A74BFBCF797 /* Pods-GitHubContributions */ = {
+			isa = PBXGroup;
+			children = (
+				E29132AFE2C2B4DBE01AC0F2C475C919 /* Pods-GitHubContributions-acknowledgements.markdown */,
+				87ACA05DB4EAFAAADEF1A220A9139BB8 /* Pods-GitHubContributions-acknowledgements.plist */,
+				70F185452634696AAB6331781B0F8F04 /* Pods-GitHubContributions-dummy.m */,
+				FB6D34F9B6BAFEA4CAFFB1A5B9E1C4DA /* Pods-GitHubContributions-frameworks.sh */,
+				233E277F68497292B6EC7C6E46EA07F2 /* Pods-GitHubContributions-resources.sh */,
+				4368268D81E597E5561885278FEA7BC4 /* Pods-GitHubContributions.debug.xcconfig */,
+				982838AE1803FB1DB5BB3CFADCAB55FF /* Pods-GitHubContributions.release.xcconfig */,
+			);
+			name = "Pods-GitHubContributions";
+			path = "Target Support Files/Pods-GitHubContributions";
+			sourceTree = "<group>";
+		};
+		5D12660F6178A86735638E063D750217 /* IQKeyboardManager */ = {
+			isa = PBXGroup;
+			children = (
+				2FFAA6458DBEA302927B903A27A21372 /* IQBarButtonItem.h */,
+				14E783C83E7E64A073E91F784409D0E9 /* IQBarButtonItem.m */,
+				CFABB4B0AC8306EBB7FC0E49641B28F9 /* IQKeyboardManager.h */,
+				D803ACD7DFE5B1F3B2C3198E35D1E36B /* IQKeyboardManager.m */,
+				D30C36B735A66D64E7092F7168C4C47A /* IQKeyboardManagerConstants.h */,
+				DDF9D776DB37B8A3A4117EB804C478F1 /* IQKeyboardManagerConstantsInternal.h */,
+				6591C04AE0083B57BA366EBC335D83F8 /* IQKeyboardReturnKeyHandler.h */,
+				2DA48C87B11DAEB90B3CBFDBB2B984FE /* IQKeyboardReturnKeyHandler.m */,
+				DBC8894B0CAA270E611179304C84553E /* IQNSArray+Sort.h */,
+				78F926F5F9FEA0C7C8F90262E51E8058 /* IQNSArray+Sort.m */,
+				FBEB6B06BFBCAC6C1E8C06B1C887B29F /* IQPreviousNextView.h */,
+				C22CB5A93F1DF197808746A2018D434A /* IQPreviousNextView.m */,
+				B604CA4F8CB63AA48F0CAF216C7A24BA /* IQTextView.h */,
+				67EB37A30970DF01E5E5E7AE9F7959A6 /* IQTextView.m */,
+				BC3D5C35D71FA67F10C064206BD3ECE6 /* IQTitleBarButtonItem.h */,
+				601C4D715553EAAB271C552108FD0517 /* IQTitleBarButtonItem.m */,
+				5CAE2ADB5AFCFB3D0DAD024E8A821F03 /* IQToolbar.h */,
+				CBE810245F529962F802ED033801150E /* IQToolbar.m */,
+				501A8CB41866FA8BE62B89D8896EE0C2 /* IQUIScrollView+Additions.h */,
+				0D9C4F535F241A6BD49D106B6BB1918A /* IQUIScrollView+Additions.m */,
+				80EF2E0A0D0B17D3B0AA0A3AE89C7DA9 /* IQUITextFieldView+Additions.h */,
+				17A24A030D214995416377FFE48E15C2 /* IQUITextFieldView+Additions.m */,
+				A8C8FF0205F1CBB00DCE04A878980676 /* IQUIView+Hierarchy.h */,
+				5909745BE8EE01F90D21D651658FC3EF /* IQUIView+Hierarchy.m */,
+				3E8C0221A0D0448FD18105B278BE4BC7 /* IQUIView+IQKeyboardToolbar.h */,
+				7778E7A063D2D170F764958E6CF0323A /* IQUIView+IQKeyboardToolbar.m */,
+				1CF37E9BCE91DEEBF2AE657AEFF896A5 /* IQUIViewController+Additions.h */,
+				C99FF1A755A4ED3EF2FEA116D86BF287 /* IQUIViewController+Additions.m */,
+				F79A671A9B7F21758F6669326EDC15C3 /* IQUIWindow+Hierarchy.h */,
+				2C4AD9BA7A9049D68F51BBE5D6DF73E6 /* IQUIWindow+Hierarchy.m */,
+				BE00C6CD39B174FA77B858BD06128AF9 /* KeyboardManager.h */,
+				C0D6D70E81C9753498B86084C22D610C /* Resources */,
+				925A91CE0BE76B314D12469D07444FDD /* Support Files */,
+			);
+			name = IQKeyboardManager;
+			path = IQKeyboardManager;
+			sourceTree = "<group>";
+		};
+		64CC5678B54067402621B7CAF96D5BCB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A1BF190F3E8502885A3A521F39CFFCC /* Pods-ContributionsOnWatch Extension */,
+				3C723D601F99B2E804616A74BFBCF797 /* Pods-GitHubContributions */,
+				2FB5C0E7D6AC37C22288FC9C0A3E8EF2 /* Pods-TodayExtension */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				97E811D73B8632F57466A1B09AAA4E66 /* Frameworks */,
+				8263D961F9CE232355EB33FE6039F42E /* Pods */,
+				EBDC7EBEF4EE9585B9F4C28263E1EF2D /* Products */,
+				64CC5678B54067402621B7CAF96D5BCB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8263D961F9CE232355EB33FE6039F42E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE730A627E8DCE847396C3C2275B867B /* DateTools */,
+				5D12660F6178A86735638E063D750217 /* IQKeyboardManager */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		925A91CE0BE76B314D12469D07444FDD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C9DEB677D20D3C830448B8094F2687C /* IQKeyboardManager.xcconfig */,
+				C78BF70EB43897F996CC767532551CFC /* IQKeyboardManager-dummy.m */,
+				9D2FB84FCB51D7F3992501996FE961DE /* IQKeyboardManager-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/IQKeyboardManager";
+			sourceTree = "<group>";
+		};
+		97E811D73B8632F57466A1B09AAA4E66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC9BD16E065DEC1EA1710D871DED9AF5 /* iOS */,
+				F24E89E6E596D1E7D3EDCBFE3C79A035 /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE730A627E8DCE847396C3C2275B867B /* DateTools */ = {
+			isa = PBXGroup;
+			children = (
+				EFE37C5F245FAF236A0D0166F258AD0D /* DateTools.h */,
+				34F57765819AFB05F9A3D47E37503B99 /* DTConstants.h */,
+				55025ECF4082684522C496078B6CF6B0 /* DTConstants.m */,
+				9040C224A1C0431D4A933A123825958B /* DTError.h */,
+				7F4116BFA9277FD86247A9F0E0A72A90 /* DTError.m */,
+				6D78302FD871E6C4C59B4321C37C2B4A /* DTTimePeriod.h */,
+				89B8A61FB89A6A0FC74253B651EF755E /* DTTimePeriod.m */,
+				5D250E716A0B5C3E7D06A649DC59464C /* DTTimePeriodChain.h */,
+				8D5422BAFB476E52ECF397357C406728 /* DTTimePeriodChain.m */,
+				EABFAF676B27FE32E76004EB7B0C5CD1 /* DTTimePeriodCollection.h */,
+				ED3E3249553C571D7FB91EEEBCE80198 /* DTTimePeriodCollection.m */,
+				2CB7C1FC83BE4534B9ADD5B0C03179A8 /* DTTimePeriodGroup.h */,
+				7BB7D383F74FD098138A8804B6121A63 /* DTTimePeriodGroup.m */,
+				929C3D8578C880CD3CACAFB922435ED3 /* NSDate+DateTools.h */,
+				198CBCBA68CB1CEA74B3C3F925ECE0DE /* NSDate+DateTools.m */,
+				BBFCB33C7D0342B834E428059E745BF1 /* Resources */,
+				F82FCDB4146C6FF7C7F65A154480001C /* Support Files */,
+			);
+			name = DateTools;
+			path = DateTools;
+			sourceTree = "<group>";
+		};
+		BBFCB33C7D0342B834E428059E745BF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0030CB81D553DDBCA1FCF4D73C7B80A6 /* DateTools.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BC9BD16E065DEC1EA1710D871DED9AF5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				038AEA9241DE2FAC0660DB66150F5BA7 /* CoreGraphics.framework */,
+				0AD825AE4FB7CFA5697713AD3A20FFDC /* Foundation.framework */,
+				3C143B2FDAB80BC8948A50A8895EAC23 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C0D6D70E81C9753498B86084C22D610C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				39FADBD543A035E4AC64FE968523E026 /* IQKeyboardManager.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EBDC7EBEF4EE9585B9F4C28263E1EF2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DFE755259D5DC1D6573D6B09189E68A /* libDateTools-iOS.a */,
+				B7B30059775D058E3BE7230DB29A30E0 /* libDateTools-watchOS.a */,
+				5C44501940F0905AA59377EBC9E02BDA /* libIQKeyboardManager.a */,
+				0324B020543083F69DE9D09F95995CF6 /* libPods-ContributionsOnWatch Extension.a */,
+				7D7EF679E21091287300F57528F6480A /* libPods-GitHubContributions.a */,
+				D444F4722493B7048E8EF11EE47C4B71 /* libPods-TodayExtension.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F24E89E6E596D1E7D3EDCBFE3C79A035 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		F82FCDB4146C6FF7C7F65A154480001C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A4ACC20B973EDBD9FDD19547EEE2341 /* DateTools-iOS.xcconfig */,
+				66394428703AD199417C4A8C88BE263A /* DateTools-iOS-dummy.m */,
+				9D2D283DD0CC0BB25AD6894DDFC0A28D /* DateTools-iOS-prefix.pch */,
+				9155D92005F08C7A9F177557C4C3731B /* DateTools-watchOS.xcconfig */,
+				6F3AD13D26920D94B3792620F3331045 /* DateTools-watchOS-dummy.m */,
+				25D989AD4E0F87563B8CE41537351D3E /* DateTools-watchOS-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DateTools-iOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B53A35BD323ECB8EC9876D22801F28DB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B04A8947059CE5E74B5302A97D0ECF15 /* IQBarButtonItem.h in Headers */,
+				B4F76157EC0674750E9DC363EFA2FBE1 /* IQKeyboardManager.h in Headers */,
+				0144FEA4570CF5B767E287CA13D3B76A /* IQKeyboardManagerConstants.h in Headers */,
+				4BF720880C0E6047A75E7B631EBE9C42 /* IQKeyboardManagerConstantsInternal.h in Headers */,
+				0733F14BEE55A6A915BC9EBDA4D3DB4B /* IQKeyboardReturnKeyHandler.h in Headers */,
+				CCAADEC20D1BDB31D90DE689200731D9 /* IQNSArray+Sort.h in Headers */,
+				37B339CDB4C5C81895302D50F41A987F /* IQPreviousNextView.h in Headers */,
+				9D1F80F75A7DFB4321914A7E0B11D9D5 /* IQTextView.h in Headers */,
+				6FB869D919EEC6EF54E8C98FDE929BBC /* IQTitleBarButtonItem.h in Headers */,
+				3D673E26BFE1F69EA50A159E7E843A5F /* IQToolbar.h in Headers */,
+				D8CC9B8B378F192DBC2AAC79911DA410 /* IQUIScrollView+Additions.h in Headers */,
+				9E0C9FFC4F71CC0DD638F14D2D19B613 /* IQUITextFieldView+Additions.h in Headers */,
+				2039716D77BD347CC7388E381C71523A /* IQUIView+Hierarchy.h in Headers */,
+				EB7A06F7AD410B989BD19C5A4BCE01D1 /* IQUIView+IQKeyboardToolbar.h in Headers */,
+				EA40DBFA537997C0417F6A7A7B877693 /* IQUIViewController+Additions.h in Headers */,
+				4FC72BCE4E697E2507DEF95BA7257F42 /* IQUIWindow+Hierarchy.h in Headers */,
+				77F54A48D92AD7934952BF17994C5B9D /* KeyboardManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3E210167B5CABE7CA82E3D61B544610 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C542A77E66ECBCAFA72937FF0ADE619 /* DateTools.h in Headers */,
+				D89C13559DFF80DDBCD21CA0B21E3D03 /* DTConstants.h in Headers */,
+				32B7A98390CB181E5BDADA689F5A1626 /* DTError.h in Headers */,
+				0B0BAE70353BADF0D3B174FFAF7B589A /* DTTimePeriod.h in Headers */,
+				A5D9E34B03FDBAC3E0338E66F579EBEC /* DTTimePeriodChain.h in Headers */,
+				A8390EF828C7D1C499C96BE93F8BBA31 /* DTTimePeriodCollection.h in Headers */,
+				5DA27B9113FFF415ECA708BEEB275421 /* DTTimePeriodGroup.h in Headers */,
+				9B741ED459D1EC9F7B22D71299224C7B /* NSDate+DateTools.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA1F2697E4CB984EF6DCCE39194C09B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2D2095FD35A0017EA404FBF60BD457 /* DateTools.h in Headers */,
+				2D9903D15DA6857CDA311B2138C5B93D /* DTConstants.h in Headers */,
+				AA3BC17D299E0B0A9A231848F746BE27 /* DTError.h in Headers */,
+				907951F745A1A23B3C153511126ED426 /* DTTimePeriod.h in Headers */,
+				A813007F41418FDFDF8C37BC383E5EC1 /* DTTimePeriodChain.h in Headers */,
+				DC5AD281D4A5E806D5771413DE1D571F /* DTTimePeriodCollection.h in Headers */,
+				EB265A71ED9486032E878994DC613005 /* DTTimePeriodGroup.h in Headers */,
+				20866087328DBC363860F56A4052672C /* NSDate+DateTools.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2A65EE41C3D3351B4DA2F0E819324727 /* Pods-GitHubContributions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FB1A77AAABAC3E89F32369DBF42C144 /* Build configuration list for PBXNativeTarget "Pods-GitHubContributions" */;
+			buildPhases = (
+				0401308E85D045022CD8948D96A2166B /* Sources */,
+				1E727CA0027DB87689AD54E1F89E8742 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7A7C8725F59F70F02E691668563F1EB /* PBXTargetDependency */,
+				8FE78886CD8E14DB9C1F8E8DC1FBB44E /* PBXTargetDependency */,
+			);
+			name = "Pods-GitHubContributions";
+			productName = "Pods-GitHubContributions";
+			productReference = 7D7EF679E21091287300F57528F6480A /* libPods-GitHubContributions.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4D4D090505C1D337FA772E39015ED147 /* Pods-TodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6560F8BD5F73D0F23014A1E1E32D90C0 /* Build configuration list for PBXNativeTarget "Pods-TodayExtension" */;
+			buildPhases = (
+				CA7E1A659232CB789A50911608A0E2D6 /* Sources */,
+				AF8AFCF80A0B8DFEB1A60AE64015B930 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABAABCED0B4409B41CB08DFF3881453B /* PBXTargetDependency */,
+			);
+			name = "Pods-TodayExtension";
+			productName = "Pods-TodayExtension";
+			productReference = D444F4722493B7048E8EF11EE47C4B71 /* libPods-TodayExtension.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		60E29A8498CBEF11C3AF96E09E10FD30 /* Pods-ContributionsOnWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21E2CB59A587E37BDD9647F91D3516D3 /* Build configuration list for PBXNativeTarget "Pods-ContributionsOnWatch Extension" */;
+			buildPhases = (
+				B230AC35A80668513C23D3F5AA0D8E73 /* Sources */,
+				07EB5D6465532BCA5ED1FA0E5BC084F3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B3D942530046F7556AC676C92A4C8B7 /* PBXTargetDependency */,
+			);
+			name = "Pods-ContributionsOnWatch Extension";
+			productName = "Pods-ContributionsOnWatch Extension";
+			productReference = 0324B020543083F69DE9D09F95995CF6 /* libPods-ContributionsOnWatch Extension.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BF38D837C4E5DAB77E0E53073AF32CA5 /* DateTools-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2256595A0948B48A2EF9E977E47C9AA4 /* Build configuration list for PBXNativeTarget "DateTools-watchOS" */;
+			buildPhases = (
+				6B3F13F51B304E48817AE00B1585B3AA /* Sources */,
+				9C11503B4015DFCEDBBCE38556C4AEA1 /* Frameworks */,
+				DA1F2697E4CB984EF6DCCE39194C09B1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DateTools-watchOS";
+			productName = "DateTools-watchOS";
+			productReference = B7B30059775D058E3BE7230DB29A30E0 /* libDateTools-watchOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EC474E8C7CC822888E45AEFC17F4B827 /* IQKeyboardManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB4B631F1F6DB9B1B50287FB04F2A993 /* Build configuration list for PBXNativeTarget "IQKeyboardManager" */;
+			buildPhases = (
+				1E4F7DCB93CEA7E78B021B054B772B50 /* Sources */,
+				94289C61AC61CF734D8191BFBA6AAA31 /* Frameworks */,
+				B53A35BD323ECB8EC9876D22801F28DB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IQKeyboardManager;
+			productName = IQKeyboardManager;
+			productReference = 5C44501940F0905AA59377EBC9E02BDA /* libIQKeyboardManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FACFBB91D8DE4FC38E13D237381C65A1 /* DateTools-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 124D8AD20B7A7548DC96A2FCC1D7F8BF /* Build configuration list for PBXNativeTarget "DateTools-iOS" */;
+			buildPhases = (
+				796803971B2C4EEB3A56CB6477973C4C /* Sources */,
+				3250FF75DF8A40DB22F60CD2870FD47A /* Frameworks */,
+				D3E210167B5CABE7CA82E3D61B544610 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DateTools-iOS";
+			productName = "DateTools-iOS";
+			productReference = 3DFE755259D5DC1D6573D6B09189E68A /* libDateTools-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = EBDC7EBEF4EE9585B9F4C28263E1EF2D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FACFBB91D8DE4FC38E13D237381C65A1 /* DateTools-iOS */,
+				BF38D837C4E5DAB77E0E53073AF32CA5 /* DateTools-watchOS */,
+				EC474E8C7CC822888E45AEFC17F4B827 /* IQKeyboardManager */,
+				60E29A8498CBEF11C3AF96E09E10FD30 /* Pods-ContributionsOnWatch Extension */,
+				2A65EE41C3D3351B4DA2F0E819324727 /* Pods-GitHubContributions */,
+				4D4D090505C1D337FA772E39015ED147 /* Pods-TodayExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0401308E85D045022CD8948D96A2166B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				429275C05A7EA67580668BF91D04C4F7 /* Pods-GitHubContributions-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E4F7DCB93CEA7E78B021B054B772B50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5917D7F6C5EADFD520A527451F7683A /* IQBarButtonItem.m in Sources */,
+				7ACA49202EF8AF3CFDC81B602B99E386 /* IQKeyboardManager-dummy.m in Sources */,
+				7683F9F11FDC5805653DCC079BE78D5C /* IQKeyboardManager.m in Sources */,
+				AEE3042D9382DE3703925875EBA6F982 /* IQKeyboardReturnKeyHandler.m in Sources */,
+				D0D935A58F393AD5B96B6C6063544194 /* IQNSArray+Sort.m in Sources */,
+				4994440EF9C1500B7DC3E56C6B395F22 /* IQPreviousNextView.m in Sources */,
+				D08740B07FDAB8CBB68EFB6F1858FA81 /* IQTextView.m in Sources */,
+				0374D5D7A29C1D2BE3592423F241AD53 /* IQTitleBarButtonItem.m in Sources */,
+				4758838AAFCBBEA51D25E8A5B59C7DFC /* IQToolbar.m in Sources */,
+				CC00A9672766D8AF015C0382DB042B82 /* IQUIScrollView+Additions.m in Sources */,
+				B7DB27F916BB919AC2A0A6E96893D6D9 /* IQUITextFieldView+Additions.m in Sources */,
+				02A438C4726F13B398FA2EAD6CBFEEC4 /* IQUIView+Hierarchy.m in Sources */,
+				D2DDAC5622D883B84FF5F84C5B4403DB /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				1B388B2220FED50AD2FA58BF5E09F6B3 /* IQUIViewController+Additions.m in Sources */,
+				BCDF84B77036F8CA5F4BBB508BF64EB5 /* IQUIWindow+Hierarchy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B3F13F51B304E48817AE00B1585B3AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83CAE1FFEBDB98A83552856166BA90FF /* DateTools-watchOS-dummy.m in Sources */,
+				68B8386881C46298375D3D08308A971B /* DTConstants.m in Sources */,
+				82A458B5D04B70B5500533E5EBCB73A3 /* DTError.m in Sources */,
+				2E97AE4122857DDC1FEAC92271F6683C /* DTTimePeriod.m in Sources */,
+				842D587B321D8220206171B69486BE27 /* DTTimePeriodChain.m in Sources */,
+				67016DBB0A12E9C112292854B756D7C6 /* DTTimePeriodCollection.m in Sources */,
+				94C13DF609EA157D82EBFCBD14BEA7A8 /* DTTimePeriodGroup.m in Sources */,
+				2FDC0E349132AAEFF64EAEB307BA8F01 /* NSDate+DateTools.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		796803971B2C4EEB3A56CB6477973C4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E2A8C7B4D34A767950AA56A6D1CBAB4 /* DateTools-iOS-dummy.m in Sources */,
+				814C233001C3A07A809E5731553FD4F9 /* DTConstants.m in Sources */,
+				0D779F21B9A7E80B7D111F0A8487ECD7 /* DTError.m in Sources */,
+				8E68CAD627D8A7905968F3EF07AA0C94 /* DTTimePeriod.m in Sources */,
+				9865C0DF204A2E3E2699FB2E009D2A47 /* DTTimePeriodChain.m in Sources */,
+				BBDFC1A345F442AC2DF655382B42A8C9 /* DTTimePeriodCollection.m in Sources */,
+				56D659DAD4DA7C0FFAA8CD347FFD74FA /* DTTimePeriodGroup.m in Sources */,
+				1442A0EB52C1295BF3CDEE73DEC583C2 /* NSDate+DateTools.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B230AC35A80668513C23D3F5AA0D8E73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEE05BCEB6086CB9F263D2BCB091C9E6 /* Pods-ContributionsOnWatch Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA7E1A659232CB789A50911608A0E2D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99FA2B131D7F6388F163F1059D3F4A5 /* Pods-TodayExtension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B3D942530046F7556AC676C92A4C8B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DateTools-watchOS";
+			target = BF38D837C4E5DAB77E0E53073AF32CA5 /* DateTools-watchOS */;
+			targetProxy = CD2FBB292A4C37D727C42791F5A5DAE5 /* PBXContainerItemProxy */;
+		};
+		8FE78886CD8E14DB9C1F8E8DC1FBB44E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManager;
+			target = EC474E8C7CC822888E45AEFC17F4B827 /* IQKeyboardManager */;
+			targetProxy = 68FBBA6A3FE26721BCFA0BE115BC32E0 /* PBXContainerItemProxy */;
+		};
+		A7A7C8725F59F70F02E691668563F1EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DateTools-iOS";
+			target = FACFBB91D8DE4FC38E13D237381C65A1 /* DateTools-iOS */;
+			targetProxy = B4DB1AB148D129DCDACE2616048D1AE6 /* PBXContainerItemProxy */;
+		};
+		ABAABCED0B4409B41CB08DFF3881453B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DateTools-iOS";
+			target = FACFBB91D8DE4FC38E13D237381C65A1 /* DateTools-iOS */;
+			targetProxy = 19CCD856CE9E48FAF286E12D6D731F11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0043CBB8B478A307355BD8B1380AAB25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C9DEB677D20D3C830448B8094F2687C /* IQKeyboardManager.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManager/IQKeyboardManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1BFE61972EE7A4062B6C9878B370D7C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9155D92005F08C7A9F177557C4C3731B /* DateTools-watchOS.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DateTools-watchOS/DateTools-watchOS-prefix.pch";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		223F50AD701F12280F0EA6D48072FC5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9413211198AAA3CC200B861DB9B60D04 /* Pods-TodayExtension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2B9308DD58738D73A5611C9260C58F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 982838AE1803FB1DB5BB3CFADCAB55FF /* Pods-GitHubContributions.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2C7C920A2CE4BDB901253C7761AD42F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		2CE85F006BD262644AAC796E25839781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9155D92005F08C7A9F177557C4C3731B /* DateTools-watchOS.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DateTools-watchOS/DateTools-watchOS-prefix.pch";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		4B5B2FCA3FD4108AE78CCAA71C0682A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E1183CEA53A8E2B80548E1F9C56DEFF /* Pods-TodayExtension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		575B19B22BB0A4337A672C1D7C76A15B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4368268D81E597E5561885278FEA7BC4 /* Pods-GitHubContributions.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7329696C750C71EA6C49D7F8A0D82840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		A35E03B9F7609909832EEAAC4FB9FC14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A4ACC20B973EDBD9FDD19547EEE2341 /* DateTools-iOS.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DateTools-iOS/DateTools-iOS-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BD925AF64E5DF32D95F0E8853566688F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC050B9969A5B47479A698BF60DF74A0 /* Pods-ContributionsOnWatch Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		C9A422F72CB50BFB8ADE651411FDB927 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34F2E5A15ED4AFA292065EBA0D2512A9 /* Pods-ContributionsOnWatch Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		DC12A8598F835F40143B706E181FEAF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C9DEB677D20D3C830448B8094F2687C /* IQKeyboardManager.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManager/IQKeyboardManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E0C85E8B568CB03B4F2D9AC5D9DFA069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A4ACC20B973EDBD9FDD19547EEE2341 /* DateTools-iOS.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DateTools-iOS/DateTools-iOS-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		124D8AD20B7A7548DC96A2FCC1D7F8BF /* Build configuration list for PBXNativeTarget "DateTools-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A35E03B9F7609909832EEAAC4FB9FC14 /* Debug */,
+				E0C85E8B568CB03B4F2D9AC5D9DFA069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21E2CB59A587E37BDD9647F91D3516D3 /* Build configuration list for PBXNativeTarget "Pods-ContributionsOnWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD925AF64E5DF32D95F0E8853566688F /* Debug */,
+				C9A422F72CB50BFB8ADE651411FDB927 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2256595A0948B48A2EF9E977E47C9AA4 /* Build configuration list for PBXNativeTarget "DateTools-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CE85F006BD262644AAC796E25839781 /* Debug */,
+				1BFE61972EE7A4062B6C9878B370D7C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C7C920A2CE4BDB901253C7761AD42F4 /* Debug */,
+				7329696C750C71EA6C49D7F8A0D82840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6560F8BD5F73D0F23014A1E1E32D90C0 /* Build configuration list for PBXNativeTarget "Pods-TodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				223F50AD701F12280F0EA6D48072FC5F /* Debug */,
+				4B5B2FCA3FD4108AE78CCAA71C0682A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FB1A77AAABAC3E89F32369DBF42C144 /* Build configuration list for PBXNativeTarget "Pods-GitHubContributions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				575B19B22BB0A4337A672C1D7C76A15B /* Debug */,
+				2B9308DD58738D73A5611C9260C58F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB4B631F1F6DB9B1B50287FB04F2A993 /* Build configuration list for PBXNativeTarget "IQKeyboardManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0043CBB8B478A307355BD8B1380AAB25 /* Debug */,
+				DC12A8598F835F40143B706E181FEAF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

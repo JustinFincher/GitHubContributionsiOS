@@ -9,8 +9,10 @@
 #import "AppDelegate.h"
 #import "Reachability.h"
 #import "JZCommitManager.h"
+#import <WatchConnectivity/WatchConnectivity.h>
+#import "JZHeader.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<WCSessionDelegate>
 
 @property (nonatomic) Reachability *hostReachability;
 
@@ -20,16 +22,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    if ([WCSession isSupported])
+    {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
     
-    
-    /*
-     Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the method reachabilityChanged will be called.
-     */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
-    //Change the host name here to change the server you want to monitor.
     NSString *remoteHostName = @"github.com";
     
     self.hostReachability = [Reachability reachabilityWithHostName:remoteHostName];
@@ -88,43 +90,48 @@
     {
         case NotReachable:
         {
-            NSLog(@"NetworkStatus NotReachable");
-            NSLog(@"UIBackgroundFetchResultFailed");
+            JZLog(@"NetworkStatus NotReachable");
+            JZLog(@"UIBackgroundFetchResultFailed");
             completionHandler(UIBackgroundFetchResultFailed);
             return;
             break;
         }
         case ReachableViaWWAN:
         {
-            NSLog(@"NetworkStatus ReachableViaWWAN");
+            JZLog(@"NetworkStatus ReachableViaWWAN");
             break;
         }
         case ReachableViaWiFi:
         {
-            NSLog(@"NetworkStatus ReachableViaWiFi");
+            JZLog(@"NetworkStatus ReachableViaWiFi");
             break;
         }
     }
-
-//    NSMutableArray * oldArray = [[[NSUserDefaults alloc] initWithSuiteName:@"UYK8GY9WS7.group.com.JustZht.GitHubContributions"] objectForKey:@"GitHubContributionsArray"];
+    
+    
     NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
     if (array)
     {
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
-        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] setObject:data forKey:@"GitHubContributionsArray"];
-        if ([[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] synchronize])
+        [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
+        if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
         {
-            NSLog(@"UIBackgroundFetchResultNewData");
+            JZLog(@"UIBackgroundFetchResultNewData");
+            WCSession* session = [WCSession defaultSession];
+            if ([session activationState] == WCSessionActivationStateActivated)
+            {
+                [session updateApplicationContext:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] error:nil];
+            }
             completionHandler(UIBackgroundFetchResultNewData);
         }else
         {
-            NSLog(@"UIBackgroundFetchResultFailed");
+            JZLog(@"UIBackgroundFetchResultFailed");
             completionHandler(UIBackgroundFetchResultFailed);
         }
     }
     else
     {
-        NSLog(@"UIBackgroundFetchResultFailed");
+        JZLog(@"UIBackgroundFetchResultFailed");
         completionHandler(UIBackgroundFetchResultFailed);
     }
 }
@@ -156,5 +163,14 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - WCSessionDelegate
+- (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error
+{
+    [session updateApplicationContext:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] error:nil];
+}
+- (void)sessionDidBecomeInactive:(WCSession *)session
+{}
+- (void)sessionDidDeactivate:(WCSession *)session
+{}
 
 @end

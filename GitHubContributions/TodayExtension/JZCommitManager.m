@@ -6,15 +6,11 @@
 //  Copyright © 2016年 JustZht. All rights reserved.
 //
 
-#define UIColorFromRGB(rgbValue) \
-[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
-blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
-alpha:1.0]
 
 #import "JZCommitManager.h"
 #import "JZCommitDataModel.h"
 #import "DateTools.h"
+#import "JZHeader.h"
 
 
 @interface JZCommitManager()
@@ -71,11 +67,11 @@ alpha:1.0]
     for (NSTextCheckingResult* match in matches)
     {
         NSString *color = [webData substringWithRange:[match rangeAtIndex:2]];
-//        NSLog( @"%@",color);
+//        JZLog( @"%@",color);
         NSString *data = [webData substringWithRange:[match rangeAtIndex:4]];
-//        NSLog( @"%@",data);
+//        JZLog( @"%@",data);
         NSString *date = [webData substringWithRange:[match rangeAtIndex:6]];
-//        NSLog( @"%@",date);
+//        JZLog( @"%@",date);
         
         JZCommitDataModel *oneDayCommit = [[JZCommitDataModel alloc] init];
         oneDayCommit.color = [JZCommitManager colorFromHexString:color];

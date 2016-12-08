@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MaG-3Z-9fA">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--SETTINGS-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="SETTINGS" animationDuration="0.20000000000000001" id="AgC-eL-Hgc" customClass="JZSettingsInterfaceController">
+                    <items>
+                        <label alignment="center" text="Contributions Settings 🎉🎉" textAlignment="center" numberOfLines="0" id="SdJ-Iu-trA"/>
+                        <separator alignment="left" alpha="0.20000000000000001" id="ZIs-NM-5Pd"/>
+                        <label alignment="left" text="3D Bar Height" id="b0y-9l-Eot">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="h4p-ym-v1v"/>
+                        <label alignment="left" text="FAQ" id="hEd-Ke-ZTm">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                    </items>
+                    <menu key="menu" id="g0e-F2-9gD">
+                        <items>
+                            <menuItem title="Refresh" icon="shuffle" id="dWS-AM-4AU">
+                                <connections>
+                                    <action selector="refreshMenuPressed" destination="AgC-eL-Hgc" id="PN4-Wr-tXu"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1056" y="345"/>
+        </scene>
+        <!--2D GRAPH-->
+        <scene sceneID="ocv-Th-Jnc">
+            <objects>
+                <controller title="2D GRAPH" animationDuration="0.20000000000000001" id="MaG-3Z-9fA">
+                    <items>
+                        <imageView width="1" height="1" alignment="left" contentMode="scaleAspectFill" id="qOq-E7-KGE"/>
+                    </items>
+                    <connections>
+                        <segue destination="BgT-Js-SkK" kind="relationship" relationship="nextPage" id="u9d-Zg-nej"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="506" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController animationDuration="0.5" id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <color key="backgroundColor" red="0.015686274509803921" green="0.87058823529411766" blue="0.44313725490196076" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller animationDuration="0.5" id="4sK-HA-Art" customClass="NotificationController">
+                    <color key="backgroundColor" red="0.015686274509803921" green="0.87058823529411766" blue="0.44313725490196076" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="551" y="643"/>
+        </scene>
+        <!--3D GRAPH-->
+        <scene sceneID="mFJ-5O-jK4">
+            <objects>
+                <controller title="3D GRAPH" animationDuration="0.20000000000000001" id="BgT-Js-SkK" customClass="JZCommitSceneInterfaceController">
+                    <items>
+                        <sceneKitScene width="1" height="1" alignment="left" id="Kjt-1M-Il5"/>
+                    </items>
+                    <connections>
+                        <outlet property="sceneView" destination="Kjt-1M-Il5" id="eQc-gO-nSj"/>
+                        <segue destination="AgC-eL-Hgc" kind="relationship" relationship="nextPage" id="QpG-88-S1h"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="780" y="345"/>
+        </scene>
+    </scenes>
+</document>

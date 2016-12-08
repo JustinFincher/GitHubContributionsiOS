@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		036F632D267B073666A2AE01 /* libPods-GitHubContributions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FF73B72CF8CE6258D62013 /* libPods-GitHubContributions.a */; };
 		0D014C1F1D86AAE400212FF1 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB5569A1D85A1710042275E /* SceneKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		0D0BA8071DF79E1100A893AB /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0BA8061DF79E1100A893AB /* WatchConnectivity.framework */; };
+		0D0BA8081DF7A4B700A893AB /* JZCommitDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556AA1D85B52D0042275E /* JZCommitDataModel.m */; };
+		0D0BA8091DF7AD9000A893AB /* JZCommitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A51D85B4970042275E /* JZCommitManager.m */; };
+		0D0BA80B1DF7AECD00A893AB /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0BA80A1DF7AECD00A893AB /* SceneKit.framework */; };
+		0D0CE4D11DF76B1B0036351D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CE4CF1DF76B1B0036351D /* Interface.storyboard */; };
+		0D0CE4D31DF76B1B0036351D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CE4D21DF76B1B0036351D /* Assets.xcassets */; };
+		0D0CE4DA1DF76B1C0036351D /* ContributionsOnWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D0CE4D91DF76B1B0036351D /* ContributionsOnWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D0CE4E51DF76B1C0036351D /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0CE4E41DF76B1C0036351D /* ExtensionDelegate.m */; };
+		0D0CE4E81DF76B1C0036351D /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0CE4E71DF76B1C0036351D /* NotificationController.m */; };
+		0D0CE4EB1DF76B1C0036351D /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0CE4EA1DF76B1C0036351D /* ComplicationController.m */; };
+		0D0CE4ED1DF76B1C0036351D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CE4EC1DF76B1C0036351D /* Assets.xcassets */; };
+		0D0CE4F11DF76B1C0036351D /* ContributionsOnWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0D0CE4CD1DF76B1B0036351D /* ContributionsOnWatch.app */; };
+		0D14EAF21DF781ED002AF0C3 /* JZComplicationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D14EAF11DF781ED002AF0C3 /* JZComplicationDataManager.m */; };
+		0D14EAF61DF78FC7002AF0C3 /* JZCommitImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A21D85AB940042275E /* JZCommitImageView.m */; };
+		0D1AF72E1DF7967400EAA85D /* JZCommitSceneInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF72D1DF7967400EAA85D /* JZCommitSceneInterfaceController.m */; };
+		0D1AF7311DF798C200EAA85D /* JZSettingsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF7301DF798C200EAA85D /* JZSettingsInterfaceController.m */; };
 		0D565F9D1D85CAC5006C0324 /* JZCommitSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */; };
 		0DB5566E1D859A120042275E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB5566D1D859A120042275E /* main.m */; };
 		0DB556711D859A120042275E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556701D859A120042275E /* AppDelegate.m */; };
@@ -21,7 +37,6 @@
 		0DB556911D859A430042275E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB5568F1D859A430042275E /* MainInterface.storyboard */; };
 		0DB556951D859A430042275E /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0DB556871D859A430042275E /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0DB5569D1D85A9F20042275E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB5569C1D85A9F20042275E /* Assets.xcassets */; };
-		0DB556A31D85AB940042275E /* JZCommitImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A21D85AB940042275E /* JZCommitImageView.m */; };
 		0DB556A71D85B4970042275E /* JZCommitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A51D85B4970042275E /* JZCommitManager.m */; };
 		0DB556AC1D85B52D0042275E /* JZCommitDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556AA1D85B52D0042275E /* JZCommitDataModel.m */; };
 		0DEF7A471D85FE7A00761555 /* JZCommitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A51D85B4970042275E /* JZCommitManager.m */; };
@@ -29,9 +44,24 @@
 		0DEF7A521D86812000761555 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF7A511D86812000761555 /* Reachability.m */; };
 		0DEF7A531D86812000761555 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF7A511D86812000761555 /* Reachability.m */; };
 		952731AEB4CB6F421E020BFB /* libPods-TodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1FBCD065571765C1D4B127 /* libPods-TodayExtension.a */; };
+		9617395C9EBF34E2D36B9981 /* libPods-ContributionsOnWatch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FBB3E500AE9DE44C4ACC3A /* libPods-ContributionsOnWatch Extension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0D0CE4DB1DF76B1C0036351D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB556611D859A120042275E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D0CE4D81DF76B1B0036351D;
+			remoteInfo = "ContributionsOnWatch Extension";
+		};
+		0D0CE4EF1DF76B1C0036351D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB556611D859A120042275E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D0CE4CC1DF76B1B0036351D;
+			remoteInfo = ContributionsOnWatch;
+		};
 		0DB556931D859A430042275E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DB556611D859A120042275E /* Project object */;
@@ -42,6 +72,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0D0CE4F71DF76B1C0036351D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0D0CE4DA1DF76B1C0036351D /* ContributionsOnWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D0CE4F91DF76B1C0036351D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0D0CE4F11DF76B1C0036351D /* ContributionsOnWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DB556991D859A430042275E /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,12 +109,37 @@
 
 /* Begin PBXFileReference section */
 		01881A84E6066C9B7BFAB953 /* Pods-TodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.release.xcconfig"; sourceTree = "<group>"; };
+		0D0BA8061DF79E1100A893AB /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		0D0BA80A1DF7AECD00A893AB /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
+		0D0CE4CD1DF76B1B0036351D /* ContributionsOnWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContributionsOnWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0CE4D01DF76B1B0036351D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		0D0CE4D21DF76B1B0036351D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D0CE4D41DF76B1B0036351D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D0CE4D91DF76B1B0036351D /* ContributionsOnWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ContributionsOnWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0CE4DF1DF76B1C0036351D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0D0CE4E31DF76B1C0036351D /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		0D0CE4E41DF76B1C0036351D /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		0D0CE4E61DF76B1C0036351D /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		0D0CE4E71DF76B1C0036351D /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		0D0CE4E91DF76B1C0036351D /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
+		0D0CE4EA1DF76B1C0036351D /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
+		0D0CE4EC1DF76B1C0036351D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D0CE4EE1DF76B1C0036351D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D14EAEE1DF76F5E002AF0C3 /* ContributionsOnWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContributionsOnWatch.entitlements; sourceTree = "<group>"; };
+		0D14EAEF1DF76F68002AF0C3 /* ContributionsOnWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ContributionsOnWatch Extension.entitlements"; sourceTree = "<group>"; };
+		0D14EAF01DF781ED002AF0C3 /* JZComplicationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZComplicationDataManager.h; sourceTree = "<group>"; };
+		0D14EAF11DF781ED002AF0C3 /* JZComplicationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = JZComplicationDataManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0D14EAF31DF78C01002AF0C3 /* JZHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = JZHeader.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0D1AF72C1DF7967400EAA85D /* JZCommitSceneInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitSceneInterfaceController.h; sourceTree = "<group>"; };
+		0D1AF72D1DF7967400EAA85D /* JZCommitSceneInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = JZCommitSceneInterfaceController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0D1AF72F1DF798C200EAA85D /* JZSettingsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZSettingsInterfaceController.h; sourceTree = "<group>"; };
+		0D1AF7301DF798C200EAA85D /* JZSettingsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZSettingsInterfaceController.m; sourceTree = "<group>"; };
 		0D565F9B1D85CAC5006C0324 /* JZCommitSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitSceneView.h; sourceTree = "<group>"; };
 		0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitSceneView.m; sourceTree = "<group>"; };
 		0DB556691D859A120042275E /* GitHubContributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubContributions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB5566D1D859A120042275E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DB5566F1D859A120042275E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0DB556701D859A120042275E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0DB556701D859A120042275E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DB556721D859A120042275E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0DB556731D859A120042275E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0DB556761D859A120042275E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,7 +149,7 @@
 		0DB556871D859A430042275E /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB556891D859A430042275E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		0DB5568C1D859A430042275E /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
-		0DB5568D1D859A430042275E /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		0DB5568D1D859A430042275E /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TodayViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DB556901D859A430042275E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		0DB556921D859A430042275E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DB5569A1D85A1710042275E /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
@@ -80,25 +157,37 @@
 		0DB556A11D85AB940042275E /* JZCommitImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitImageView.h; sourceTree = "<group>"; };
 		0DB556A21D85AB940042275E /* JZCommitImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitImageView.m; sourceTree = "<group>"; };
 		0DB556A41D85B4970042275E /* JZCommitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitManager.h; sourceTree = "<group>"; };
-		0DB556A51D85B4970042275E /* JZCommitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitManager.m; sourceTree = "<group>"; };
+		0DB556A51D85B4970042275E /* JZCommitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = JZCommitManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DB556A91D85B52D0042275E /* JZCommitDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitDataModel.h; sourceTree = "<group>"; };
 		0DB556AA1D85B52D0042275E /* JZCommitDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitDataModel.m; sourceTree = "<group>"; };
 		0DEF7A451D85FC2B00761555 /* GitHubContributions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHubContributions.entitlements; sourceTree = "<group>"; };
 		0DEF7A461D85FC7E00761555 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		0DEF7A501D86812000761555 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		0DEF7A511D86812000761555 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		0DEF7A511D86812000761555 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Reachability.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2237E1EDAB39F7AA0EA47331 /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		36FBB3E500AE9DE44C4ACC3A /* libPods-ContributionsOnWatch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ContributionsOnWatch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A245A6947FC32EF01EBE6CC /* Pods-ContributionsOnWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContributionsOnWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContributionsOnWatch Extension/Pods-ContributionsOnWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		5B1FBCD065571765C1D4B127 /* libPods-TodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE94186F89229304926B28EC /* Pods-GitHubContributions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubContributions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubContributions/Pods-GitHubContributions.debug.xcconfig"; sourceTree = "<group>"; };
 		C77384543F54CDE4CC88222F /* Pods-GitHubContributions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubContributions.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubContributions/Pods-GitHubContributions.release.xcconfig"; sourceTree = "<group>"; };
+		DBBF7451C332543E2F9FABD2 /* Pods-ContributionsOnWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContributionsOnWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContributionsOnWatch Extension/Pods-ContributionsOnWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		F6FF73B72CF8CE6258D62013 /* libPods-GitHubContributions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitHubContributions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0D0CE4D61DF76B1B0036351D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9617395C9EBF34E2D36B9981 /* libPods-ContributionsOnWatch Extension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DB556661D859A120042275E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0BA8071DF79E1100A893AB /* WatchConnectivity.framework in Frameworks */,
 				036F632D267B073666A2AE01 /* libPods-GitHubContributions.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,9 +202,95 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		697F26F22569D80C02BDD7BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D0BA80B1DF7AECD00A893AB /* SceneKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0CE4CE1DF76B1B0036351D /* ContributionsOnWatch */ = {
+			isa = PBXGroup;
+			children = (
+				0D14EAEE1DF76F5E002AF0C3 /* ContributionsOnWatch.entitlements */,
+				0D0CE4CF1DF76B1B0036351D /* Interface.storyboard */,
+				0D0CE4D21DF76B1B0036351D /* Assets.xcassets */,
+				0D0CE4D41DF76B1B0036351D /* Info.plist */,
+			);
+			path = ContributionsOnWatch;
+			sourceTree = "<group>";
+		};
+		0D0CE4DD1DF76B1C0036351D /* ContributionsOnWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0D14EAEF1DF76F68002AF0C3 /* ContributionsOnWatch Extension.entitlements */,
+				0D14EAF71DF78FED002AF0C3 /* View */,
+				0D14EAFA1DF790BE002AF0C3 /* Controller */,
+				0D0CE4E31DF76B1C0036351D /* ExtensionDelegate.h */,
+				0D0CE4E41DF76B1C0036351D /* ExtensionDelegate.m */,
+				0D0CE4E61DF76B1C0036351D /* NotificationController.h */,
+				0D0CE4E71DF76B1C0036351D /* NotificationController.m */,
+				0D0CE4E91DF76B1C0036351D /* ComplicationController.h */,
+				0D0CE4EA1DF76B1C0036351D /* ComplicationController.m */,
+				0D0CE4EC1DF76B1C0036351D /* Assets.xcassets */,
+				0D0CE4EE1DF76B1C0036351D /* Info.plist */,
+				0D0CE4DE1DF76B1C0036351D /* Supporting Files */,
+			);
+			path = "ContributionsOnWatch Extension";
+			sourceTree = "<group>";
+		};
+		0D0CE4DE1DF76B1C0036351D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D0CE4DF1DF76B1C0036351D /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D14EAF71DF78FED002AF0C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D14EAF01DF781ED002AF0C3 /* JZComplicationDataManager.h */,
+				0D14EAF11DF781ED002AF0C3 /* JZComplicationDataManager.m */,
+			);
+			name = View;
+			path = "ContributionsOnWatch Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+		0D14EAFA1DF790BE002AF0C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AF72C1DF7967400EAA85D /* JZCommitSceneInterfaceController.h */,
+				0D1AF72D1DF7967400EAA85D /* JZCommitSceneInterfaceController.m */,
+				0D1AF72F1DF798C200EAA85D /* JZSettingsInterfaceController.h */,
+				0D1AF7301DF798C200EAA85D /* JZSettingsInterfaceController.m */,
+			);
+			name = Controller;
+			path = ../ContributionsOnWatch;
+			sourceTree = "<group>";
+		};
+		0D14EAFF1DF7913A002AF0C3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0DEF7A501D86812000761555 /* Reachability.h */,
+				0DEF7A511D86812000761555 /* Reachability.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		0D14EB001DF79144002AF0C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0DB556721D859A120042275E /* ViewController.h */,
+				0DB556731D859A120042275E /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		0D565F9E1D85CBF3006C0324 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +316,8 @@
 			children = (
 				0DB5566B1D859A120042275E /* GitHubContributions */,
 				0DB5568B1D859A430042275E /* TodayExtension */,
+				0D0CE4CE1DF76B1B0036351D /* ContributionsOnWatch */,
+				0D0CE4DD1DF76B1C0036351D /* ContributionsOnWatch Extension */,
 				0DB556881D859A430042275E /* Frameworks */,
 				0DB5566A1D859A120042275E /* Products */,
 				102F0CAF98808953597A6685 /* Pods */,
@@ -152,6 +329,8 @@
 			children = (
 				0DB556691D859A120042275E /* GitHubContributions.app */,
 				0DB556871D859A430042275E /* TodayExtension.appex */,
+				0D0CE4CD1DF76B1B0036351D /* ContributionsOnWatch.app */,
+				0D0CE4D91DF76B1B0036351D /* ContributionsOnWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,12 +339,11 @@
 			isa = PBXGroup;
 			children = (
 				0DEF7A451D85FC2B00761555 /* GitHubContributions.entitlements */,
+				0D14EAF31DF78C01002AF0C3 /* JZHeader.h */,
 				0DB5566F1D859A120042275E /* AppDelegate.h */,
 				0DB556701D859A120042275E /* AppDelegate.m */,
-				0DEF7A501D86812000761555 /* Reachability.h */,
-				0DEF7A511D86812000761555 /* Reachability.m */,
-				0DB556721D859A120042275E /* ViewController.h */,
-				0DB556731D859A120042275E /* ViewController.m */,
+				0D14EB001DF79144002AF0C3 /* Controller */,
+				0D14EAFF1DF7913A002AF0C3 /* Data */,
 				0DB556751D859A120042275E /* Main.storyboard */,
 				0DB556781D859A120042275E /* Assets.xcassets */,
 				0DB5567A1D859A120042275E /* LaunchScreen.storyboard */,
@@ -186,10 +364,13 @@
 		0DB556881D859A430042275E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D0BA80A1DF7AECD00A893AB /* SceneKit.framework */,
+				0D0BA8061DF79E1100A893AB /* WatchConnectivity.framework */,
 				0DB5569A1D85A1710042275E /* SceneKit.framework */,
 				0DB556891D859A430042275E /* NotificationCenter.framework */,
 				F6FF73B72CF8CE6258D62013 /* libPods-GitHubContributions.a */,
 				5B1FBCD065571765C1D4B127 /* libPods-TodayExtension.a */,
+				36FBB3E500AE9DE44C4ACC3A /* libPods-ContributionsOnWatch Extension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,6 +407,8 @@
 				C77384543F54CDE4CC88222F /* Pods-GitHubContributions.release.xcconfig */,
 				2237E1EDAB39F7AA0EA47331 /* Pods-TodayExtension.debug.xcconfig */,
 				01881A84E6066C9B7BFAB953 /* Pods-TodayExtension.release.xcconfig */,
+				DBBF7451C332543E2F9FABD2 /* Pods-ContributionsOnWatch Extension.debug.xcconfig */,
+				3A245A6947FC32EF01EBE6CC /* Pods-ContributionsOnWatch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -233,6 +416,46 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0D0CE4CC1DF76B1B0036351D /* ContributionsOnWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D0CE4F81DF76B1C0036351D /* Build configuration list for PBXNativeTarget "ContributionsOnWatch" */;
+			buildPhases = (
+				0D0CE4CB1DF76B1B0036351D /* Resources */,
+				0D0CE4F71DF76B1C0036351D /* Embed App Extensions */,
+				0D14EAEC1DF76D43002AF0C3 /* ShellScript */,
+				697F26F22569D80C02BDD7BB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D0CE4DC1DF76B1C0036351D /* PBXTargetDependency */,
+			);
+			name = ContributionsOnWatch;
+			productName = ContributionsOnWatch;
+			productReference = 0D0CE4CD1DF76B1B0036351D /* ContributionsOnWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		0D0CE4D81DF76B1B0036351D /* ContributionsOnWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D0CE4F61DF76B1C0036351D /* Build configuration list for PBXNativeTarget "ContributionsOnWatch Extension" */;
+			buildPhases = (
+				1456DC087F47741F97DC3BC5 /* [CP] Check Pods Manifest.lock */,
+				0D0CE4D51DF76B1B0036351D /* Sources */,
+				0D0CE4D61DF76B1B0036351D /* Frameworks */,
+				0D0CE4D71DF76B1B0036351D /* Resources */,
+				0D14EAED1DF76D46002AF0C3 /* ShellScript */,
+				13F8E8B2E6E9A7A2884C851A /* [CP] Embed Pods Frameworks */,
+				66654D9BE7DE1500BA39DCEA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ContributionsOnWatch Extension";
+			productName = "ContributionsOnWatch Extension";
+			productReference = 0D0CE4D91DF76B1B0036351D /* ContributionsOnWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		0DB556681D859A120042275E /* GitHubContributions */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB556801D859A120042275E /* Build configuration list for PBXNativeTarget "GitHubContributions" */;
@@ -244,11 +467,14 @@
 				0DB556991D859A430042275E /* Embed App Extensions */,
 				B7DE7E371EA76DCA30324E54 /* [CP] Embed Pods Frameworks */,
 				A0D53904E8291543FD7AB94E /* [CP] Copy Pods Resources */,
+				0DDE1A101DE6EAF000F12909 /* ShellScript */,
+				0D0CE4F91DF76B1C0036351D /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				0DB556941D859A430042275E /* PBXTargetDependency */,
+				0D0CE4F01DF76B1C0036351D /* PBXTargetDependency */,
 			);
 			name = GitHubContributions;
 			productName = GitHubContributions;
@@ -263,9 +489,9 @@
 				0DB556831D859A430042275E /* Sources */,
 				0DB556841D859A430042275E /* Frameworks */,
 				0DB556851D859A430042275E /* Resources */,
-				56AAC5656CC03C74294A7DD9 /* [CP] Embed Pods Frameworks */,
 				794B7EF0240FD54F964B2E51 /* [CP] Copy Pods Resources */,
 				0D6BD12D1D86AF470041C5FD /* ShellScript */,
+				0D14EAEB1DF76D3D002AF0C3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -285,6 +511,32 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = JustZht;
 				TargetAttributes = {
+					0D0CE4CC1DF76B1B0036351D = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 9QJ8M25J77;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes.watchos.app = {
+								enabled = 0;
+							};
+						};
+					};
+					0D0CE4D81DF76B1B0036351D = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 9QJ8M25J77;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
 					0DB556681D859A120042275E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 9QJ8M25J77;
@@ -294,6 +546,9 @@
 								enabled = 1;
 							};
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -325,11 +580,30 @@
 			targets = (
 				0DB556681D859A120042275E /* GitHubContributions */,
 				0DB556861D859A430042275E /* TodayExtension */,
+				0D0CE4CC1DF76B1B0036351D /* ContributionsOnWatch */,
+				0D0CE4D81DF76B1B0036351D /* ContributionsOnWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D0CE4CB1DF76B1B0036351D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D0CE4D31DF76B1B0036351D /* Assets.xcassets in Resources */,
+				0D0CE4D11DF76B1B0036351D /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D0CE4D71DF76B1B0036351D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D0CE4ED1DF76B1C0036351D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DB556671D859A120042275E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,6 +626,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D14EAEB1DF76D3D002AF0C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n# xcode-build-bump.sh\n# @desc Auto-increment the build number every time the project is run.\n# @usage\n# 1. Select: your Target in Xcode\n# 2. Select: Build Phases Tab\n# 3. Select: Add Build Phase -> Add Run Script\n# 4. Paste code below in to new \"Run Script\" section\n# 5. Drag the \"Run Script\" below \"Link Binaries With Libraries\"\n# 6. Insure that your starting build number is set to a whole integer and not a float (e.g. 1, not 1.0)\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		0D14EAEC1DF76D43002AF0C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n# xcode-build-bump.sh\n# @desc Auto-increment the build number every time the project is run.\n# @usage\n# 1. Select: your Target in Xcode\n# 2. Select: Build Phases Tab\n# 3. Select: Add Build Phase -> Add Run Script\n# 4. Paste code below in to new \"Run Script\" section\n# 5. Drag the \"Run Script\" below \"Link Binaries With Libraries\"\n# 6. Insure that your starting build number is set to a whole integer and not a float (e.g. 1, not 1.0)\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		0D14EAED1DF76D46002AF0C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n# xcode-build-bump.sh\n# @desc Auto-increment the build number every time the project is run.\n# @usage\n# 1. Select: your Target in Xcode\n# 2. Select: Build Phases Tab\n# 3. Select: Add Build Phase -> Add Run Script\n# 4. Paste code below in to new \"Run Script\" section\n# 5. Drag the \"Run Script\" below \"Link Binaries With Libraries\"\n# 6. Insure that your starting build number is set to a whole integer and not a float (e.g. 1, not 1.0)\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
 		0D6BD12D1D86AF470041C5FD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,6 +678,49 @@
 			shellPath = /bin/sh;
 			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi";
 		};
+		0DDE1A101DE6EAF000F12909 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n# xcode-build-bump.sh\n# @desc Auto-increment the build number every time the project is run.\n# @usage\n# 1. Select: your Target in Xcode\n# 2. Select: Build Phases Tab\n# 3. Select: Add Build Phase -> Add Run Script\n# 4. Paste code below in to new \"Run Script\" section\n# 5. Drag the \"Run Script\" below \"Link Binaries With Libraries\"\n# 6. Insure that your starting build number is set to a whole integer and not a float (e.g. 1, not 1.0)\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		13F8E8B2E6E9A7A2884C851A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContributionsOnWatch Extension/Pods-ContributionsOnWatch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1456DC087F47741F97DC3BC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		2FD285DC7976C18C276D1D2A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,22 +733,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		56AAC5656CC03C74294A7DD9 /* [CP] Embed Pods Frameworks */ = {
+		66654D9BE7DE1500BA39DCEA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContributionsOnWatch Extension/Pods-ContributionsOnWatch Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		794B7EF0240FD54F964B2E51 /* [CP] Copy Pods Resources */ = {
@@ -452,12 +808,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0D0CE4D51DF76B1B0036351D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1AF7311DF798C200EAA85D /* JZSettingsInterfaceController.m in Sources */,
+				0D0CE4E51DF76B1C0036351D /* ExtensionDelegate.m in Sources */,
+				0D0CE4EB1DF76B1C0036351D /* ComplicationController.m in Sources */,
+				0D0BA8091DF7AD9000A893AB /* JZCommitManager.m in Sources */,
+				0D14EAF21DF781ED002AF0C3 /* JZComplicationDataManager.m in Sources */,
+				0D1AF72E1DF7967400EAA85D /* JZCommitSceneInterfaceController.m in Sources */,
+				0D0BA8081DF7A4B700A893AB /* JZCommitDataModel.m in Sources */,
+				0D0CE4E81DF76B1C0036351D /* NotificationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DB556651D859A120042275E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -478,15 +849,25 @@
 				0DB556A71D85B4970042275E /* JZCommitManager.m in Sources */,
 				0DB5568E1D859A430042275E /* TodayViewController.m in Sources */,
 				0DB556AC1D85B52D0042275E /* JZCommitDataModel.m in Sources */,
-				0DB556A31D85AB940042275E /* JZCommitImageView.m in Sources */,
 				0DEF7A531D86812000761555 /* Reachability.m in Sources */,
 				0D565F9D1D85CAC5006C0324 /* JZCommitSceneView.m in Sources */,
+				0D14EAF61DF78FC7002AF0C3 /* JZCommitImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0D0CE4DC1DF76B1C0036351D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D0CE4D81DF76B1B0036351D /* ContributionsOnWatch Extension */;
+			targetProxy = 0D0CE4DB1DF76B1C0036351D /* PBXContainerItemProxy */;
+		};
+		0D0CE4F01DF76B1C0036351D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D0CE4CC1DF76B1B0036351D /* ContributionsOnWatch */;
+			targetProxy = 0D0CE4EF1DF76B1C0036351D /* PBXContainerItemProxy */;
+		};
 		0DB556941D859A430042275E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0DB556861D859A430042275E /* TodayExtension */;
@@ -495,6 +876,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0D0CE4CF1DF76B1B0036351D /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D0CE4D01DF76B1B0036351D /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		0DB556751D859A120042275E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -522,6 +911,76 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0D0CE4F21DF76B1C0036351D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ContributionsOnWatch/ContributionsOnWatch.entitlements;
+				DEVELOPMENT_TEAM = 9QJ8M25J77;
+				IBSC_MODULE = ContributionsOnWatch_Extension;
+				INFOPLIST_FILE = ContributionsOnWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustZht.GitHubContributions.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		0D0CE4F31DF76B1C0036351D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ContributionsOnWatch/ContributionsOnWatch.entitlements;
+				DEVELOPMENT_TEAM = 9QJ8M25J77;
+				IBSC_MODULE = ContributionsOnWatch_Extension;
+				INFOPLIST_FILE = ContributionsOnWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustZht.GitHubContributions.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		0D0CE4F41DF76B1C0036351D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBBF7451C332543E2F9FABD2 /* Pods-ContributionsOnWatch Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "ContributionsOnWatch Extension/ContributionsOnWatch Extension.entitlements";
+				DEVELOPMENT_TEAM = 9QJ8M25J77;
+				INFOPLIST_FILE = "ContributionsOnWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustZht.GitHubContributions.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		0D0CE4F51DF76B1C0036351D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A245A6947FC32EF01EBE6CC /* Pods-ContributionsOnWatch Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "ContributionsOnWatch Extension/ContributionsOnWatch Extension.entitlements";
+				DEVELOPMENT_TEAM = 9QJ8M25J77;
+				INFOPLIST_FILE = "ContributionsOnWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustZht.GitHubContributions.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
 		0DB5567E1D859A120042275E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -677,6 +1136,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0D0CE4F61DF76B1C0036351D /* Build configuration list for PBXNativeTarget "ContributionsOnWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0CE4F41DF76B1C0036351D /* Debug */,
+				0D0CE4F51DF76B1C0036351D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D0CE4F81DF76B1C0036351D /* Build configuration list for PBXNativeTarget "ContributionsOnWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0CE4F21DF76B1C0036351D /* Debug */,
+				0D0CE4F31DF76B1C0036351D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0DB556641D859A120042275E /* Build configuration list for PBXProject "GitHubContributions" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
