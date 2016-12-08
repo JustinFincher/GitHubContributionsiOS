@@ -21,6 +21,8 @@
 		0D0CE4EB1DF76B1C0036351D /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0CE4EA1DF76B1C0036351D /* ComplicationController.m */; };
 		0D0CE4ED1DF76B1C0036351D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CE4EC1DF76B1C0036351D /* Assets.xcassets */; };
 		0D0CE4F11DF76B1C0036351D /* ContributionsOnWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0D0CE4CD1DF76B1B0036351D /* ContributionsOnWatch.app */; };
+		0D10F0E91DF9CB1F00904A8B /* JZCommitImageInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D10F0E81DF9CB1F00904A8B /* JZCommitImageInterfaceController.m */; };
+		0D10F0EB1DF9F52E00904A8B /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D10F0EA1DF9F52E00904A8B /* WatchConnectivity.framework */; };
 		0D14EAF21DF781ED002AF0C3 /* JZComplicationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D14EAF11DF781ED002AF0C3 /* JZComplicationDataManager.m */; };
 		0D14EAF61DF78FC7002AF0C3 /* JZCommitImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A21D85AB940042275E /* JZCommitImageView.m */; };
 		0D1AF72E1DF7967400EAA85D /* JZCommitSceneInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF72D1DF7967400EAA85D /* JZCommitSceneInterfaceController.m */; };
@@ -125,6 +127,9 @@
 		0D0CE4EA1DF76B1C0036351D /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
 		0D0CE4EC1DF76B1C0036351D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D0CE4EE1DF76B1C0036351D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D10F0E71DF9CB1F00904A8B /* JZCommitImageInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitImageInterfaceController.h; sourceTree = "<group>"; };
+		0D10F0E81DF9CB1F00904A8B /* JZCommitImageInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitImageInterfaceController.m; sourceTree = "<group>"; };
+		0D10F0EA1DF9F52E00904A8B /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		0D14EAEE1DF76F5E002AF0C3 /* ContributionsOnWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContributionsOnWatch.entitlements; sourceTree = "<group>"; };
 		0D14EAEF1DF76F68002AF0C3 /* ContributionsOnWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ContributionsOnWatch Extension.entitlements"; sourceTree = "<group>"; };
 		0D14EAF01DF781ED002AF0C3 /* JZComplicationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZComplicationDataManager.h; sourceTree = "<group>"; };
@@ -206,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D10F0EB1DF9F52E00904A8B /* WatchConnectivity.framework in Frameworks */,
 				0D0BA80B1DF7AECD00A893AB /* SceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +270,8 @@
 		0D14EAFA1DF790BE002AF0C3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0D10F0E71DF9CB1F00904A8B /* JZCommitImageInterfaceController.h */,
+				0D10F0E81DF9CB1F00904A8B /* JZCommitImageInterfaceController.m */,
 				0D1AF72C1DF7967400EAA85D /* JZCommitSceneInterfaceController.h */,
 				0D1AF72D1DF7967400EAA85D /* JZCommitSceneInterfaceController.m */,
 				0D1AF72F1DF798C200EAA85D /* JZSettingsInterfaceController.h */,
@@ -364,6 +372,7 @@
 		0DB556881D859A430042275E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D10F0EA1DF9F52E00904A8B /* WatchConnectivity.framework */,
 				0D0BA80A1DF7AECD00A893AB /* SceneKit.framework */,
 				0D0BA8061DF79E1100A893AB /* WatchConnectivity.framework */,
 				0DB5569A1D85A1710042275E /* SceneKit.framework */,
@@ -508,7 +517,7 @@
 		0DB556611D859A120042275E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = JustZht;
 				TargetAttributes = {
 					0D0CE4CC1DF76B1B0036351D = {
@@ -822,6 +831,7 @@
 				0D0CE4E51DF76B1C0036351D /* ExtensionDelegate.m in Sources */,
 				0D0CE4EB1DF76B1C0036351D /* ComplicationController.m in Sources */,
 				0D0BA8091DF7AD9000A893AB /* JZCommitManager.m in Sources */,
+				0D10F0E91DF9CB1F00904A8B /* JZCommitImageInterfaceController.m in Sources */,
 				0D14EAF21DF781ED002AF0C3 /* JZComplicationDataManager.m in Sources */,
 				0D1AF72E1DF7967400EAA85D /* JZCommitSceneInterfaceController.m in Sources */,
 				0D0BA8081DF7A4B700A893AB /* JZCommitDataModel.m in Sources */,
@@ -999,6 +1009,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1047,6 +1058,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "JZCommitManager.h"
+#import <WatchConnectivity/WatchConnectivity.h>
+#import "JZHeader.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
@@ -25,16 +27,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                             forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
     
     
-    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] objectForKey:@"GitHubContributionsName"];
+    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsName"];
     if (name)
     {
         _userNameField.text = name;
     }
 }
 
-
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -43,16 +53,52 @@
 - (IBAction)updateInfoButtonPressed:(id)sender
 {
     NSString *trimmedName = [_userNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] setObject:trimmedName forKey:@"GitHubContributionsName"];
+    [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:trimmedName forKey:@"GitHubContributionsName"];
     
     UIButton *button = (UIButton *)sender;
-    [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] removeObjectForKey:@"GitHubContributionsArray"];
     
-    [button setTitle:@"Widget will update soon" forState:UIControlStateNormal];
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
+    [button setTitle:@"Widget & Complication will update soon" forState:UIControlStateNormal];
+    
+    dispatch_queue_t gqueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    dispatch_async(gqueue, ^(void)
+    {
+        NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
+        if (array)
+        {
+            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
+            
+            [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] removeObjectForKey:@"GitHubContributionsArray"];
+            [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
+            if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
+            {
+                WCSession* session = [WCSession defaultSession];
+                if ([session activationState] != WCSessionActivationStateActivated)
+                {
+                    [session activateSession];
+                }else
+                {
+                    NSError *err;
+                    [session updateApplicationContext:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] error:&err];
+                    if (err)
+                    {
+                        JZLog(@"%@",[err localizedDescription]);
+                    }
+                }
+                
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), ^
+        {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^
+                           {
+                               [button setTitle:@"In the mean time, you can close this app" forState:UIControlStateNormal];
+                               dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^
+                                              {
+                                                  [button setTitle:@"Update Info" forState:UIControlStateNormal];
+                                              });
+                           });
+        });
+    });
+    
 }
 @end

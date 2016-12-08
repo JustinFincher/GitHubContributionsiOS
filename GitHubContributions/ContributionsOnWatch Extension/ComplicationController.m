@@ -37,7 +37,7 @@
 
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler
 {
-    CLKComplicationTemplate *template =[[JZComplicationDataManager sharedManager] getComplicationFrom:complication isSample:YES];
+    CLKComplicationTemplate *template =[[JZComplicationDataManager sharedManager] getComplicationFrom:complication isSample:NO];
     if (template)
     {
         CLKComplicationTimelineEntry *entry = [CLKComplicationTimelineEntry entryWithDate:[NSDate date] complicationTemplate:template];
@@ -71,5 +71,11 @@
         handler(nil);
     }
 }
+
+- (void)getNextRequestedUpdateDateWithHandler:(void (^)(NSDate * _Nullable))handler
+{
+    handler([NSDate dateWithTimeIntervalSinceNow:1800.0f]);
+}
+
 
 @end

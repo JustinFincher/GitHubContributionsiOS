@@ -13,19 +13,44 @@
             <objects>
                 <controller title="SETTINGS" animationDuration="0.20000000000000001" id="AgC-eL-Hgc" customClass="JZSettingsInterfaceController">
                     <items>
-                        <label alignment="center" text="Contributions Settings 🎉🎉" textAlignment="center" numberOfLines="0" id="SdJ-Iu-trA"/>
-                        <separator alignment="left" alpha="0.20000000000000001" id="ZIs-NM-5Pd"/>
-                        <label alignment="left" text="3D Bar Height" id="b0y-9l-Eot">
+                        <label alignment="center" text="Contributions For GitHub 🕹⌚️" textAlignment="center" numberOfLines="0" id="SdJ-Iu-trA"/>
+                        <label alignment="left" text="FAQ" id="ULZ-Zp-tkf">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="h4p-ym-v1v"/>
-                        <label alignment="left" text="FAQ" id="hEd-Ke-ZTm">
-                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        <separator alignment="left" alpha="0.5" id="ZIs-NM-5Pd"/>
+                        <label width="1" alignment="left" text="Q : How can I change commit bar height in 3D view?   " numberOfLines="0" id="Ye3-Lk-2nC">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" text="A : Scroll your digital crown when 3D view is being displayed!" numberOfLines="0" id="xNr-4a-bQU">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <separator alignment="left" alpha="0.5" id="5Sy-HW-RkO"/>
+                        <label width="1" alignment="left" text="Q : Cool, how can I report issues?" numberOfLines="0" id="1W8-1I-OaM">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" text="A : Please visit https://github.com/JustinFincher/GitHubContributionsiOS to open an issue." numberOfLines="0" id="lg7-44-zOw">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <separator alignment="left" alpha="0.5" id="NQn-if-YTl"/>
+                        <label width="1" alignment="left" text="Q : Why is this thing never updated?" numberOfLines="0" id="PVv-Qs-acR">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" numberOfLines="0" id="y0f-wl-J82">
+                            <string key="text">A : Watch complications only update every 30 minutes due to limitations of watchOS. Also if you are using an iPhone with iOS 10+ in Mainland China, you may need to check "Network Permission" on your iOS settings to enable network access to GitHub, or this app will never gets data.</string>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <separator alignment="left" alpha="0.5" id="w9k-t0-nqK"/>
+                        <label width="1" alignment="left" text="Q : What if I want to force update commit data?" numberOfLines="0" id="9Xe-8k-xZD">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" numberOfLines="0" id="JxM-bP-joV">
+                            <string key="text">A : Open Contributions For GitHub on both your watch and iOS Device. Press "Update Info" from your iOS Device, wait for a while and swipe to 2D / 3D view to see if data have been updated.</string>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
                     </items>
                     <menu key="menu" id="g0e-F2-9gD">
                         <items>
-                            <menuItem title="Refresh" icon="shuffle" id="dWS-AM-4AU">
+                            <menuItem title="Refresh" icon="repeat" id="dWS-AM-4AU">
                                 <connections>
                                     <action selector="refreshMenuPressed" destination="AgC-eL-Hgc" id="PN4-Wr-tXu"/>
                                 </connections>
@@ -39,11 +64,12 @@
         <!--2D GRAPH-->
         <scene sceneID="ocv-Th-Jnc">
             <objects>
-                <controller title="2D GRAPH" animationDuration="0.20000000000000001" id="MaG-3Z-9fA">
+                <controller title="2D GRAPH" animationDuration="0.20000000000000001" id="MaG-3Z-9fA" customClass="JZCommitImageInterfaceController">
                     <items>
                         <imageView width="1" height="1" alignment="left" contentMode="scaleAspectFill" id="qOq-E7-KGE"/>
                     </items>
                     <connections>
+                        <outlet property="commitImage" destination="qOq-E7-KGE" id="3i0-2y-Xpy"/>
                         <segue destination="BgT-Js-SkK" kind="relationship" relationship="nextPage" id="u9d-Zg-nej"/>
                     </connections>
                 </controller>

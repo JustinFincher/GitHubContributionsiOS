@@ -12,6 +12,7 @@
 #import "JZCommitSceneView.h"
 
 #import "JZCommitManager.h"
+#import "JZHeader.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet JZCommitImageView *commitImageView;
@@ -43,11 +44,8 @@
 {
     _settingsButton.hidden = YES;
     
-//     [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] removeObjectForKey:@"GitHubContributionsArray"];
-//     [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] removeObjectForKey:@"GitHubContributionsName"];
-    
     NSMutableArray *weeks;
-    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"]  objectForKey:@"GitHubContributionsArray"];
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
     if (data != nil)
     {
         weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
@@ -73,8 +71,8 @@
         [_commitImageView refreshFromCommits:weeks];
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:weeks] ;
-        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] setObject:data forKey:@"GitHubContributionsArray"];
-        if ([[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] synchronize])
+        [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
+        if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
         {
             JZLog(@"viewWillAppearDataTaskNewData");
         }else

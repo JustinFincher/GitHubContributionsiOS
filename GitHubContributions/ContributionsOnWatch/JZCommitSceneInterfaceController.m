@@ -39,6 +39,7 @@
 {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+
     [self refreshView];
 }
 
@@ -54,8 +55,8 @@
     //    self.sceneView.autoenablesDefaultLighting = YES;
     SCNLight *light = [SCNLight light];
     light.type = SCNLightTypeDirectional;
-    //    light.color = [UIColor colorWithWhite:1.0 alpha:0.3];
-    //    light.shadowColor = (__bridge id _Nonnull)([UIColor colorWithWhite:0.0 alpha:0.4].CGColor);
+    light.color = [UIColor colorWithWhite:1.0 alpha:0.2];
+    light.shadowColor = (__bridge id _Nonnull)([UIColor colorWithWhite:0.0 alpha:0.8].CGColor);
     SCNNode *lightNode = [SCNNode node];
     lightNode.eulerAngles = SCNVector3Make(-M_PI / 3, M_PI_4 * 3,0);
     lightNode.light = light;
@@ -75,7 +76,7 @@
     cameraNode.camera.orthographicScale = 5.0f;
     
     [self.sceneView.scene.rootNode addChildNode:cameraNode];
-    cameraNode.position = SCNVector3Make(24, 16, 30);
+    cameraNode.position = SCNVector3Make(23, 23, 30);
     cameraNode.eulerAngles = SCNVector3Make(-M_PI / 6, +M_PI_4,0);
     self.sceneView.pointOfView = cameraNode;
     
@@ -124,10 +125,6 @@
             if ([node.name isEqualToString:@"barNode"])
             {
                 node.scale = SCNVector3Make(1, self.barHeightScale, 1);
-//                for (SCNNode *barNode in node.childNodes)
-//                {
-//                    barNode.scale = SCNVector3Make(1, self.barHeightScale, 1);
-//                }
             }
         }
     }
@@ -136,13 +133,29 @@
 #pragma mark - WKCrownDelegate
 - (void)crownDidRotate:(WKCrownSequencer *)crownSequencer rotationalDelta:(double)rotationalDelta
 {
-//    JZLog(@"%f",rotationalDelta);
-    if (self.barHeightScale > 0.1 && self.barHeightScale < 2.0)
+    if ((rotationalDelta < 0))
     {
-        self.barHeightScale = self.barHeightScale + ((rotationalDelta > 0) ? 0.01f : -0.01f);
+        if (self.barHeightScale - 0.01f >= 0.05f)
+        {
+            self.barHeightScale -= 0.01f;
+//            [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeDirectionUp];
+
+        }else
+        {
+            self.barHeightScale = 0.05f;
+            [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeDirectionUp];
+        }
     }else
     {
-        self.barHeightScale = 1.0;
+        if (self.barHeightScale + 0.01f <= 2.0f)
+        {
+            self.barHeightScale += 0.01f;
+//            [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeDirectionDown];
+        }else
+        {
+            self.barHeightScale = 2.0f;
+            [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeDirectionDown];
+        }
     }
     
     [self refreshBarNode];

@@ -25,11 +25,6 @@
         session.delegate = self;
         [session activateSession];
     }
-    
-    for (CLKComplication *complication in [CLKComplicationServer sharedInstance].activeComplications)
-    {
-        [[CLKComplicationServer sharedInstance] reloadTimelineForComplication:complication];
-    }
 }
 
 - (void)applicationDidBecomeActive {
@@ -70,7 +65,9 @@
 
 #pragma mark - WCSessionDelegate
 - (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error
-{}
+{
+    
+}
 - (void)sessionDidBecomeInactive:(WCSession *)session
 {}
 - (void)sessionDidDeactivate:(WCSession *)session
@@ -85,11 +82,12 @@
         [defaults setObject:[applicationContext objectForKey:key] forKey:key];
     }
     
-    [defaults synchronize];
-    
-    for (CLKComplication *complication in [CLKComplicationServer sharedInstance].activeComplications)
+    if ([defaults synchronize])
     {
-        [[CLKComplicationServer sharedInstance] reloadTimelineForComplication:complication];
+        for (CLKComplication *complication in [CLKComplicationServer sharedInstance].activeComplications)
+        {
+            [[CLKComplicationServer sharedInstance] reloadTimelineForComplication:complication];
+        }
     }
 }
 
