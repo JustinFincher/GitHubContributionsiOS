@@ -12,6 +12,7 @@
 
 @interface JZCommitSceneInterfaceController ()<WKCrownDelegate>
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceSCNScene *sceneView;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *noDataLabel;
 @property float barHeightScale;
 
 @end
@@ -23,8 +24,8 @@
     
     // Configure interface objects here.
     self.crownSequencer.delegate = self;
-    self.barHeightScale = 1.0f;
-    
+    self.barHeightScale = 0.5f;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:@"JZ_WATCH_USERDEFAULT_UPDATED" object:nil];
 }
 - (void)willDisappear
 {
@@ -93,9 +94,11 @@
         if (!weeks)
         {
             JZLog(@"NSUserDefaults DO NOT HAVE weeks DATA");
+            [self.noDataLabel setHidden:NO];
         }else
         {
             JZLog(@"NSUserDefaults DO HAVE weeks DATA");
+            [self.noDataLabel setHidden:YES];
             for (int weekFromNow = 0; weekFromNow < 10; weekFromNow ++)
             {
                 NSMutableArray *week = [weeks objectAtIndex:weekFromNow];
@@ -112,7 +115,11 @@
                 }
             }
         }
+    }else
+    {
+        [self.noDataLabel setHidden:NO];
     }
+    [self refreshBarNode];
 
 }
 
@@ -135,14 +142,14 @@
 {
     if ((rotationalDelta < 0))
     {
-        if (self.barHeightScale - 0.01f >= 0.05f)
+        if (self.barHeightScale - 0.01f >= 0.02f)
         {
             self.barHeightScale -= 0.01f;
 //            [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeDirectionUp];
 
         }else
         {
-            self.barHeightScale = 0.05f;
+            self.barHeightScale = 0.02f;
             [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeDirectionUp];
         }
     }else

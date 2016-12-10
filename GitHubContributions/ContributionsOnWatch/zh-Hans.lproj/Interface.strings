@@ -1,0 +1,51 @@
+
+/* Class = "WKInterfaceLabel"; text = "Q : Cool, how can I report issues?"; ObjectID = "1W8-1I-OaM"; */
+"1W8-1I-OaM.text" = "Q : 赞哦，但是万一软件出错怎么办？";
+
+/* Class = "WKInterfaceLabel"; text = "Q : What if I want to force update commits data?"; ObjectID = "9Xe-8k-xZD"; */
+"9Xe-8k-xZD.text" = "Q : 如果我想强行更新数据怎么办？";
+
+/* Class = "WKInterfaceController"; title = "SETTINGS"; ObjectID = "AgC-eL-Hgc"; */
+"AgC-eL-Hgc.title" = "设置";
+
+/* Class = "WKInterfaceController"; title = "3D GRAPH"; ObjectID = "BgT-Js-SkK"; */
+"BgT-Js-SkK.title" = "3D 视图";
+
+/* Class = "WKInterfaceLabel"; text = "Alert Label"; ObjectID = "IdU-wH-bcW"; */
+"IdU-wH-bcW.text" = "Alert Label";
+
+/* Class = "WKInterfaceLabel"; text = "A : Open Contributions For GitHub on both your watch and iOS Device. Press \"Update Info\" from your iOS Device, wait for a while and swipe to 2D / 3D view to see if data have been updated. If commits data is updated but complications is not, try force touch this page and press \"refresh\" menu. "; ObjectID = "JxM-bP-joV"; */
+"JxM-bP-joV.text" = "A : 在手机和手表上同时打开这款软件，在手机上点击 Update Info，稍等片刻。如果二维三维视图数据已经更新而表盘没有，请在当前界面用力下按选择“刷新”。";
+
+/* Class = "WKInterfaceLabel"; text = "No data. Please setup your username on your iPhone."; ObjectID = "MEV-m3-4TH"; */
+"MEV-m3-4TH.text" = "目前无数据，请去 iPhone 界面设置用户名";
+
+/* Class = "WKInterfaceController"; title = "2D GRAPH"; ObjectID = "MaG-3Z-9fA"; */
+"MaG-3Z-9fA.title" = "2D 视图";
+
+/* Class = "WKInterfaceLabel"; text = "Q : Why is this thing never updated?"; ObjectID = "PVv-Qs-acR"; */
+"PVv-Qs-acR.text" = "Q : 为什么数据老是不更新？";
+
+/* Class = "WKInterfaceLabel"; text = "Contributions For GitHub 🕹⌚️"; ObjectID = "SdJ-Iu-trA"; */
+"SdJ-Iu-trA.text" = "Contributions For GitHub 🕹⌚️";
+
+/* Class = "WKInterfaceLabel"; text = "FAQ"; ObjectID = "ULZ-Zp-tkf"; */
+"ULZ-Zp-tkf.text" = "FAQ（疑难解答）";
+
+/* Class = "WKInterfaceLabel"; text = "Q : How can I change commit bar height in 3D view?   "; ObjectID = "Ye3-Lk-2nC"; */
+"Ye3-Lk-2nC.text" = "Q : 我要如何暂时更改三维视图的高度？";
+
+/* Class = "WKInterfaceMenuItem"; title = "Refresh"; ObjectID = "dWS-AM-4AU"; */
+"dWS-AM-4AU.title" = "刷新";
+
+/* Class = "WKInterfaceLabel"; text = "No data. Please setup your username on your iPhone."; ObjectID = "fDZ-XQ-I6l"; */
+"fDZ-XQ-I6l.text" = "目前无数据，请去 iPhone 界面设置用户名";
+
+/* Class = "WKInterfaceLabel"; text = "A : Please visit https://github.com/JustinFincher/GitHubContributionsiOS to open an issue."; ObjectID = "lg7-44-zOw"; */
+"lg7-44-zOw.text" = "A : 请访问 https://github.com/JustinFincher/GitHubContributionsiOS 并开启一个 Issue";
+
+/* Class = "WKInterfaceLabel"; text = "A : Scroll your digital crown when 3D view is being displayed!"; ObjectID = "xNr-4a-bQU"; */
+"xNr-4a-bQU.text" = "A : 三维视图显示的时候，滑动 Digital Crown 就行了";
+
+/* Class = "WKInterfaceLabel"; text = "A : Watch complications is set to only update every 2 hrs due to limitations of watchOS (up to 50 updates a day). Also if you are using an iPhone with iOS 10+ in Mainland China, you may need to check \"Network Permission\" on your iOS settings to enable network access to GitHub, or this app will never gets data."; ObjectID = "y0f-wl-J82"; */
+"y0f-wl-J82.text" = "A : 表盘更新频率受制于系统配额。而且如果你是国行 iOS 10 及以上用户，你也许需要检查下这个软件在系统设置中的网络权限，否则这个软件永远获取不到数据。";

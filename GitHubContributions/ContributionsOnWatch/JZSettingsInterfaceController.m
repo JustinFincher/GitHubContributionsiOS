@@ -7,6 +7,7 @@
 //
 
 #import "JZSettingsInterfaceController.h"
+#import "ExtensionDelegate.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 
 @interface JZSettingsInterfaceController ()
@@ -33,18 +34,12 @@
 
 - (IBAction)refreshMenuPressed
 {
-    if ([WCSession isSupported])
+    WCSession* session = [WCSession defaultSession];
+    if (session.activationState != WCSessionActivationStateActivated)
     {
-        WCSession* session = [WCSession defaultSession];
-        if (session.activationState != WCSessionActivationStateActivated)
-        {
-            [session activateSession];
-        }
+        [session activateSession];
     }
-    for (CLKComplication *complication in [CLKComplicationServer sharedInstance].activeComplications)
-    {
-        [[CLKComplicationServer sharedInstance] reloadTimelineForComplication:complication];
-    }
+    [(ExtensionDelegate*)([WKExtension sharedExtension].delegate) updateComplications];
 }
 
 @end

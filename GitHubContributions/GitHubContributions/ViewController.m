@@ -11,7 +11,7 @@
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "JZHeader.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UIButton *updateInfoButton;
 
@@ -33,6 +33,7 @@
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     
+    self.userNameField.delegate = self;
     
     NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsName"];
     if (name)
@@ -100,5 +101,14 @@
         });
     });
     
+}
+#pragma mark - UITextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if ([string isEqualToString:@" "])
+    {
+        return NO;
+    }
+    return YES;
 }
 @end

@@ -51,19 +51,25 @@
         {
             JZLog(@"NSUserDefaults DO HAVE weeks DATA");
         }
-    }else
-    {
-        return nil;
     }
     NSMutableArray *week = [weeks objectAtIndex:0];
-    JZCommitDataModel* today = [week lastObject];
-    
-    int todayNum = [today.dataCount intValue];
-    
+    JZCommitDataModel* today;
+    int todayNum = 0;
     int weekNum = 0;
-    for (JZCommitDataModel* day in week)
+    if (week)
     {
-        weekNum += [day.dataCount intValue];
+        today = [week lastObject];
+        if (today)
+        {
+            todayNum = today.dataCount ? [today.dataCount intValue] : 0;
+        }
+        for (JZCommitDataModel* day in week)
+        {
+            if (day)
+            {
+                weekNum += (day.dataCount ? [today.dataCount intValue] : 0);
+            }
+        }
     }
     
     switch (complication.family)
@@ -144,11 +150,11 @@
         {
             CLKComplicationTemplateModularLargeColumns *modularLargeColumns = [[CLKComplicationTemplateModularLargeColumns alloc] init];
             modularLargeColumns.row1ImageProvider = [CLKImageProvider imageProviderWithOnePieceImage:[UIImage imageNamed:@"Watch_Complication_Template"]];
-            modularLargeColumns.row1Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@"Commits"]];
+            modularLargeColumns.row1Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:NSLocalizedString(@"Commits", nil)];
             modularLargeColumns.row1Column2TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@""]];
             
-            modularLargeColumns.row2Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@"Today"]];
-            modularLargeColumns.row3Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@"Week"]];
+            modularLargeColumns.row2Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:NSLocalizedString(@"Today", nil)];
+            modularLargeColumns.row3Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:NSLocalizedString(@"Week", nil)];
             modularLargeColumns.column2Alignment = CLKComplicationColumnAlignmentTrailing;
             if (sampleBool)
             {

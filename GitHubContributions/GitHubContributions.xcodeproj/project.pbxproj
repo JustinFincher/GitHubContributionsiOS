@@ -23,6 +23,7 @@
 		0D0CE4F11DF76B1C0036351D /* ContributionsOnWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0D0CE4CD1DF76B1B0036351D /* ContributionsOnWatch.app */; };
 		0D10F0E91DF9CB1F00904A8B /* JZCommitImageInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D10F0E81DF9CB1F00904A8B /* JZCommitImageInterfaceController.m */; };
 		0D10F0EB1DF9F52E00904A8B /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D10F0EA1DF9F52E00904A8B /* WatchConnectivity.framework */; };
+		0D10F0EE1DFB2E5A00904A8B /* ckcomplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D10F0F01DFB2E5A00904A8B /* ckcomplication.strings */; };
 		0D14EAF21DF781ED002AF0C3 /* JZComplicationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D14EAF11DF781ED002AF0C3 /* JZComplicationDataManager.m */; };
 		0D14EAF61DF78FC7002AF0C3 /* JZCommitImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556A21D85AB940042275E /* JZCommitImageView.m */; };
 		0D1AF72E1DF7967400EAA85D /* JZCommitSceneInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF72D1DF7967400EAA85D /* JZCommitSceneInterfaceController.m */; };
@@ -130,6 +131,13 @@
 		0D10F0E71DF9CB1F00904A8B /* JZCommitImageInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitImageInterfaceController.h; sourceTree = "<group>"; };
 		0D10F0E81DF9CB1F00904A8B /* JZCommitImageInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitImageInterfaceController.m; sourceTree = "<group>"; };
 		0D10F0EA1DF9F52E00904A8B /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		0D10F0EF1DFB2E5A00904A8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ckcomplication.strings; sourceTree = "<group>"; };
+		0D10F0F11DFB2E5E00904A8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/ckcomplication.strings; sourceTree = "<group>"; };
+		0D10F0F21DFB300E00904A8B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		0D10F0F31DFB300E00904A8B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0D10F0F41DFB300F00904A8B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
+		0D10F0F61DFB300F00904A8B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ckcomplication.strings"; sourceTree = "<group>"; };
+		0D10F0F81DFB3F1900904A8B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Interface.strings"; sourceTree = "<group>"; };
 		0D14EAEE1DF76F5E002AF0C3 /* ContributionsOnWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContributionsOnWatch.entitlements; sourceTree = "<group>"; };
 		0D14EAEF1DF76F68002AF0C3 /* ContributionsOnWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ContributionsOnWatch Extension.entitlements"; sourceTree = "<group>"; };
 		0D14EAF01DF781ED002AF0C3 /* JZComplicationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZComplicationDataManager.h; sourceTree = "<group>"; };
@@ -245,6 +253,7 @@
 				0D0CE4EC1DF76B1C0036351D /* Assets.xcassets */,
 				0D0CE4EE1DF76B1C0036351D /* Info.plist */,
 				0D0CE4DE1DF76B1C0036351D /* Supporting Files */,
+				0D10F0F01DFB2E5A00904A8B /* ckcomplication.strings */,
 			);
 			path = "ContributionsOnWatch Extension";
 			sourceTree = "<group>";
@@ -529,7 +538,7 @@
 								enabled = 1;
 							};
 							com.apple.BackgroundModes.watchos.app = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -539,6 +548,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes.watchos.extension = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -581,6 +593,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 0DB556601D859A120042275E;
 			productRefGroup = 0DB5566A1D859A120042275E /* Products */;
@@ -609,6 +622,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D10F0EE1DFB2E5A00904A8B /* ckcomplication.strings in Resources */,
 				0D0CE4ED1DF76B1C0036351D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -890,14 +904,26 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D0CE4D01DF76B1B0036351D /* Base */,
+				0D10F0F81DFB3F1900904A8B /* zh-Hans */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		0D10F0F01DFB2E5A00904A8B /* ckcomplication.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D10F0EF1DFB2E5A00904A8B /* en */,
+				0D10F0F11DFB2E5E00904A8B /* Base */,
+				0D10F0F61DFB300F00904A8B /* zh-Hans */,
+			);
+			name = ckcomplication.strings;
 			sourceTree = "<group>";
 		};
 		0DB556751D859A120042275E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0DB556761D859A120042275E /* Base */,
+				0D10F0F21DFB300E00904A8B /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -906,6 +932,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0DB5567B1D859A120042275E /* Base */,
+				0D10F0F31DFB300E00904A8B /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -914,6 +941,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0DB556901D859A430042275E /* Base */,
+				0D10F0F41DFB300F00904A8B /* zh-Hans */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -995,6 +1023,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1044,6 +1073,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

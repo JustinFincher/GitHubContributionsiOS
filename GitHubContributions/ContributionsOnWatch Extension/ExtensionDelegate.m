@@ -12,19 +12,42 @@
 
 @interface ExtensionDelegate()<WCSessionDelegate>
 
+@property (nonatomic,strong) NSMutableArray *wcBackgroundTasks;
+
 @end
 
 @implementation ExtensionDelegate
 
 - (void)applicationDidFinishLaunching
 {
-    // Perform any final initialization of your application.
-    if ([WCSession isSupported])
+    self.wcBackgroundTasks = [NSMutableArray array];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateComplications) name:CLKComplicationServerActiveComplicationsDidChangeNotification object:nil];
+    WCSession* session = [WCSession defaultSession];
+    [session addObserver:self forKeyPath:@"activationState" options:0 context:nil];
+    [session addObserver:self forKeyPath:@"hasContentPending" options:0 context:nil];
+    session.delegate = self;
+    [session activateSession];
+}
+- (void)dealloc
+{
+    WCSession* session = [WCSession defaultSession];
+    [session removeObserver:self forKeyPath:@"activationState"];
+    [session removeObserver:self forKeyPath:@"hasContentPending"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
     {
-        WCSession* session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
-    }
+        //non-main thread.
+        [self completeAllTasksIfReady];
+        dispatch_async(dispatch_get_main_queue(), ^
+        {
+            //main thread.
+
+        });
+    });
 }
 
 - (void)applicationDidBecomeActive {
@@ -35,23 +58,37 @@
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, etc.
 }
+- (void)completeAllTasksIfReady
+{
+    WCSession* session = [WCSession defaultSession];
+    if (session.activationState == WCSessionActivationStateActivated && !session.hasContentPending)
+    {
+        for (WKRefreshBackgroundTask *task in self.wcBackgroundTasks)
+        {
+            [task setTaskCompleted];
+        }
+        [self.wcBackgroundTasks removeAllObjects];
+    }
+}
 
 - (void)handleBackgroundTasks:(NSSet<WKRefreshBackgroundTask *> *)backgroundTasks {
     // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
     for (WKRefreshBackgroundTask * task in backgroundTasks) {
         // Check the Class of each task to decide how to process it
-        if ([task isKindOfClass:[WKApplicationRefreshBackgroundTask class]]) {
+        if ([task isKindOfClass:[WKApplicationRefreshBackgroundTask class]])
+        {
             // Be sure to complete the background task once you’re done.
             WKApplicationRefreshBackgroundTask *backgroundTask = (WKApplicationRefreshBackgroundTask*)task;
             [backgroundTask setTaskCompleted];
         } else if ([task isKindOfClass:[WKSnapshotRefreshBackgroundTask class]]) {
             // Snapshot tasks have a unique completion call, make sure to set your expiration date
             WKSnapshotRefreshBackgroundTask *snapshotTask = (WKSnapshotRefreshBackgroundTask*)task;
-            [snapshotTask setTaskCompletedWithDefaultStateRestored:YES estimatedSnapshotExpiration:[NSDate distantFuture] userInfo:nil];
-        } else if ([task isKindOfClass:[WKWatchConnectivityRefreshBackgroundTask class]]) {
+            [snapshotTask setTaskCompletedWithDefaultStateRestored:NO estimatedSnapshotExpiration:[NSDate distantFuture] userInfo:nil];
+        } else if ([task isKindOfClass:[WKWatchConnectivityRefreshBackgroundTask class]])
+        {
             // Be sure to complete the background task once you’re done.
             WKWatchConnectivityRefreshBackgroundTask *backgroundTask = (WKWatchConnectivityRefreshBackgroundTask*)task;
-            [backgroundTask setTaskCompleted];
+            [self.wcBackgroundTasks addObject:backgroundTask];
         } else if ([task isKindOfClass:[WKURLSessionRefreshBackgroundTask class]]) {
             // Be sure to complete the background task once you’re done.
             WKURLSessionRefreshBackgroundTask *backgroundTask = (WKURLSessionRefreshBackgroundTask*)task;
@@ -61,17 +98,26 @@
             [task setTaskCompleted];
         }
     }
+    [self completeAllTasksIfReady];
 }
 
 #pragma mark - WCSessionDelegate
 - (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error
 {
+    if (error)
+    {
+        JZLog(@"%@",[error localizedDescription]);
+    }
+}
+
+- (void)sessionDidBecomeInactive:(WCSession *)session
+{
     
 }
-- (void)sessionDidBecomeInactive:(WCSession *)session
-{}
 - (void)sessionDidDeactivate:(WCSession *)session
-{}
+{
+    
+}
 -(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext {
     JZLog(@"New Session Context: %@", applicationContext);
     
@@ -84,12 +130,33 @@
     
     if ([defaults synchronize])
     {
-        for (CLKComplication *complication in [CLKComplicationServer sharedInstance].activeComplications)
-        {
-            [[CLKComplicationServer sharedInstance] reloadTimelineForComplication:complication];
-        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"JZ_WATCH_USERDEFAULT_UPDATED" object:nil];
+        [self updateComplications];
     }
 }
 
+//- (void)session:(WCSession *)session didReceiveUserInfo:(NSDictionary<NSString *,id> *)userInfo
+//{
+//    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:JZSuiteName];
+//    
+//    for (NSString *key in userInfo.allKeys)
+//    {
+//        [defaults setObject:[userInfo objectForKey:key] forKey:key];
+//    }
+//    
+//    if ([defaults synchronize])
+//    {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"JZ_WATCH_USERDEFAULT_UPDATED" object:nil];
+//        [self updateComplications];
+//    }
+//}
+
+- (void)updateComplications
+{
+    for (CLKComplication *complication in [[CLKComplicationServer sharedInstance] activeComplications])
+    {
+        [[CLKComplicationServer sharedInstance] reloadTimelineForComplication:complication];
+    }
+}
 
 @end

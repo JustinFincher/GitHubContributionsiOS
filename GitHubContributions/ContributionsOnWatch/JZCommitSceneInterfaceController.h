@@ -10,5 +10,5 @@
 #import <Foundation/Foundation.h>
 
 @interface JZCommitSceneInterfaceController : WKInterfaceController
-
+- (void)refreshView;
 @end

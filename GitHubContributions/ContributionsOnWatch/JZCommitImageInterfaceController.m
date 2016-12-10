@@ -12,6 +12,7 @@
 #import "JZHeader.h"
 
 @interface JZCommitImageInterfaceController ()
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *noDataLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *commitImage;
 @end
 
@@ -21,11 +22,22 @@
     [super awakeWithContext:context];
     
     // Configure interface objects here.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:@"JZ_WATCH_USERDEFAULT_UPDATED" object:nil];
 }
+
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    [self refreshView];
+}
+
+- (void)didDeactivate {
+    // This method is called when watch view controller is no longer visible
+    [super didDeactivate];
+}
+- (void)refreshView;
+{
     NSMutableArray *weeks;
     NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
     if (data != nil)
@@ -34,20 +46,18 @@
         if (!weeks)
         {
             JZLog(@"NSUserDefaults DO NOT HAVE weeks DATA");
+            [self.noDataLabel setHidden:NO];
         }else
         {
             JZLog(@"NSUserDefaults DO HAVE weeks DATA");
+            [self.noDataLabel setHidden:YES];
             [self refreshFromCommits:weeks];
         }
+    }else
+    {
+        [self.noDataLabel setHidden:NO];
     }
-
 }
-
-- (void)didDeactivate {
-    // This method is called when watch view controller is no longer visible
-    [super didDeactivate];
-}
-
 - (void)refreshFromCommits:(NSMutableArray *)array
 {
     

@@ -18,7 +18,7 @@
 #pragma mark - Timeline Configuration
 
 - (void)getSupportedTimeTravelDirectionsForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimeTravelDirections directions))handler {
-    handler(CLKComplicationTimeTravelDirectionForward|CLKComplicationTimeTravelDirectionBackward);
+    handler(0);
 }
 
 - (void)getTimelineStartDateForComplication:(CLKComplication *)complication withHandler:(void(^)(NSDate * __nullable date))handler {
@@ -37,7 +37,7 @@
 
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler
 {
-    CLKComplicationTemplate *template =[[JZComplicationDataManager sharedManager] getComplicationFrom:complication isSample:NO];
+    CLKComplicationTemplate *template = [[JZComplicationDataManager sharedManager] getComplicationFrom:complication isSample:NO];
     if (template)
     {
         CLKComplicationTimelineEntry *entry = [CLKComplicationTimelineEntry entryWithDate:[NSDate date] complicationTemplate:template];
@@ -71,11 +71,5 @@
         handler(nil);
     }
 }
-
-- (void)getNextRequestedUpdateDateWithHandler:(void (^)(NSDate * _Nullable))handler
-{
-    handler([NSDate dateWithTimeIntervalSinceNow:1800.0f]);
-}
-
 
 @end

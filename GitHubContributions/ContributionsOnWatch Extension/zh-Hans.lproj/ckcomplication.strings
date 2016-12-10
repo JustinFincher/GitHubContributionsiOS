@@ -1,0 +1,11 @@
+/* 
+  ckcomplication.strings
+  GitHubContributions
+
+  Created by Justin Fincher on 2016/12/10.
+  Copyright © 2016年 JustZht. All rights reserved.
+*/
+
+"Today" = "今日";
+"Week" = "这周";
+"Commits" = "Commits";

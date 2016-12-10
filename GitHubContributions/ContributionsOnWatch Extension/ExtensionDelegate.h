@@ -9,5 +9,5 @@
 #import <WatchKit/WatchKit.h>
 
 @interface ExtensionDelegate : NSObject <WKExtensionDelegate>
-
+- (void)updateComplications;
 @end

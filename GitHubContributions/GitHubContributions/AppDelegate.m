@@ -64,7 +64,6 @@
         {
             case NotReachable:
             {
-                
                 break;
             }
                 
@@ -117,11 +116,7 @@
         if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
         {
             JZLog(@"UIBackgroundFetchResultNewData");
-            WCSession* session = [WCSession defaultSession];
-            if ([session activationState] == WCSessionActivationStateActivated)
-            {
-                [session updateApplicationContext:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] error:nil];
-            }
+            [self syncUserDefaultToWatch];
             completionHandler(UIBackgroundFetchResultNewData);
         }else
         {
@@ -133,6 +128,15 @@
     {
         JZLog(@"UIBackgroundFetchResultFailed");
         completionHandler(UIBackgroundFetchResultFailed);
+    }
+}
+
+- (void)syncUserDefaultToWatch
+{
+    WCSession* session = [WCSession defaultSession];
+    if ([session activationState] == WCSessionActivationStateActivated)
+    {
+        [session updateApplicationContext:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] error:nil];
     }
 }
 
@@ -166,7 +170,7 @@
 #pragma mark - WCSessionDelegate
 - (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error
 {
-    [session updateApplicationContext:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] error:nil];
+    [self syncUserDefaultToWatch];
 }
 - (void)sessionDidBecomeInactive:(WCSession *)session
 {}
