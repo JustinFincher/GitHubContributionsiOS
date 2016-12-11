@@ -113,16 +113,19 @@
     {
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
         [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
-        if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
-        {
-            JZLog(@"UIBackgroundFetchResultNewData");
-            [self syncUserDefaultToWatch];
-            completionHandler(UIBackgroundFetchResultNewData);
-        }else
-        {
-            JZLog(@"UIBackgroundFetchResultFailed");
-            completionHandler(UIBackgroundFetchResultFailed);
-        }
+//        if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
+//        {
+//            JZLog(@"UIBackgroundFetchResultNewData");
+//            [self syncUserDefaultToWatch];
+//            completionHandler(UIBackgroundFetchResultNewData);
+//        }else
+//        {
+//            JZLog(@"UIBackgroundFetchResultFailed");
+//            completionHandler(UIBackgroundFetchResultFailed);
+//        }
+        JZLog(@"UIBackgroundFetchResultNewData");
+        [self syncUserDefaultToWatch];
+        completionHandler(UIBackgroundFetchResultNewData);
     }
     else
     {
@@ -136,7 +139,7 @@
     WCSession* session = [WCSession defaultSession];
     if ([session activationState] == WCSessionActivationStateActivated)
     {
-        [session updateApplicationContext:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] error:nil];
+        [session transferUserInfo:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation]];
     }
 }
 

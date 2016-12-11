@@ -109,7 +109,6 @@
         JZLog(@"%@",[error localizedDescription]);
     }
 }
-
 - (void)sessionDidBecomeInactive:(WCSession *)session
 {
     
@@ -118,14 +117,13 @@
 {
     
 }
--(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext {
-    JZLog(@"New Session Context: %@", applicationContext);
-    
+- (void)session:(WCSession *)session didReceiveUserInfo:(NSDictionary<NSString *,id> *)userInfo
+{
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:JZSuiteName];
     
-    for (NSString *key in applicationContext.allKeys)
+    for (NSString *key in userInfo.allKeys)
     {
-        [defaults setObject:[applicationContext objectForKey:key] forKey:key];
+        [defaults setObject:[userInfo objectForKey:key] forKey:key];
     }
     
     if ([defaults synchronize])
@@ -134,22 +132,21 @@
         [self updateComplications];
     }
 }
-
-//- (void)session:(WCSession *)session didReceiveUserInfo:(NSDictionary<NSString *,id> *)userInfo
-//{
-//    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:JZSuiteName];
-//    
-//    for (NSString *key in userInfo.allKeys)
-//    {
-//        [defaults setObject:[userInfo objectForKey:key] forKey:key];
-//    }
-//    
-//    if ([defaults synchronize])
-//    {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"JZ_WATCH_USERDEFAULT_UPDATED" object:nil];
-//        [self updateComplications];
-//    }
-//}
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
+{
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:JZSuiteName];
+    
+    for (NSString *key in message.allKeys)
+    {
+        [defaults setObject:[message objectForKey:key] forKey:key];
+    }
+    
+    if ([defaults synchronize])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"JZ_WATCH_USERDEFAULT_UPDATED" object:nil];
+        [self updateComplications];
+    }
+}
 
 - (void)updateComplications
 {

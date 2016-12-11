@@ -149,19 +149,21 @@
         case CLKComplicationFamilyModularLarge:
         {
             CLKComplicationTemplateModularLargeColumns *modularLargeColumns = [[CLKComplicationTemplateModularLargeColumns alloc] init];
-            modularLargeColumns.row1ImageProvider = [CLKImageProvider imageProviderWithOnePieceImage:[UIImage imageNamed:@"Watch_Complication_Template"]];
-            modularLargeColumns.row1Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:NSLocalizedString(@"Commits", nil)];
-            modularLargeColumns.row1Column2TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@""]];
+            modularLargeColumns.row2ImageProvider = [CLKImageProvider imageProviderWithOnePieceImage:[UIImage imageNamed:@"Watch_Complication_Template"]];
+            modularLargeColumns.row3ImageProvider = [CLKImageProvider imageProviderWithOnePieceImage:[UIImage imageNamed:@"Watch_Complication_Template"]];
+            modularLargeColumns.row1Column2TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:NSLocalizedString(@"", nil)];
             
             modularLargeColumns.row2Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:NSLocalizedString(@"Today", nil)];
             modularLargeColumns.row3Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:NSLocalizedString(@"Week", nil)];
             modularLargeColumns.column2Alignment = CLKComplicationColumnAlignmentTrailing;
             if (sampleBool)
             {
+                modularLargeColumns.row1Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@"@GitHub"]];
                 modularLargeColumns.row2Column2TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@"12"]];
                 modularLargeColumns.row3Column2TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@"60"]];
             }else
             {
+                modularLargeColumns.row1Column1TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@"@%@",[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsName"]]];
                 modularLargeColumns.row2Column2TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@"%d",todayNum]];
                 modularLargeColumns.row3Column2TextProvider = [CLKTextProvider localizableTextProviderWithStringsFileTextKey:[NSString stringWithFormat:@"%d",weekNum]];
                 modularLargeColumns.row1ImageProvider.tintColor = today.color;

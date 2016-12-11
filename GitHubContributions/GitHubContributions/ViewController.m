@@ -68,24 +68,21 @@
         {
             NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
             
-            [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] removeObjectForKey:@"GitHubContributionsArray"];
             [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
-            if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
+            WCSession* session = [WCSession defaultSession];
+            if ([session activationState] != WCSessionActivationStateActivated)
             {
-                WCSession* session = [WCSession defaultSession];
-                if ([session activationState] != WCSessionActivationStateActivated)
+                [session activateSession];
+            }else
+            {
+                if ([session isReachable])
                 {
-                    [session activateSession];
-                }else
-                {
-                    NSError *err;
-                    [session updateApplicationContext:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] error:&err];
-                    if (err)
-                    {
-                        JZLog(@"%@",[err localizedDescription]);
-                    }
+                    [session sendMessage:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] replyHandler:nil errorHandler:^(NSError *error)
+                     {
+                         JZLog(@"%@",[error localizedDescription]);
+                     }];
                 }
-                
+                [session transferUserInfo:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation]];
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^
