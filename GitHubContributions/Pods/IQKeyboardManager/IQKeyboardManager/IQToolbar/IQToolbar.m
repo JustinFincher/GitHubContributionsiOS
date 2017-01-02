@@ -32,14 +32,9 @@
 @synthesize titleFont = _titleFont;
 @synthesize title = _title;
 
-Class IQUIToolbarTextButtonClass;
-Class IQUIToolbarButtonClass;
-
-
-+(void)load
++(void)initialize
 {
-    IQUIToolbarTextButtonClass = NSClassFromString(@"UIToolbarTextButton");
-    IQUIToolbarButtonClass = NSClassFromString(@"UIToolbarButton");
+    [super initialize];
 
     //Tint Color
     [[self appearance] setTintColor:nil];
@@ -99,6 +94,28 @@ Class IQUIToolbarButtonClass;
     return sizeThatFit;
 }
 
+-(void)setBarStyle:(UIBarStyle)barStyle
+{
+    [super setBarStyle:barStyle];
+    
+    for (UIBarButtonItem *item in self.items)
+    {
+        if ([item isKindOfClass:[IQTitleBarButtonItem class]])
+        {
+            if (barStyle == UIBarStyleDefault)
+            {
+                [(IQTitleBarButtonItem*)item setSelectableTextColor:[UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0]];
+            }
+            else
+            {
+                [(IQTitleBarButtonItem*)item setSelectableTextColor:[UIColor yellowColor]];
+            }
+            
+            break;
+        }
+    }
+}
+
 -(void)setTintColor:(UIColor *)tintColor
 {
     [super setTintColor:tintColor];
@@ -118,6 +135,7 @@ Class IQUIToolbarButtonClass;
         if ([item isKindOfClass:[IQTitleBarButtonItem class]])
         {
             [(IQTitleBarButtonItem*)item setFont:titleFont];
+            break;
         }
     }
 }
@@ -131,6 +149,35 @@ Class IQUIToolbarButtonClass;
         if ([item isKindOfClass:[IQTitleBarButtonItem class]])
         {
             [(IQTitleBarButtonItem*)item setTitle:title];
+            break;
+        }
+    }
+}
+
+-(void)setTitleTarget:(nullable id)target action:(nullable SEL)action
+{
+    NSInvocation *invocation = nil;
+    
+    if (target && action)
+    {
+        invocation = [NSInvocation invocationWithMethodSignature:[target methodSignatureForSelector:action]];
+        invocation.target = target;
+        invocation.selector = action;
+    }
+    
+    self.titleInvocation = invocation;
+}
+
+-(void)setTitleInvocation:(NSInvocation*)invocation
+{
+    _titleInvocation = invocation;
+
+    for (UIBarButtonItem *item in self.items)
+    {
+        if ([item isKindOfClass:[IQTitleBarButtonItem class]])
+        {
+            [(IQTitleBarButtonItem*)item setTitleInvocation:_titleInvocation];
+            break;
         }
     }
 }
@@ -162,6 +209,15 @@ Class IQUIToolbarButtonClass;
         
         else    return NSOrderedSame;
     }];
+    
+    static Class IQUIToolbarTextButtonClass = Nil;
+    static Class IQUIToolbarButtonClass = Nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        IQUIToolbarTextButtonClass = NSClassFromString(@"UIToolbarTextButton");
+        IQUIToolbarButtonClass = NSClassFromString(@"UIToolbarButton");
+    });
     
     for (UIView *barButtonItemView in subviews)
     {

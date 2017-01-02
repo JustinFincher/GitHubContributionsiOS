@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+        <dict>
+            <key>Type</key>
+            <string>PSTitleValueSpecifier</string>
+            <key>Title</key>
+            <string>App Version</string>
+            <key>DefaultValue</key>
+            <string>0.0.0</string>
+            <key>Key</key>
+            <string>com.JustZht.GitHubContributions.Bundle.Settings.AppVersionTitle</string>
+        </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Debug</string>
+            <key>FooterText</key>
+            <string>For debug use only. If last background fetch data won't update, please file a issue on GitHub (https://github.com/JustinFincher/GitHubContributionsiOS).</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Last Fetch Date</string>
+			<key>DefaultValue</key>
+			<string>Not-Known</string>
+			<key>Key</key>
+			<string>com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Info</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Acknowledgements</string>
+			<key>File</key>
+			<string>Pods-GitHubContributions-settings-metadata</string>
+		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>Title</key>
+            <string>Project Contributors</string>
+            <key>File</key>
+            <string>Contributors</string>
+        </dict>
+	</array>
+</dict>
+</plist>

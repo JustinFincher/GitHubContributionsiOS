@@ -26,14 +26,6 @@
 
 #import <Foundation/NSObjCRuntime.h>
 
-///----------------
-/// @name Debugging
-///----------------
-
-/**
- Set IQKEYBOARDMANAGER_DEBUG=1 in preprocessor macros under build settings to enable debugging.
- */
-
 ///-----------------------------------
 /// @name IQAutoToolbarManageBehaviour
 ///-----------------------------------
@@ -54,6 +46,22 @@ typedef NS_ENUM(NSInteger, IQAutoToolbarManageBehaviour) {
     IQAutoToolbarByPosition,
 };
 
+/**
+ `IQPreviousNextDisplayModeDefault`
+ Show NextPrevious when there are more than 1 textField otherwise hide.
+ 
+ `IQPreviousNextDisplayModeAlwaysHide`
+ Do not show NextPrevious buttons in any case.
+ 
+ `IQPreviousNextDisplayModeAlwaysShow`
+ Always show nextPrevious buttons, if there are more than 1 textField then both buttons will be visible but will be shown as disabled.
+ */
+typedef NS_ENUM(NSUInteger, IQPreviousNextDisplayMode) {
+    IQPreviousNextDisplayModeDefault,
+    IQPreviousNextDisplayModeAlwaysHide,
+    IQPreviousNextDisplayModeAlwaysShow,
+};
+
 ///-------------------
 /// @name Localization
 ///-------------------
@@ -69,68 +77,70 @@ typedef NS_ENUM(NSInteger, IQAutoToolbarManageBehaviour) {
  |                                   iOS NSNotification Mechanism                                    |
  /---------------------------------------------------------------------------------------------------\
  \---------------------------------------------------------------------------------------------------/
+
  
- 1) Begin Editing:-         When TextField begin editing.
- 2) End Editing:-           When TextField end editing.
- 3) Switch TextField:-      When Keyboard Switch from a TextField to another TextField.
- 3) Orientation Change:-    When Device Orientation Change.
+ ------------------------------------------------------------
+ When UITextField become first responder
+ ------------------------------------------------------------
+ - UITextFieldTextDidBeginEditingNotification (UITextField)
+ - UIKeyboardWillShowNotification
+ - UIKeyboardDidShowNotification
  
+ ------------------------------------------------------------
+ When UITextView become first responder
+ ------------------------------------------------------------
+ - UIKeyboardWillShowNotification
+ - UITextViewTextDidBeginEditingNotification (UITextView)
+ - UIKeyboardDidShowNotification
+
+ ------------------------------------------------------------
+ When switching focus from UITextField to another UITextField
+ ------------------------------------------------------------
+ - UITextFieldTextDidEndEditingNotification (UITextField1)
+ - UITextFieldTextDidBeginEditingNotification (UITextField2)
+ - UIKeyboardWillShowNotification
+ - UIKeyboardDidShowNotification
+
+ ------------------------------------------------------------
+ When switching focus from UITextView to another UITextView
+ ------------------------------------------------------------
+ - UITextViewTextDidEndEditingNotification : (UITextView1)
+ - UIKeyboardWillShowNotification
+ - UITextViewTextDidBeginEditingNotification : (UITextView2)
+ - UIKeyboardDidShowNotification
  
- ----------------------------------------------------------------------------------------------------------------------------------------------
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- ----------------------------------------------------------------------------------------------------------------------------------------------
- =============
- UITextField
- =============
+ ------------------------------------------------------------
+ When switching focus from UITextField to UITextView
+ ------------------------------------------------------------
+ - UITextFieldTextDidEndEditingNotification (UITextField)
+ - UIKeyboardWillShowNotification
+ - UITextViewTextDidBeginEditingNotification (UITextView)
+ - UIKeyboardDidShowNotification
+
+ ------------------------------------------------------------
+ When switching focus from UITextView to UITextField
+ ------------------------------------------------------------
+ - UITextViewTextDidEndEditingNotification (UITextView)
+ - UITextFieldTextDidBeginEditingNotification (UITextField)
+ - UIKeyboardWillShowNotification
+ - UIKeyboardDidShowNotification
+
+ ------------------------------------------------------------
+ When opening/closing UIKeyboard Predictive bar
+ ------------------------------------------------------------
+ - UIKeyboardWillShowNotification
+ - UIKeyboardDidShowNotification
+
+ ------------------------------------------------------------
+ On orientation change
+ ------------------------------------------------------------
+ - UIApplicationWillChangeStatusBarOrientationNotification
+ - UIKeyboardWillHideNotification
+ - UIKeyboardDidHideNotification
+ - UIApplicationDidChangeStatusBarOrientationNotification
+ - UIKeyboardWillShowNotification
+ - UIKeyboardDidShowNotification
+ - UIKeyboardWillShowNotification
+ - UIKeyboardDidShowNotification
  
- Begin Editing                                Begin Editing
- --------------------------------------------           ----------------------------------           ---------------------------------
- |UITextFieldTextDidBeginEditingNotification| --------> | UIKeyboardWillShowNotification | --------> | UIKeyboardDidShowNotification |
- --------------------------------------------           ----------------------------------           ---------------------------------
- ^                  Switch TextField             ^               Switch TextField
- |                                               |
- |                                               |
- | Switch TextField                              | Orientation Change
- |                                               |
- |                                               |
- |                                               |
- --------------------------------------------    |      ----------------------------------           ---------------------------------
- | UITextFieldTextDidEndEditingNotification | <-------- | UIKeyboardWillHideNotification | --------> | UIKeyboardDidHideNotification |
- --------------------------------------------           ----------------------------------           ---------------------------------
- |                    End Editing                                                             ^
- |                                                                                            |
- |--------------------End Editing-------------------------------------------------------------|
- 
- 
- ----------------------------------------------------------------------------------------------------------------------------------------------
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- ----------------------------------------------------------------------------------------------------------------------------------------------
- =============
- UITextView
- =============
- |-------------------Switch TextView--------------------------------------------------------------|
- | |------------------Begin Editing-------------------------------------------------------------| |
- | |                                                                                            | |
- v |                  Begin Editing                               Switch TextView               v |
- --------------------------------------------           ----------------------------------           ---------------------------------
- | UITextViewTextDidBeginEditingNotification| <-------- | UIKeyboardWillShowNotification | --------> | UIKeyboardDidShowNotification |
- --------------------------------------------           ----------------------------------           ---------------------------------
- ^
- |
- |------------------------Switch TextView--------|
- |                                               | Orientation Change
- |                                               |
- |                                               |
- |                                               |
- --------------------------------------------    |      ----------------------------------           ---------------------------------
- | UITextViewTextDidEndEditingNotification  | <-------- | UIKeyboardWillHideNotification |           | UIKeyboardDidHideNotification |
- --------------------------------------------           ----------------------------------           ---------------------------------
- |                    End Editing                                                             ^
- |                                                                                            |
- |--------------------End Editing-------------------------------------------------------------|
- 
- 
- ----------------------------------------------------------------------------------------------------------------------------------------------
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- ----------------------------------------------------------------------------------------------------------------------------------------------
  */

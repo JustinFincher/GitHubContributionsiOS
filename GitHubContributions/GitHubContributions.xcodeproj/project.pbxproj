@@ -29,6 +29,8 @@
 		0D1AF72E1DF7967400EAA85D /* JZCommitSceneInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF72D1DF7967400EAA85D /* JZCommitSceneInterfaceController.m */; };
 		0D1AF7311DF798C200EAA85D /* JZSettingsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF7301DF798C200EAA85D /* JZSettingsInterfaceController.m */; };
 		0D565F9D1D85CAC5006C0324 /* JZCommitSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */; };
+		0D96B1E81E1A9746001C1228 /* JZNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1E71E1A9746001C1228 /* JZNotificationManager.m */; };
+		0D96B1EB1E1A9C9A001C1228 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D96B1EA1E1A9C9A001C1228 /* Settings.bundle */; };
 		0DB5566E1D859A120042275E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB5566D1D859A120042275E /* main.m */; };
 		0DB556711D859A120042275E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556701D859A120042275E /* AppDelegate.m */; };
 		0DB556741D859A120042275E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556731D859A120042275E /* ViewController.m */; };
@@ -46,8 +48,14 @@
 		0DEF7A481D85FE7D00761555 /* JZCommitDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556AA1D85B52D0042275E /* JZCommitDataModel.m */; };
 		0DEF7A521D86812000761555 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF7A511D86812000761555 /* Reachability.m */; };
 		0DEF7A531D86812000761555 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF7A511D86812000761555 /* Reachability.m */; };
+		214B175D2E8668D3A43786E9 /* Pods-TodayExtension-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = D657E72920B53E796FFABA39 /* Pods-TodayExtension-settings-metadata.plist */; };
+		287DFBDF760673F29A0DC0CF /* Pods-TodayExtension-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B8D0D93ED354561D6EC3122 /* Pods-TodayExtension-metadata.plist */; };
+		5E36697B78C0D44233888E56 /* Pods-ContributionsOnWatch Extension-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5603E050A82D3486F9B68D2 /* Pods-ContributionsOnWatch Extension-settings-metadata.plist */; };
+		6B747912C7B8314E5FAFE18A /* Pods-GitHubContributions-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3ECA54723EECDD74E656CF5 /* Pods-GitHubContributions-metadata.plist */; };
 		952731AEB4CB6F421E020BFB /* libPods-TodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1FBCD065571765C1D4B127 /* libPods-TodayExtension.a */; };
 		9617395C9EBF34E2D36B9981 /* libPods-ContributionsOnWatch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FBB3E500AE9DE44C4ACC3A /* libPods-ContributionsOnWatch Extension.a */; };
+		A678BE80CF72460EB7239BD9 /* Pods-ContributionsOnWatch Extension-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7C8BAA5D3FAD966FDCD99C4 /* Pods-ContributionsOnWatch Extension-metadata.plist */; };
+		D2363A55E4477AA033E81A0D /* Pods-GitHubContributions-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72C971AF1C5EA06986FD74D /* Pods-GitHubContributions-settings-metadata.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +157,9 @@
 		0D1AF7301DF798C200EAA85D /* JZSettingsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZSettingsInterfaceController.m; sourceTree = "<group>"; };
 		0D565F9B1D85CAC5006C0324 /* JZCommitSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitSceneView.h; sourceTree = "<group>"; };
 		0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitSceneView.m; sourceTree = "<group>"; };
+		0D96B1E61E1A9746001C1228 /* JZNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNotificationManager.h; sourceTree = "<group>"; };
+		0D96B1E71E1A9746001C1228 /* JZNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZNotificationManager.m; sourceTree = "<group>"; };
+		0D96B1EA1E1A9C9A001C1228 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0DB556691D859A120042275E /* GitHubContributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubContributions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB5566D1D859A120042275E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DB5566F1D859A120042275E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -177,13 +188,19 @@
 		0DEF7A461D85FC7E00761555 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		0DEF7A501D86812000761555 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		0DEF7A511D86812000761555 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Reachability.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B8D0D93ED354561D6EC3122 /* Pods-TodayExtension-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-TodayExtension-metadata.plist"; path = "Pods/Pods-TodayExtension-metadata.plist"; sourceTree = "<group>"; };
 		2237E1EDAB39F7AA0EA47331 /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		36FBB3E500AE9DE44C4ACC3A /* libPods-ContributionsOnWatch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ContributionsOnWatch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A245A6947FC32EF01EBE6CC /* Pods-ContributionsOnWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContributionsOnWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContributionsOnWatch Extension/Pods-ContributionsOnWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		5B1FBCD065571765C1D4B127 /* libPods-TodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5603E050A82D3486F9B68D2 /* Pods-ContributionsOnWatch Extension-settings-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-ContributionsOnWatch Extension-settings-metadata.plist"; path = "GitHubContributions/Settings.bundle/Pods-ContributionsOnWatch Extension-settings-metadata.plist"; sourceTree = "<group>"; };
+		B7C8BAA5D3FAD966FDCD99C4 /* Pods-ContributionsOnWatch Extension-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-ContributionsOnWatch Extension-metadata.plist"; path = "Pods/Pods-ContributionsOnWatch Extension-metadata.plist"; sourceTree = "<group>"; };
 		BE94186F89229304926B28EC /* Pods-GitHubContributions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubContributions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubContributions/Pods-GitHubContributions.debug.xcconfig"; sourceTree = "<group>"; };
 		C77384543F54CDE4CC88222F /* Pods-GitHubContributions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubContributions.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubContributions/Pods-GitHubContributions.release.xcconfig"; sourceTree = "<group>"; };
+		D657E72920B53E796FFABA39 /* Pods-TodayExtension-settings-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-TodayExtension-settings-metadata.plist"; path = "GitHubContributions/Settings.bundle/Pods-TodayExtension-settings-metadata.plist"; sourceTree = "<group>"; };
 		DBBF7451C332543E2F9FABD2 /* Pods-ContributionsOnWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContributionsOnWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContributionsOnWatch Extension/Pods-ContributionsOnWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		E3ECA54723EECDD74E656CF5 /* Pods-GitHubContributions-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-GitHubContributions-metadata.plist"; path = "Pods/Pods-GitHubContributions-metadata.plist"; sourceTree = "<group>"; };
+		E72C971AF1C5EA06986FD74D /* Pods-GitHubContributions-settings-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-GitHubContributions-settings-metadata.plist"; path = "GitHubContributions/Settings.bundle/Pods-GitHubContributions-settings-metadata.plist"; sourceTree = "<group>"; };
 		F6FF73B72CF8CE6258D62013 /* libPods-GitHubContributions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitHubContributions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -295,6 +312,8 @@
 			children = (
 				0DEF7A501D86812000761555 /* Reachability.h */,
 				0DEF7A511D86812000761555 /* Reachability.m */,
+				0D96B1E61E1A9746001C1228 /* JZNotificationManager.h */,
+				0D96B1E71E1A9746001C1228 /* JZNotificationManager.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -328,6 +347,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		0D96B1E91E1A9C8A001C1228 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0D96B1EA1E1A9C9A001C1228 /* Settings.bundle */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		0DB556601D859A120042275E = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +386,7 @@
 				0D14EAF31DF78C01002AF0C3 /* JZHeader.h */,
 				0DB5566F1D859A120042275E /* AppDelegate.h */,
 				0DB556701D859A120042275E /* AppDelegate.m */,
+				0D96B1E91E1A9C8A001C1228 /* Settings */,
 				0D14EB001DF79144002AF0C3 /* Controller */,
 				0D14EAFF1DF7913A002AF0C3 /* Data */,
 				0DB556751D859A120042275E /* Main.storyboard */,
@@ -427,6 +455,12 @@
 				01881A84E6066C9B7BFAB953 /* Pods-TodayExtension.release.xcconfig */,
 				DBBF7451C332543E2F9FABD2 /* Pods-ContributionsOnWatch Extension.debug.xcconfig */,
 				3A245A6947FC32EF01EBE6CC /* Pods-ContributionsOnWatch Extension.release.xcconfig */,
+				E3ECA54723EECDD74E656CF5 /* Pods-GitHubContributions-metadata.plist */,
+				E72C971AF1C5EA06986FD74D /* Pods-GitHubContributions-settings-metadata.plist */,
+				1B8D0D93ED354561D6EC3122 /* Pods-TodayExtension-metadata.plist */,
+				D657E72920B53E796FFABA39 /* Pods-TodayExtension-settings-metadata.plist */,
+				B7C8BAA5D3FAD966FDCD99C4 /* Pods-ContributionsOnWatch Extension-metadata.plist */,
+				A5603E050A82D3486F9B68D2 /* Pods-ContributionsOnWatch Extension-settings-metadata.plist */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -482,6 +516,7 @@
 				0DB556651D859A120042275E /* Sources */,
 				0DB556661D859A120042275E /* Frameworks */,
 				0DB556671D859A120042275E /* Resources */,
+				0D96B1EC1E1AAFCF001C1228 /* ShellScript */,
 				0DB556991D859A430042275E /* Embed App Extensions */,
 				B7DE7E371EA76DCA30324E54 /* [CP] Embed Pods Frameworks */,
 				A0D53904E8291543FD7AB94E /* [CP] Copy Pods Resources */,
@@ -625,6 +660,8 @@
 			files = (
 				0D10F0EE1DFB2E5A00904A8B /* ckcomplication.strings in Resources */,
 				0D0CE4ED1DF76B1C0036351D /* Assets.xcassets in Resources */,
+				A678BE80CF72460EB7239BD9 /* Pods-ContributionsOnWatch Extension-metadata.plist in Resources */,
+				5E36697B78C0D44233888E56 /* Pods-ContributionsOnWatch Extension-settings-metadata.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,9 +669,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D96B1EB1E1A9C9A001C1228 /* Settings.bundle in Resources */,
 				0DB5567C1D859A120042275E /* LaunchScreen.storyboard in Resources */,
 				0DB556791D859A120042275E /* Assets.xcassets in Resources */,
 				0DB556771D859A120042275E /* Main.storyboard in Resources */,
+				6B747912C7B8314E5FAFE18A /* Pods-GitHubContributions-metadata.plist in Resources */,
+				D2363A55E4477AA033E81A0D /* Pods-GitHubContributions-settings-metadata.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +684,8 @@
 			files = (
 				0DB5569D1D85A9F20042275E /* Assets.xcassets in Resources */,
 				0DB556911D859A430042275E /* MainInterface.storyboard in Resources */,
+				287DFBDF760673F29A0DC0CF /* Pods-TodayExtension-metadata.plist in Resources */,
+				214B175D2E8668D3A43786E9 /* Pods-TodayExtension-settings-metadata.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +743,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi";
+		};
+		0D96B1EC1E1AAFCF001C1228 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "version=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$PROJECT_DIR/$INFOPLIST_FILE\")\nbuild=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$PROJECT_DIR/$INFOPLIST_FILE\")\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:0:DefaultValue $version ($build)\" \"$CODESIGNING_FOLDER_PATH/Settings.bundle/Root.plist\"";
 		};
 		0DBA3E8D1E0C060F00C1D8DA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -876,6 +931,7 @@
 				0DB556741D859A120042275E /* ViewController.m in Sources */,
 				0DB556711D859A120042275E /* AppDelegate.m in Sources */,
 				0DEF7A521D86812000761555 /* Reachability.m in Sources */,
+				0D96B1E81E1A9746001C1228 /* JZNotificationManager.m in Sources */,
 				0DB5566E1D859A120042275E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
