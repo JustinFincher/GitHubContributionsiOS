@@ -26,9 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [Fabric with:@[[Crashlytics class]]];
 #if DEBUG
-    [[Fabric sharedSDK] setDebug: YES];
+#else
+    [Fabric with:@[[Crashlytics class],[Answers class]]];
 #endif
     
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
@@ -101,6 +101,9 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle"];
+    
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
     content.title = @"Contributions Debug Task";
     content.body = @"Doing Background Fetch";
@@ -144,6 +147,8 @@
     NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
     if (array)
     {
+        [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Success"
+                       customAttributes:@{}];
         
         UNMutableNotificationContent *content = [UNMutableNotificationContent new];
         content.title = @"Contributions Debug Task";
@@ -164,22 +169,18 @@
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
         [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
-        //        if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
-        //        {
-        //            JZLog(@"UIBackgroundFetchResultNewData");
-        //            [self syncUserDefaultToWatch];
-        //            completionHandler(UIBackgroundFetchResultNewData);
-        //        }else
-        //        {
-        //            JZLog(@"UIBackgroundFetchResultFailed");
-        //            completionHandler(UIBackgroundFetchResultFailed);
-        //        }
+        
+        [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastSuccessFetchTimeTitle"];
+        
         JZLog(@"UIBackgroundFetchResultNewData");
         [self syncUserDefaultToWatch];
         completionHandler(UIBackgroundFetchResultNewData);
     }
     else
     {
+        [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Fail"
+                       customAttributes:@{}];
+        
         UNMutableNotificationContent *content = [UNMutableNotificationContent new];
         content.title = @"Contributions Debug Task";
         content.body = @"Background Fetch Failed";

@@ -42,7 +42,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    _settingsButton.hidden = YES;
+    [_settingsButton setTitle:@"" forState:UIControlStateNormal];
     
     NSMutableArray *weeks;
     NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
@@ -85,7 +85,7 @@
 
 - (void)showError
 {
-    _settingsButton.hidden = NO;
+    [_settingsButton setTitle:@"Tap to set username" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

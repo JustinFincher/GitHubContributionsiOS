@@ -20,24 +20,6 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Debug</string>
-            <key>FooterText</key>
-            <string>For debug use only. If last background fetch data won't update, please file a issue on GitHub (https://github.com/JustinFincher/GitHubContributionsiOS).</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Last Fetch Date</string>
-			<key>DefaultValue</key>
-			<string>Not-Known</string>
-			<key>Key</key>
-			<string>com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
 			<string>Info</string>
 		</dict>
 		<dict>
@@ -55,6 +37,34 @@
             <string>Project Contributors</string>
             <key>File</key>
             <string>Contributors</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Debug Background Fetch</string>
+            <key>FooterText</key>
+            <string>For debug use only. If last background fetch data won't update, please file an issue on GitHub (https://github.com/JustinFincher/GitHubContributionsiOS).</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSTitleValueSpecifier</string>
+            <key>Title</key>
+            <string>Last Attempt</string>
+            <key>DefaultValue</key>
+            <string>nil</string>
+            <key>Key</key>
+            <string>com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSTitleValueSpecifier</string>
+            <key>Title</key>
+            <string>Last Success</string>
+            <key>DefaultValue</key>
+            <string>nil</string>
+            <key>Key</key>
+            <string>com.JustZht.GitHubContributions.Bundle.Settings.LastSuccessFetchTimeTitle</string>
         </dict>
 	</array>
 </dict>

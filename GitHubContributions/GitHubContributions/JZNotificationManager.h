@@ -10,4 +10,6 @@
 
 @interface JZNotificationManager : NSObject
 
+- (BOOL) isNotificationEnabled;
+
 @end
