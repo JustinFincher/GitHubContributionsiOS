@@ -11,6 +11,9 @@
 #import "JZCommitManager.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "JZHeader.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+#import <UserNotifications/UserNotifications.h>
 
 @interface AppDelegate ()<WCSessionDelegate>
 
@@ -23,7 +26,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    [Fabric with:@[[Crashlytics class]]];
+#if DEBUG
+    [[Fabric sharedSDK] setDebug: YES];
+#endif
+    
+    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                                                                        completionHandler:^(BOOL granted, NSError * _Nullable error)
+     {
+         if (!error) {
+             
+         }
+     }];
+    
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
     if ([WCSession isSupported])
     {
         WCSession* session = [WCSession defaultSession];
@@ -58,7 +74,7 @@
     if (reachability == self.hostReachability)
     {
         NetworkStatus netStatus = [reachability currentReachabilityStatus];
-//        BOOL connectionRequired = [reachability connectionRequired];
+        //        BOOL connectionRequired = [reachability connectionRequired];
         
         switch (netStatus)
         {
@@ -84,14 +100,30 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+    UNMutableNotificationContent *content = [UNMutableNotificationContent new];
+    content.title = @"Contributions Debug Task";
+    content.body = @"Doing Background Fetch";
+    content.sound = [UNNotificationSound defaultSound];
+    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1
+                                                                                                    repeats:NO];
+    NSString *identifier = [NSString stringWithFormat:@"Notif%@",[NSDate date]];
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier
+                                                                          content:content trigger:trigger];
+    
+    [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        if (error != nil) {
+            NSLog(@"Something went wrong: %@",error);
+        }
+    }];
+    
     NetworkStatus netStatus = [self.hostReachability currentReachabilityStatus];
     switch (netStatus)
     {
         case NotReachable:
         {
             JZLog(@"NetworkStatus NotReachable");
-            JZLog(@"UIBackgroundFetchResultFailed");
-            completionHandler(UIBackgroundFetchResultFailed);
+            JZLog(@"UIBackgroundFetchResultNoData");
+            completionHandler(UIBackgroundFetchResultNoData);
             return;
             break;
         }
@@ -111,26 +143,60 @@
     NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
     if (array)
     {
+        
+        UNMutableNotificationContent *content = [UNMutableNotificationContent new];
+        content.title = @"Contributions Debug Task";
+        content.body = @"Background Fetch Success";
+        content.sound = [UNNotificationSound defaultSound];
+        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1
+                                                                                                        repeats:NO];
+        NSString *identifier = [NSString stringWithFormat:@"Notif%@",[NSDate date]];
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier
+                                                                              content:content trigger:trigger];
+        
+        [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+            if (error != nil) {
+                NSLog(@"Something went wrong: %@",error);
+            }
+        }];
+        
+        
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
         [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
-//        if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
-//        {
-//            JZLog(@"UIBackgroundFetchResultNewData");
-//            [self syncUserDefaultToWatch];
-//            completionHandler(UIBackgroundFetchResultNewData);
-//        }else
-//        {
-//            JZLog(@"UIBackgroundFetchResultFailed");
-//            completionHandler(UIBackgroundFetchResultFailed);
-//        }
+        //        if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] synchronize])
+        //        {
+        //            JZLog(@"UIBackgroundFetchResultNewData");
+        //            [self syncUserDefaultToWatch];
+        //            completionHandler(UIBackgroundFetchResultNewData);
+        //        }else
+        //        {
+        //            JZLog(@"UIBackgroundFetchResultFailed");
+        //            completionHandler(UIBackgroundFetchResultFailed);
+        //        }
         JZLog(@"UIBackgroundFetchResultNewData");
         [self syncUserDefaultToWatch];
         completionHandler(UIBackgroundFetchResultNewData);
     }
     else
     {
-        JZLog(@"UIBackgroundFetchResultFailed");
-        completionHandler(UIBackgroundFetchResultFailed);
+        UNMutableNotificationContent *content = [UNMutableNotificationContent new];
+        content.title = @"Contributions Debug Task";
+        content.body = @"Background Fetch Failed";
+        content.sound = [UNNotificationSound defaultSound];
+        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1
+                                                                                                        repeats:NO];
+        NSString *identifier = [NSString stringWithFormat:@"Notif%@",[NSDate date]];
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier
+                                                                              content:content trigger:trigger];
+        
+        [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+            if (error != nil) {
+                NSLog(@"Something went wrong: %@",error);
+            }
+        }];
+        
+        JZLog(@"UIBackgroundFetchResultNoData");
+        completionHandler(UIBackgroundFetchResultNoData);
     }
 }
 

@@ -8,6 +8,8 @@ target 'GitHubContributions' do
   # Pods for GitHubContributions
 pod 'IQKeyboardManager'
 pod 'DateTools'
+pod 'Fabric'
+pod 'Crashlytics'
 end
 
 target 'TodayExtension' do
