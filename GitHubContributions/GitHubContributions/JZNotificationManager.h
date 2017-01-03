@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UserNotifications/UserNotifications.h>
 
 @interface JZNotificationManager : NSObject
 
++ (id)sharedManager;
+
 - (BOOL) isNotificationEnabled;
 
-- (void) triggerNotificationNow;
-
+- (void) triggerSuccessNotificationWithData:(NSMutableArray *)dataArray;
+- (void) triggerFailedNotification;
 @end

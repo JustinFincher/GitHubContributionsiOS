@@ -48,27 +48,28 @@
     NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
     if (data != nil)
     {
-        weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-        if (!weeks)
+        if (self.extensionContext.widgetActiveDisplayMode == NCWidgetDisplayModeCompact)
         {
-            JZLog(@"NSUserDefaults DO NOT HAVE weeks DATA");
+            [_commitImageView refreshData];
         }else
         {
-            JZLog(@"NSUserDefaults DO HAVE weeks DATA");
-            [_commitSceneView refreshFromCommits:weeks];
-            [_commitImageView refreshData];
+            [_commitSceneView refreshData];
         }
     }else
     {
-        JZLog(@"NSUserDefaults DO NOT HAVE DATA");
         weeks = [[JZCommitManager sharedManager] refresh];
         if (!weeks)
         {
             [self showError];
             return;
         }
-        [_commitSceneView refreshFromCommits:weeks];
-        [_commitImageView refreshData];
+        if (self.extensionContext.widgetActiveDisplayMode == NCWidgetDisplayModeCompact)
+        {
+            [_commitImageView refreshData];
+        }else
+        {
+            [_commitSceneView refreshData];
+        }
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:weeks] ;
         [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
@@ -118,7 +119,10 @@
                              _commitImageView.alpha = 1.0f;
                              _commitSceneView.alpha = 0.0f;
                              [self.view layoutIfNeeded]; // Called on parent view
-                         }];
+                         } completion:^(BOOL finished)
+         {
+             [_commitImageView refreshData];
+         }];
     }
     else {
         self.preferredContentSize = CGSizeMake(0, 200.0);
@@ -128,7 +132,11 @@
                              _commitImageView.alpha = 0.0f;
                              _commitSceneView.alpha = 1.0f;
                              [self.view layoutIfNeeded]; // Called on parent view
-                         }];
+                         }completion:^(BOOL finished)
+         {
+             [_commitSceneView refreshData];
+         }];
+
     }
 }
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets

@@ -13,7 +13,8 @@
 @interface JZDataVisualizationManager : NSObject
 
 typedef NS_ENUM(NSInteger, JZDataVisualizationOSType) {
-    JZDataVisualizationOSType_iOS,
+    JZDataVisualizationOSType_iOS_Widget,
+    JZDataVisualizationOSType_iOS_Notification,
     JZDataVisualizationOsType_watchOS
 };
 

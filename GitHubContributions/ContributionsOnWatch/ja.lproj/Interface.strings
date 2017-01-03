@@ -1,0 +1,51 @@
+
+/* Class = "WKInterfaceLabel"; text = "Q : Cool, how can I report issues?"; ObjectID = "1W8-1I-OaM"; */
+"1W8-1I-OaM.text" = "Q : Cool, how can I report issues?";
+
+/* Class = "WKInterfaceLabel"; text = "Q : What if I want to force update commits data?"; ObjectID = "9Xe-8k-xZD"; */
+"9Xe-8k-xZD.text" = "Q : What if I want to force update commits data?";
+
+/* Class = "WKInterfaceController"; title = "SETTINGS"; ObjectID = "AgC-eL-Hgc"; */
+"AgC-eL-Hgc.title" = "SETTINGS";
+
+/* Class = "WKInterfaceController"; title = "3D GRAPH"; ObjectID = "BgT-Js-SkK"; */
+"BgT-Js-SkK.title" = "3D GRAPH";
+
+/* Class = "WKInterfaceLabel"; text = "Alert Label"; ObjectID = "IdU-wH-bcW"; */
+"IdU-wH-bcW.text" = "Alert Label";
+
+/* Class = "WKInterfaceLabel"; text = "A : Open Contributions For GitHub on both your watch and iOS Device. Press \"Update Info\" from your iOS Device, wait for a while and swipe to 2D / 3D view to see if data have been updated. If commits data is updated but complications is not, try force touch this page and press \"refresh\" menu. "; ObjectID = "JxM-bP-joV"; */
+"JxM-bP-joV.text" = "A : Open Contributions For GitHub on both your watch and iOS Device. Press \"Update Info\" from your iOS Device, wait for a while and swipe to 2D / 3D view to see if data have been updated. If commits data is updated but complications is not, try force touch this page and press \"refresh\" menu. ";
+
+/* Class = "WKInterfaceLabel"; text = "No data. Please setup your username on your iPhone."; ObjectID = "MEV-m3-4TH"; */
+"MEV-m3-4TH.text" = "No data. Please setup your username on your iPhone.";
+
+/* Class = "WKInterfaceController"; title = "2D GRAPH"; ObjectID = "MaG-3Z-9fA"; */
+"MaG-3Z-9fA.title" = "2D GRAPH";
+
+/* Class = "WKInterfaceLabel"; text = "Q : Why is this thing never updated?"; ObjectID = "PVv-Qs-acR"; */
+"PVv-Qs-acR.text" = "Q : Why is this thing never updated?";
+
+/* Class = "WKInterfaceLabel"; text = "Contributions For GitHub 🕹⌚️"; ObjectID = "SdJ-Iu-trA"; */
+"SdJ-Iu-trA.text" = "Contributions For GitHub 🕹⌚️";
+
+/* Class = "WKInterfaceLabel"; text = "FAQ"; ObjectID = "ULZ-Zp-tkf"; */
+"ULZ-Zp-tkf.text" = "FAQ";
+
+/* Class = "WKInterfaceLabel"; text = "Q : How can I change commit bar height in 3D view?   "; ObjectID = "Ye3-Lk-2nC"; */
+"Ye3-Lk-2nC.text" = "Q : How can I change commit bar height in 3D view?   ";
+
+/* Class = "WKInterfaceMenuItem"; title = "Refresh"; ObjectID = "dWS-AM-4AU"; */
+"dWS-AM-4AU.title" = "Refresh";
+
+/* Class = "WKInterfaceLabel"; text = "No data. Please setup your username on your iPhone."; ObjectID = "fDZ-XQ-I6l"; */
+"fDZ-XQ-I6l.text" = "No data. Please setup your username on your iPhone.";
+
+/* Class = "WKInterfaceLabel"; text = "A : Please visit https://github.com/JustinFincher/GitHubContributionsiOS to open an issue."; ObjectID = "lg7-44-zOw"; */
+"lg7-44-zOw.text" = "A : Please visit https://github.com/JustinFincher/GitHubContributionsiOS to open an issue.";
+
+/* Class = "WKInterfaceLabel"; text = "A : Scroll your digital crown when 3D view is being displayed!"; ObjectID = "xNr-4a-bQU"; */
+"xNr-4a-bQU.text" = "A : Scroll your digital crown when 3D view is being displayed!";
+
+/* Class = "WKInterfaceLabel"; text = "A : Watch complications is set to only update every 2 hrs due to limitations of watchOS (up to 50 updates a day). Also if you are using an iPhone with iOS 10+ in Mainland China, you may need to check \"Network Permission\" on your iOS settings to enable network access to GitHub, or this app will never gets data."; ObjectID = "y0f-wl-J82"; */
+"y0f-wl-J82.text" = "A : Watch complications is set to only update every 2 hrs due to limitations of watchOS (up to 50 updates a day). Also if you are using an iPhone with iOS 10+ in Mainland China, you may need to check \"Network Permission\" on your iOS settings to enable network access to GitHub, or this app will never gets data.";

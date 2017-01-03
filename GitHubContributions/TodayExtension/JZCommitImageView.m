@@ -35,7 +35,7 @@
 
 - (void)refreshData
 {
-    self.image = [[JZDataVisualizationManager sharedManager] commitImageWithRect:self.frame OS:JZDataVisualizationOSType_iOS];
+    self.image = [[JZDataVisualizationManager sharedManager] commitImageWithRect:self.frame OS:JZDataVisualizationOSType_iOS_Widget];
 }
 
 @end

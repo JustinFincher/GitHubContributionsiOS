@@ -10,5 +10,5 @@
 @import SceneKit;
 
 @interface JZCommitSceneView : SCNView
-- (void)refreshFromCommits:(NSMutableArray *)array;
+- (void)refreshData;
 @end

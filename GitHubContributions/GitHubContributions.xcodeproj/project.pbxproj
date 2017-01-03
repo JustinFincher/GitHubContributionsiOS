@@ -29,6 +29,7 @@
 		0D1AF72E1DF7967400EAA85D /* JZCommitSceneInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF72D1DF7967400EAA85D /* JZCommitSceneInterfaceController.m */; };
 		0D1AF7311DF798C200EAA85D /* JZSettingsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF7301DF798C200EAA85D /* JZSettingsInterfaceController.m */; };
 		0D565F9D1D85CAC5006C0324 /* JZCommitSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */; };
+		0D7703FC1E1C19A00019F507 /* JZDataVisualizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */; };
 		0D96B1E81E1A9746001C1228 /* JZNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1E71E1A9746001C1228 /* JZNotificationManager.m */; };
 		0D96B1EB1E1A9C9A001C1228 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D96B1EA1E1A9C9A001C1228 /* Settings.bundle */; };
 		0D96B1EF1E1B87A3001C1228 /* JZDataVisualizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */; };
@@ -164,6 +165,18 @@
 		0D96B1EA1E1A9C9A001C1228 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0D96B1ED1E1B87A3001C1228 /* JZDataVisualizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZDataVisualizationManager.h; sourceTree = "<group>"; };
 		0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZDataVisualizationManager.m; sourceTree = "<group>"; };
+		0D96B1F11E1B95BF001C1228 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		0D96B1F21E1B95BF001C1228 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0D96B1F31E1B95C0001C1228 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainInterface.strings"; sourceTree = "<group>"; };
+		0D96B1F41E1B95C0001C1228 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Interface.strings"; sourceTree = "<group>"; };
+		0D96B1F51E1B95C0001C1228 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ckcomplication.strings"; sourceTree = "<group>"; };
+		0D96B1F61E1B95D1001C1228 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		0D96B1F71E1B95D1001C1228 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0D96B1F81E1B95D1001C1228 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		0D96B1F91E1B95D1001C1228 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Interface.strings; sourceTree = "<group>"; };
+		0D96B1FA1E1B95D1001C1228 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ckcomplication.strings; sourceTree = "<group>"; };
+		0D96B2001E1BA30B001C1228 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		0D96B2021E1BA30B001C1228 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		0DB556691D859A120042275E /* GitHubContributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubContributions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB5566D1D859A120042275E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DB5566F1D859A120042275E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -423,6 +436,8 @@
 				F6FF73B72CF8CE6258D62013 /* libPods-GitHubContributions.a */,
 				5B1FBCD065571765C1D4B127 /* libPods-TodayExtension.a */,
 				36FBB3E500AE9DE44C4ACC3A /* libPods-ContributionsOnWatch Extension.a */,
+				0D96B2001E1BA30B001C1228 /* UserNotifications.framework */,
+				0D96B2021E1BA30B001C1228 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -636,6 +651,8 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
+				ja,
 			);
 			mainGroup = 0DB556601D859A120042275E;
 			productRefGroup = 0DB5566A1D859A120042275E /* Products */;
@@ -922,6 +939,7 @@
 				0D0BA8091DF7AD9000A893AB /* JZCommitManager.m in Sources */,
 				0D10F0E91DF9CB1F00904A8B /* JZCommitImageInterfaceController.m in Sources */,
 				0D14EAF21DF781ED002AF0C3 /* JZComplicationDataManager.m in Sources */,
+				0D7703FC1E1C19A00019F507 /* JZDataVisualizationManager.m in Sources */,
 				0D1AF72E1DF7967400EAA85D /* JZCommitSceneInterfaceController.m in Sources */,
 				0D0BA8081DF7A4B700A893AB /* JZCommitDataModel.m in Sources */,
 				0D0CE4E81DF76B1C0036351D /* NotificationController.m in Sources */,
@@ -983,6 +1001,8 @@
 			children = (
 				0D0CE4D01DF76B1B0036351D /* Base */,
 				0D10F0F81DFB3F1900904A8B /* zh-Hans */,
+				0D96B1F41E1B95C0001C1228 /* zh-Hant */,
+				0D96B1F91E1B95D1001C1228 /* ja */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";
@@ -993,6 +1013,8 @@
 				0D10F0EF1DFB2E5A00904A8B /* en */,
 				0D10F0F11DFB2E5E00904A8B /* Base */,
 				0D10F0F61DFB300F00904A8B /* zh-Hans */,
+				0D96B1F51E1B95C0001C1228 /* zh-Hant */,
+				0D96B1FA1E1B95D1001C1228 /* ja */,
 			);
 			name = ckcomplication.strings;
 			sourceTree = "<group>";
@@ -1002,6 +1024,8 @@
 			children = (
 				0DB556761D859A120042275E /* Base */,
 				0D10F0F21DFB300E00904A8B /* zh-Hans */,
+				0D96B1F11E1B95BF001C1228 /* zh-Hant */,
+				0D96B1F61E1B95D1001C1228 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1011,6 +1035,8 @@
 			children = (
 				0DB5567B1D859A120042275E /* Base */,
 				0D10F0F31DFB300E00904A8B /* zh-Hans */,
+				0D96B1F21E1B95BF001C1228 /* zh-Hant */,
+				0D96B1F71E1B95D1001C1228 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1020,6 +1046,8 @@
 			children = (
 				0DB556901D859A430042275E /* Base */,
 				0D10F0F41DFB300F00904A8B /* zh-Hans */,
+				0D96B1F31E1B95C0001C1228 /* zh-Hant */,
+				0D96B1F81E1B95D1001C1228 /* ja */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";

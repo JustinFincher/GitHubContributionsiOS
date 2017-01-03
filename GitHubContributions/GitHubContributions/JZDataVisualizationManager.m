@@ -10,8 +10,6 @@
 #import "JZHeader.h"
 #import "JZCommitDataModel.h"
 
-#define COMMIT_IMAGE_TOP_MARGIN 4.0f
-#define COMMIT_IMAGE_BOTTOM_MARGIN 4.0f
 #define COMMIT_IMAGE_RIGHT_MARGIN 4.0f
 #define COMMIT_IMAGE_LEFT_MARGIN 4.0f
 #define COMMIT_VERTIAL_TILE_NUM 8
@@ -51,6 +49,9 @@
 - (UIImage *)commitImageWithRect:(CGRect)rect
                               OS:(JZDataVisualizationOSType)osType
 {
+    
+    float topMargin = (osType == JZDataVisualizationOsType_watchOS) ? 18.0f: 4.0f;
+    float bottomMargin = (osType == JZDataVisualizationOsType_watchOS) ? 10.0f: 4.0f;
     NSMutableArray *weeks;
     NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
     UIImage* im = nil;
@@ -61,12 +62,11 @@
         {
             @autoreleasepool
             {
-                
                 CGRect bounds = rect;
                 UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0);
                 [[UIColor clearColor] setFill];
                 
-                float squarenBlankSize = (bounds.size.height - COMMIT_IMAGE_TOP_MARGIN - COMMIT_IMAGE_BOTTOM_MARGIN) / COMMIT_VERTIAL_TILE_NUM;
+                float squarenBlankSize = (bounds.size.height - topMargin - bottomMargin) / COMMIT_VERTIAL_TILE_NUM;
                 float squareSize = squarenBlankSize * COMMIT_TILE_SIZE_PERCETAGE ;
                 
                 CGContextRef context = UIGraphicsGetCurrentContext();
@@ -80,7 +80,7 @@
                     for (JZCommitDataModel *day in week)
                     {
                         CGRect rect = CGRectMake(bounds.size.width - COMMIT_IMAGE_RIGHT_MARGIN - (weekFromNow + 1
-                                                                      ) * squarenBlankSize, COMMIT_IMAGE_TOP_MARGIN + (day.weekDay.intValue - 1) * squarenBlankSize, squareSize, squareSize);
+                                                                      ) * squarenBlankSize, topMargin + (day.weekDay.intValue - 1) * squarenBlankSize, squareSize, squareSize);
                         [day.color setFill];
                         CGContextFillRect(context,rect);
                     }
@@ -89,13 +89,24 @@
                     JZCommitDataModel *firstDayOfWeek = [week firstObject];
                     NSString* monthName = [self monthName:[firstDayOfWeek.month intValue]];
                     // Setup the font specific variables
+                    
+                    UIColor *fontColor;
+                    switch (osType)
+                    {
+                        case JZDataVisualizationOSType_iOS_Notification:
+                            fontColor = [UIColor blackColor];
+                            break;
+                        default:
+                            fontColor = [UIColor whiteColor];
+                            break;
+                    }
                     NSDictionary *attributes = @{
                                                  NSFontAttributeName   : [UIFont systemFontOfSize:squarenBlankSize * COMMIT_FONT_SIZE_PERCETAGE],
                                                  NSStrokeWidthAttributeName    : @(0),
-                                                 NSForegroundColorAttributeName    : [UIColor whiteColor]
+                                                 NSForegroundColorAttributeName    : fontColor
                                                  };
                     // Draw text with CGPoint and attributes
-                    [monthName drawAtPoint:CGPointMake(bounds.size.width - COMMIT_IMAGE_RIGHT_MARGIN - (weekFromNow + 1) * squarenBlankSize + squarenBlankSize * (1.0f - COMMIT_FONT_SIZE_PERCETAGE)/2.0f ,COMMIT_IMAGE_TOP_MARGIN + (COMMIT_VERTIAL_TILE_NUM - 1) * squarenBlankSize) withAttributes:attributes];
+                    [monthName drawAtPoint:CGPointMake(bounds.size.width - COMMIT_IMAGE_RIGHT_MARGIN - (weekFromNow + 1) * squarenBlankSize + squarenBlankSize * (1.0f - COMMIT_FONT_SIZE_PERCETAGE)/2.0f ,topMargin + (COMMIT_VERTIAL_TILE_NUM - 1) * squarenBlankSize) withAttributes:attributes];
                 }
                 
                 im = UIGraphicsGetImageFromCurrentImageContext();
@@ -139,15 +150,13 @@
     cameraNode.camera = [SCNCamera camera];
     cameraNode.camera.automaticallyAdjustsZRange= YES;
     cameraNode.camera.usesOrthographicProjection = YES;
-    cameraNode.camera.orthographicScale = 5.0f;
-    
     [scene.rootNode addChildNode:cameraNode];
-    cameraNode.position = SCNVector3Make(23, 23, 30);
     cameraNode.eulerAngles = SCNVector3Make(-M_PI / 6, +M_PI_4,0);
     
     
     SCNNode *barNode = [SCNNode node];
     barNode.name = @"barNode";
+    barNode.position = SCNVector3Make(0, 0, 0);
     [scene.rootNode addChildNode:barNode];
     
     NSMutableArray *weeks;
@@ -157,7 +166,19 @@
         weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         if (weeks)
         {
-            for (int weekFromNow = 0; weekFromNow < 10; weekFromNow ++)
+            NSUInteger count;
+            if (osType == JZDataVisualizationOsType_watchOS)
+            {
+                count = 10;
+                cameraNode.camera.orthographicScale = 5.0f;
+                cameraNode.position = SCNVector3Make(23, 23, 30);
+            }else
+            {
+                count = weeks.count;
+                cameraNode.camera.orthographicScale = 11 - (rect.size.width - 320)/55.0f;
+                cameraNode.position = SCNVector3Make(M_PI_4 * 50 - 15 * 1.5f, M_PI / 6.0f * 50 + 2,  M_PI_4 * 50);
+            }
+            for (int weekFromNow = 0; weekFromNow < count; weekFromNow ++)
             {
                 NSMutableArray *week = [weeks objectAtIndex:weekFromNow];
                 for (JZCommitDataModel *day in week)
@@ -169,11 +190,11 @@
                     mat.diffuse.contents = day.color;
                     node.position = SCNVector3Make(-weekFromNow * 1.5, box.height / 2.0, day.weekDay.intValue * 1.5);
                     [barNode addChildNode:node];
-                    
                 }
             }
         }
     }
+    
     return scene;
 }
 

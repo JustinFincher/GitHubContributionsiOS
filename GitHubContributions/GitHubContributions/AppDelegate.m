@@ -13,8 +13,10 @@
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "JZHeader.h"
 #import <Fabric/Fabric.h>
+#import "JZDataVisualizationManager.h"
 #import <Crashlytics/Crashlytics.h>
 #import <UserNotifications/UserNotifications.h>
+#import "JZNotificationManager.h"
 
 @interface AppDelegate ()<WCSessionDelegate>
 
@@ -28,6 +30,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
 #if DEBUG
+#warning comment this when production
+    [Fabric with:@[[Crashlytics class],[Answers class]]];
 #else
     [Fabric with:@[[Crashlytics class],[Answers class]]];
 #endif
@@ -41,7 +45,7 @@
          }
      }];
     
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:1800];
     if ([WCSession isSupported])
     {
         WCSession* session = [WCSession defaultSession];
@@ -102,24 +106,14 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+#if DEBUG
+#warning comment this when production
+    [Fabric with:@[[Crashlytics class],[Answers class]]];
+#else
+    [Fabric with:@[[Crashlytics class],[Answers class]]];
+#endif
     
     [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle"];
-    
-    UNMutableNotificationContent *content = [UNMutableNotificationContent new];
-    content.title = @"Contributions Debug Task";
-    content.body = @"Doing Background Fetch";
-    content.sound = [UNNotificationSound defaultSound];
-    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1
-                                                                                                    repeats:NO];
-    NSString *identifier = [NSString stringWithFormat:@"Notif%@",[NSDate date]];
-    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier
-                                                                          content:content trigger:trigger];
-    
-    [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-        if (error != nil) {
-            NSLog(@"Something went wrong: %@",error);
-        }
-    }];
     
     NetworkStatus netStatus = [self.hostReachability currentReachabilityStatus];
     switch (netStatus)
@@ -151,22 +145,7 @@
         [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Success"
                        customAttributes:@{}];
         
-        UNMutableNotificationContent *content = [UNMutableNotificationContent new];
-        content.title = @"Contributions Debug Task";
-        content.body = @"Background Fetch Success";
-        content.sound = [UNNotificationSound defaultSound];
-        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1
-                                                                                                        repeats:NO];
-        NSString *identifier = [NSString stringWithFormat:@"Notif%@",[NSDate date]];
-        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier
-                                                                              content:content trigger:trigger];
-        
-        [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-            if (error != nil) {
-                NSLog(@"Something went wrong: %@",error);
-            }
-        }];
-        
+        [[JZNotificationManager sharedManager] triggerSuccessNotificationWithData:array];
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
         [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
@@ -182,21 +161,7 @@
         [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Fail"
                        customAttributes:@{}];
         
-        UNMutableNotificationContent *content = [UNMutableNotificationContent new];
-        content.title = @"Contributions Debug Task";
-        content.body = @"Background Fetch Failed";
-        content.sound = [UNNotificationSound defaultSound];
-        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1
-                                                                                                        repeats:NO];
-        NSString *identifier = [NSString stringWithFormat:@"Notif%@",[NSDate date]];
-        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier
-                                                                              content:content trigger:trigger];
-        
-        [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-            if (error != nil) {
-                NSLog(@"Something went wrong: %@",error);
-            }
-        }];
+        [[JZNotificationManager sharedManager] triggerFailedNotification];
         
         JZLog(@"UIBackgroundFetchResultNoData");
         completionHandler(UIBackgroundFetchResultNoData);
