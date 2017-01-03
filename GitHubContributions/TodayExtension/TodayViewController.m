@@ -56,19 +56,19 @@
         {
             JZLog(@"NSUserDefaults DO HAVE weeks DATA");
             [_commitSceneView refreshFromCommits:weeks];
-            [_commitImageView refreshFromCommits:weeks];
+            [_commitImageView refreshData];
         }
     }else
     {
         JZLog(@"NSUserDefaults DO NOT HAVE DATA");
-         weeks = [[JZCommitManager sharedManager] refresh];
+        weeks = [[JZCommitManager sharedManager] refresh];
         if (!weeks)
         {
             [self showError];
             return;
         }
         [_commitSceneView refreshFromCommits:weeks];
-        [_commitImageView refreshFromCommits:weeks];
+        [_commitImageView refreshData];
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:weeks] ;
         [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
@@ -81,6 +81,7 @@
         }
         
     }
+    
 }
 
 - (void)showError

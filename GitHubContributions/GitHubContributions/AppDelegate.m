@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Reachability.h"
+#import <DateTools/NSDate+DateTools.h>
 #import "JZCommitManager.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "JZHeader.h"

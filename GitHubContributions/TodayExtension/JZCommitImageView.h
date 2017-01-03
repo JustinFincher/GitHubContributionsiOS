@@ -10,6 +10,6 @@
 
 @interface JZCommitImageView : UIImageView
 
-- (void)refreshFromCommits:(NSMutableArray *)array;
+- (void)refreshData;
 
 @end

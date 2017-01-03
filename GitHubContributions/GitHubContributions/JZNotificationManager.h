@@ -12,4 +12,6 @@
 
 - (BOOL) isNotificationEnabled;
 
+- (void) triggerNotificationNow;
+
 @end
