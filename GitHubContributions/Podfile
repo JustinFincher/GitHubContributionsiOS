@@ -10,6 +10,8 @@ pod 'IQKeyboardManager'
 pod 'DateTools'
 pod 'Fabric'
 pod 'Crashlytics'
+pod "JazzHands"
+pod 'Masonry'
 end
 
 target 'TodayExtension' do
