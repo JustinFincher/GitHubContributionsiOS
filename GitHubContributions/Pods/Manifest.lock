@@ -6,6 +6,7 @@ PODS:
   - IQKeyboardManager (4.0.3)
   - JazzHands (2.0.8)
   - Masonry (1.0.2)
+  - Shimmer (1.0.2)
 
 DEPENDENCIES:
   - Crashlytics
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JazzHands
   - Masonry
+  - Shimmer
 
 SPEC CHECKSUMS:
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
@@ -22,7 +24,8 @@ SPEC CHECKSUMS:
   IQKeyboardManager: be9695ffc5a52077deb4847608f338771022d6d1
   JazzHands: 355dc5c2b6fc38ee460d0ed7836c69539263f477
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: fefe6406726cf65e0f210b3895e150e5dacc22f9
+PODFILE CHECKSUM: 5d6efa06d03d7608a5599c334bb617ecb981e5c1
 
 COCOAPODS: 1.1.1
