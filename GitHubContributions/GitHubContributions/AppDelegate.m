@@ -36,15 +36,6 @@
     [Fabric with:@[[Crashlytics class],[Answers class]]];
 #endif
     
-    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
-                                                                        completionHandler:^(BOOL granted, NSError * _Nullable error)
-     {
-         if (!error)
-         {
-             
-         }
-     }];
-    
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
     if ([WCSession isSupported])
     {

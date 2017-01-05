@@ -8,12 +8,16 @@
 
 #import "JZIntroViewController.h"
 #import <Masonry/Masonry.h>
+#import "JZCommitManager.h"
+#import <WatchConnectivity/WatchConnectivity.h>
 #import "JZHeader.h"
+#import <UserNotifications/UserNotifications.h>
 #import <Shimmer/FBShimmeringView.h>
+#import "JZNotificationManager.h"
 
-#define INTRO_TOTAL_PAGE_NUM 9
+#define INTRO_TOTAL_PAGE_NUM 7
 
-@interface JZIntroViewController ()<UIScrollViewDelegate>
+@interface JZIntroViewController ()<UIScrollViewDelegate,UITextFieldDelegate>
 
 @property (nonatomic,strong) UIVisualEffectView *effectContainerView;
 @property (nonatomic,strong) UIPageControl *pageControl;
@@ -43,6 +47,8 @@
 @property (nonatomic,strong) UILabel *notificationLabel;
 @property (nonatomic,strong) UISwitch *notificationSwitch;
 
+@property (nonatomic,strong) UIImageView *watchImageView;
+@property (nonatomic,strong) UILabel *watchLabel;
 
 
 @end
@@ -66,7 +72,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureViews];
-    [self configureAnimations];
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -84,6 +89,7 @@
     }
 }
 
+#pragma mark - UIUIUI
 - (void)configureViews
 {
     self.scrollView.delegate = self;
@@ -131,11 +137,16 @@
     
     self.setupLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     self.setupLabel.text = @"SETUP";
+    self.setupLabel.userInteractionEnabled = YES;
     self.setupLabel.minimumScaleFactor = 0.1;
     self.setupLabel.adjustsFontSizeToFitWidth = YES;
     self.setupLabel.font = [UIFont fontWithName:@"Avenir-Light" size:50];
     self.setupLabel.textAlignment = NSTextAlignmentCenter;
     self.setupLabel.textColor = UIColorFromRGB(0x676767);
+    UITapGestureRecognizer *setupLabelTapGesture =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(navigatePageTwo)];
+    [self.setupLabel addGestureRecognizer:setupLabelTapGesture];
     [self.setupLabelContainerView addSubview:self.setupLabel];
     [self.setupLabel mas_makeConstraints:^(MASConstraintMaker *make)
     {
@@ -195,6 +206,12 @@
 
     self.githubIdInputField = [[UITextField alloc] initWithFrame:CGRectZero];
     [self.contentView addSubview:self.githubIdInputField];
+    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsName"];
+    if (name)
+    {
+        self.githubIdInputField.text = name;
+    }
+    self.githubIdInputField.delegate = self;
     self.githubIdInputField.font = [UIFont fontWithName:@"Avenir-Medium" size:30];
     self.githubIdInputField.adjustsFontSizeToFitWidth = YES;
     self.githubIdInputField.minimumFontSize = 0.02;
@@ -211,6 +228,8 @@
     [self keepView:self.githubIdInputField onPages:@[@(1)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
     self.notificationSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+    [self.notificationSwitch addTarget:self action:@selector(notificationSwitchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.notificationSwitch setOn:[[JZNotificationManager sharedManager] isNotificationEnabled]];
     [self.contentView addSubview:self.notificationSwitch];
     [self.notificationSwitch mas_makeConstraints:^(MASConstraintMaker *make)
      {
@@ -247,8 +266,8 @@
                                                                                                                                                  attribute:IFTTTLayoutAttributeHeight
                                                                                                                                              referenceView:self.contentView];
     [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:4 multiplier:0.9f withEasingFunction:IFTTTEasingFunctionEaseOutCubic];
-    [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:5 multiplier:1.05f];
-    [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:6 multiplier:0.9f];
+    [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:5 multiplier:1.03f];
+    [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:6 multiplier:1.6f];
     [self.animator addAnimation:phoneBodyImageViewTopConstraintMultiplierAnimation];
     
     
@@ -400,7 +419,7 @@
                                                                                                                                                            attribute:IFTTTLayoutAttributeHeight
                                                                                                                                                        referenceView:self.phoneScreenMaskView];
     [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:4 multiplier:-0.2f withEasingFunction:IFTTTEasingFunctionEaseOutCubic];
-    [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:5 multiplier:0.08f];
+    [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:5 multiplier:0.09f];
     [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:6 multiplier:-0.2f];
     [self.animator addAnimation:notificationImageViewTopConstraintMultiplierAnimation];
     
@@ -424,6 +443,36 @@
     [self keepView:self.notificationLabel onPages:@[@(5)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
     
+    self.watchImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro_watch"]];
+    [self.contentView addSubview:self.watchImageView];
+    [self.watchImageView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.centerX.mas_equalTo(self.contentView);
+         make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
+         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
+         make.top.mas_equalTo(self.contentView);
+     }];
+    [self keepView:self.watchImageView onPages:@[@(6)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
+    
+    self.watchLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    [self.contentView addSubview:self.watchLabel];
+    self.watchLabel.font = [UIFont fontWithName:@"Avenir-Light" size:50];
+    self.watchLabel.adjustsFontSizeToFitWidth = YES;
+    self.watchLabel.minimumScaleFactor = 0.02;
+    self.watchLabel.textColor = UIColorFromRGB(0x272727);
+    self.watchLabel.text = @"DON'T FORGET TO CHECK CONTRIBUTIONS FOR APPLE WATCH WITH COMPLICATIONS";
+    self.watchLabel.textAlignment = NSTextAlignmentCenter;
+    self.watchLabel.numberOfLines = 0;
+    [self.watchLabel mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.centerX.mas_equalTo(self.contentView);
+         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
+         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.5);
+         make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.9);
+     }];
+    [self keepView:self.watchLabel onPages:@[@(6)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
+    
+    
     
     
     
@@ -436,7 +485,7 @@
          make.width.mas_equalTo(self.view.mas_width);
          make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.1);
      }];
-    [self keepView:self.effectContainerView onPages:@[@(0),@(1),@(2),@(3),@(4),@(5)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
+    [self keepView:self.effectContainerView onPages:@[@(0),@(1),@(2),@(3),@(4),@(5),@(6)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
     self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
     [self.effectContainerView addSubview:self.pageControl];
@@ -450,9 +499,62 @@
      }];
 }
 
-- (void)configureAnimations
+- (void)navigatePageTwo
 {
+    [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width*1, 0.0f) animated:YES];
+}
+
+- (void)notificationSwitchValueChanged:(id)sender{
+    if([sender isOn])
+    {
+        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                                                                            completionHandler:^(BOOL granted, NSError * _Nullable error)
+         {}];
+    }
+    [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:[NSNumber numberWithBool:[sender isOn]] forKey:@"NotificationEnabled"];
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    if (textField == self.githubIdInputField)
+    {
+        NSString *trimmedName = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:trimmedName forKey:@"GitHubContributionsName"];
+        NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
+        if (array)
+        {
+            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
+            [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
+            WCSession* session = [WCSession defaultSession];
+            if ([session activationState] != WCSessionActivationStateActivated)
+            {
+                [session activateSession];
+            }
+            else
+            {
+                if ([session isReachable])
+                {
+                    [session sendMessage:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] replyHandler:nil errorHandler:^(NSError *error)
+                     {
+                         JZLog(@"%@",[error localizedDescription]);
+                     }];
+                }
+                [session transferUserInfo:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation]];
+            }
+        }
+        
+    }
     
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
+    if (textField == self.githubIdInputField)
+    {
+        return [string containsString:@" "];
+    }
+    
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
