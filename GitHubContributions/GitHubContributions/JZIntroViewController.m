@@ -39,6 +39,10 @@
 @property (nonatomic,strong) UIImageView *phoneScreenTodayAddingImageView;
 @property (nonatomic,strong) UIImageView *phoneScreenTodayAddedImageView;
 
+@property (nonatomic,strong) UIImageView *notificationImageView;
+@property (nonatomic,strong) UILabel *notificationLabel;
+@property (nonatomic,strong) UISwitch *notificationSwitch;
+
 
 
 @end
@@ -206,6 +210,20 @@
      }];
     [self keepView:self.githubIdInputField onPages:@[@(1)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
+    self.notificationSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+    [self.contentView addSubview:self.notificationSwitch];
+    [self.notificationSwitch mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.centerX.mas_equalTo(self.contentView);
+         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.5);
+     }];
+    [self keepView:self.notificationSwitch onPages:@[@(2),@(3),@(4),@(5)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
+    IFTTTAlphaAnimation *notificationSwitchAlphaAnimation = [[IFTTTAlphaAnimation alloc] initWithView:self.notificationSwitch];
+    [notificationSwitchAlphaAnimation addKeyframeForTime:4 alpha:0];
+    [notificationSwitchAlphaAnimation addKeyframeForTime:5 alpha:1];
+    [notificationSwitchAlphaAnimation addKeyframeForTime:6 alpha:0];
+    [self.animator addAnimation:notificationSwitchAlphaAnimation];
+    
     
     self.phoneBodyImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro_iphone_screen_blend"]];
     [self.contentView addSubview:self.phoneBodyImageView];
@@ -214,9 +232,25 @@
          make.centerX.mas_equalTo(self.contentView);
          make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.9);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5623*0.9);
-         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.4);
      }];
-    [self keepView:self.phoneBodyImageView onPages:@[@(2),@(3)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
+    [self keepView:self.phoneBodyImageView onPages:@[@(2),@(3),@(4),@(5)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
+    
+    NSLayoutConstraint *phoneBodyImageViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.phoneBodyImageView
+                                                                                          attribute:NSLayoutAttributeCenterY
+                                                                                          relatedBy:NSLayoutRelationEqual
+                                                                                             toItem:self.contentView
+                                                                                          attribute:NSLayoutAttributeTop
+                                                                                         multiplier:1.0f constant:0.f];
+    [self.contentView addConstraint:phoneBodyImageViewTopConstraint];
+    IFTTTConstraintMultiplierAnimation *phoneBodyImageViewTopConstraintMultiplierAnimation = [IFTTTConstraintMultiplierAnimation animationWithSuperview:self.contentView
+                                                                                                                                                constraint:phoneBodyImageViewTopConstraint
+                                                                                                                                                 attribute:IFTTTLayoutAttributeHeight
+                                                                                                                                             referenceView:self.contentView];
+    [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:4 multiplier:0.9f withEasingFunction:IFTTTEasingFunctionEaseOutCubic];
+    [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:5 multiplier:1.05f];
+    [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:6 multiplier:0.9f];
+    [self.animator addAnimation:phoneBodyImageViewTopConstraintMultiplierAnimation];
+    
     
     self.phoneScreenMaskView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.phoneBodyImageView addSubview:self.phoneScreenMaskView];
@@ -236,6 +270,19 @@
          make.center.mas_equalTo(self.phoneScreenMaskView);
          make.size.mas_equalTo(self.phoneScreenMaskView);
      }];
+    
+    self.phoneScreenTodayAddedImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"phoneScreenTodayAdded"]];
+    [self.phoneScreenMaskView addSubview:self.phoneScreenTodayAddedImageView];
+    [self.phoneScreenTodayAddedImageView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.center.mas_equalTo(self.phoneScreenMaskView);
+         make.size.mas_equalTo(self.phoneScreenMaskView);
+     }];
+    IFTTTAlphaAnimation *phoneScreenTodayAddedImageViewFadeInAnimation = [[IFTTTAlphaAnimation alloc] initWithView:self.phoneScreenTodayAddedImageView];
+    [phoneScreenTodayAddedImageViewFadeInAnimation addKeyframeForTime:3.0 alpha:0.0f];
+    [phoneScreenTodayAddedImageViewFadeInAnimation addKeyframeForTime:3.1 alpha:1.0f];
+    [self.animator addAnimation:phoneScreenTodayAddedImageViewFadeInAnimation];
+    
     self.phoneScreenTodayUnAddedLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentView addSubview:self.phoneScreenTodayUnAddedLabel];
     self.phoneScreenTodayUnAddedLabel.font = [UIFont fontWithName:@"Avenir-Light" size:50];
@@ -275,6 +322,7 @@
                                                                                                                    referenceView:self.phoneScreenMaskView];
     [phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation addKeyframeForTime:2 multiplier:2.f withEasingFunction:IFTTTEasingFunctionEaseOutCubic];
     [phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation addKeyframeForTime:3 multiplier:0.5f];
+    [phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation addKeyframeForTime:4 multiplier:2.f];
     [self.animator addAnimation:phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation];
     
     [self.contentView addSubview:self.phoneScreenTodayUnAddedLabel];
@@ -311,6 +359,72 @@
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.4);
      }];
     [self keepView:self.phoneScreenTodayAddingLabel onPages:@[@(3)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
+    
+    
+    self.phoneScreenTodayAddedLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    [self.contentView addSubview:self.phoneScreenTodayAddedLabel];
+    self.phoneScreenTodayAddedLabel.font = [UIFont fontWithName:@"Avenir-Light" size:50];
+    self.phoneScreenTodayAddedLabel.adjustsFontSizeToFitWidth = YES;
+    self.phoneScreenTodayAddedLabel.minimumScaleFactor = 0.02;
+    self.phoneScreenTodayAddedLabel.textColor = UIColorFromRGB(0x272727);
+    self.phoneScreenTodayAddedLabel.text = @"AND YOU'RE ALL SET. YOU CAN VIEW 2D/3D GRAPH FROM TODAY VIEW";
+    self.phoneScreenTodayAddedLabel.textAlignment = NSTextAlignmentCenter;
+    self.phoneScreenTodayAddedLabel.numberOfLines = 0;
+    [self.phoneScreenTodayAddedLabel mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.centerX.mas_equalTo(self.contentView);
+         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
+         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.1);
+         make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.4);
+     }];
+    [self keepView:self.phoneScreenTodayAddedLabel onPages:@[@(4)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
+    
+    
+    self.notificationImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro_notification"]];
+    [self.phoneScreenMaskView addSubview:self.notificationImageView];
+    [self.notificationImageView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.centerX.mas_equalTo(self.phoneScreenMaskView);
+         make.width.mas_equalTo(self.phoneScreenMaskView);
+         make.height.mas_equalTo(self.phoneScreenMaskView.mas_width).multipliedBy(0.3144);
+     }];
+    NSLayoutConstraint *notificationImageViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.notificationImageView
+                                                                                                    attribute:NSLayoutAttributeCenterY
+                                                                                                    relatedBy:NSLayoutRelationEqual
+                                                                                                       toItem:self.phoneScreenMaskView
+                                                                                                    attribute:NSLayoutAttributeTop
+                                                                                                   multiplier:1.0f constant:0.f];
+    [self.phoneScreenMaskView addConstraint:notificationImageViewTopConstraint];
+    IFTTTConstraintMultiplierAnimation *notificationImageViewTopConstraintMultiplierAnimation = [IFTTTConstraintMultiplierAnimation animationWithSuperview:self.phoneScreenMaskView
+                                                                                                                                                          constraint:notificationImageViewTopConstraint
+                                                                                                                                                           attribute:IFTTTLayoutAttributeHeight
+                                                                                                                                                       referenceView:self.phoneScreenMaskView];
+    [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:4 multiplier:-0.2f withEasingFunction:IFTTTEasingFunctionEaseOutCubic];
+    [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:5 multiplier:0.08f];
+    [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:6 multiplier:-0.2f];
+    [self.animator addAnimation:notificationImageViewTopConstraintMultiplierAnimation];
+    
+    
+    self.notificationLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    [self.contentView addSubview:self.notificationLabel];
+    self.notificationLabel.font = [UIFont fontWithName:@"Avenir-Light" size:50];
+    self.notificationLabel.adjustsFontSizeToFitWidth = YES;
+    self.notificationLabel.minimumScaleFactor = 0.02;
+    self.notificationLabel.textColor = UIColorFromRGB(0x272727);
+    self.notificationLabel.text = @"NOTIFICATION CAN BE TRIGGERED ONCE BACKGROUND FETCH IS DONE (MAX 4 TIMES A DAY)";
+    self.notificationLabel.textAlignment = NSTextAlignmentCenter;
+    self.notificationLabel.numberOfLines = 0;
+    [self.notificationLabel mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.centerX.mas_equalTo(self.contentView);
+         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
+         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.1);
+         make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.45);
+     }];
+    [self keepView:self.notificationLabel onPages:@[@(5)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
+    
+    
+    
     
     
     self.effectContainerView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
