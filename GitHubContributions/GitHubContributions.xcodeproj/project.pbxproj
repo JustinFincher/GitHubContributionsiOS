@@ -30,13 +30,13 @@
 		0D1AF7311DF798C200EAA85D /* JZSettingsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF7301DF798C200EAA85D /* JZSettingsInterfaceController.m */; };
 		0D565F9D1D85CAC5006C0324 /* JZCommitSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */; };
 		0D7703FC1E1C19A00019F507 /* JZDataVisualizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */; };
+		0D7703FF1E1D52910019F507 /* JZIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7703FE1E1D52910019F507 /* JZIntroViewController.m */; };
 		0D96B1E81E1A9746001C1228 /* JZNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1E71E1A9746001C1228 /* JZNotificationManager.m */; };
 		0D96B1EB1E1A9C9A001C1228 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D96B1EA1E1A9C9A001C1228 /* Settings.bundle */; };
 		0D96B1EF1E1B87A3001C1228 /* JZDataVisualizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */; };
 		0D96B1F01E1B87A3001C1228 /* JZDataVisualizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */; };
 		0DB5566E1D859A120042275E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB5566D1D859A120042275E /* main.m */; };
 		0DB556711D859A120042275E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556701D859A120042275E /* AppDelegate.m */; };
-		0DB556741D859A120042275E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB556731D859A120042275E /* ViewController.m */; };
 		0DB556771D859A120042275E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB556751D859A120042275E /* Main.storyboard */; };
 		0DB556791D859A120042275E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB556781D859A120042275E /* Assets.xcassets */; };
 		0DB5567C1D859A120042275E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB5567A1D859A120042275E /* LaunchScreen.storyboard */; };
@@ -160,6 +160,8 @@
 		0D1AF7301DF798C200EAA85D /* JZSettingsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZSettingsInterfaceController.m; sourceTree = "<group>"; };
 		0D565F9B1D85CAC5006C0324 /* JZCommitSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitSceneView.h; sourceTree = "<group>"; };
 		0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitSceneView.m; sourceTree = "<group>"; };
+		0D7703FD1E1D52910019F507 /* JZIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZIntroViewController.h; sourceTree = "<group>"; };
+		0D7703FE1E1D52910019F507 /* JZIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZIntroViewController.m; sourceTree = "<group>"; };
 		0D96B1E61E1A9746001C1228 /* JZNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNotificationManager.h; sourceTree = "<group>"; };
 		0D96B1E71E1A9746001C1228 /* JZNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZNotificationManager.m; sourceTree = "<group>"; };
 		0D96B1EA1E1A9C9A001C1228 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -181,8 +183,6 @@
 		0DB5566D1D859A120042275E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DB5566F1D859A120042275E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0DB556701D859A120042275E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		0DB556721D859A120042275E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0DB556731D859A120042275E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0DB556761D859A120042275E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DB556781D859A120042275E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DB5567B1D859A120042275E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -336,8 +336,8 @@
 		0D14EB001DF79144002AF0C3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0DB556721D859A120042275E /* ViewController.h */,
-				0DB556731D859A120042275E /* ViewController.m */,
+				0D7703FD1E1D52910019F507 /* JZIntroViewController.h */,
+				0D7703FE1E1D52910019F507 /* JZIntroViewController.m */,
 				0D96B1ED1E1B87A3001C1228 /* JZDataVisualizationManager.h */,
 				0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */,
 				0D96B1E61E1A9746001C1228 /* JZNotificationManager.h */,
@@ -951,9 +951,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DEF7A481D85FE7D00761555 /* JZCommitDataModel.m in Sources */,
+				0D7703FF1E1D52910019F507 /* JZIntroViewController.m in Sources */,
 				0DEF7A471D85FE7A00761555 /* JZCommitManager.m in Sources */,
 				0D96B1EF1E1B87A3001C1228 /* JZDataVisualizationManager.m in Sources */,
-				0DB556741D859A120042275E /* ViewController.m in Sources */,
 				0DB556711D859A120042275E /* AppDelegate.m in Sources */,
 				0DEF7A521D86812000761555 /* Reachability.m in Sources */,
 				0D96B1E81E1A9746001C1228 /* JZNotificationManager.m in Sources */,

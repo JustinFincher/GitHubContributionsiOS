@@ -36,16 +36,7 @@
     [Fabric with:@[[Crashlytics class],[Answers class]]];
 #endif
     
-    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
-                                                                        completionHandler:^(BOOL granted, NSError * _Nullable error)
-     {
-         if (!error)
-         {
-             
-         }
-     }];
-    
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:1800];
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
     if ([WCSession isSupported])
     {
         WCSession* session = [WCSession defaultSession];
@@ -106,13 +97,7 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-#if DEBUG
-#warning comment this when production
-    [Fabric with:@[[Crashlytics class],[Answers class]]];
-#else
-    [Fabric with:@[[Crashlytics class],[Answers class]]];
-#endif
-    
+
     [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle"];
     
     NetworkStatus netStatus = [self.hostReachability currentReachabilityStatus];
