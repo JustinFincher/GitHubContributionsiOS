@@ -50,7 +50,10 @@
 
 - (void) triggerSuccessNotificationWithData:(NSMutableArray *)dataArray
 {
-    
+    if (![self isNotificationEnabled])
+    {
+        return;
+    }
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
     content.title = @"Contributions Data Fetched 🤗";
     content.sound = [UNNotificationSound defaultSound];
@@ -101,6 +104,10 @@
 
 - (void) triggerFailedNotification
 {
+    if (![self isNotificationEnabled])
+    {
+        return;
+    }
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
     content.title = @"Contributions Fetch Failed 😢";
     content.sound = [UNNotificationSound defaultSound];

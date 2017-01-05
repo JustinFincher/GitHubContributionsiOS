@@ -520,28 +520,38 @@
     {
         NSString *trimmedName = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:trimmedName forKey:@"GitHubContributionsName"];
-        NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
-        if (array)
-        {
-            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
-            [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
-            WCSession* session = [WCSession defaultSession];
-            if ([session activationState] != WCSessionActivationStateActivated)
-            {
-                [session activateSession];
-            }
-            else
-            {
-                if ([session isReachable])
-                {
-                    [session sendMessage:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] replyHandler:nil errorHandler:^(NSError *error)
-                     {
-                         JZLog(@"%@",[error localizedDescription]);
-                     }];
-                }
-                [session transferUserInfo:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation]];
-            }
-        }
+        
+
+        dispatch_queue_t gqueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        dispatch_async(gqueue, ^(void)
+                       {
+                           NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
+                           if (array)
+                           {
+                               NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
+                               
+                               [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
+                               WCSession* session = [WCSession defaultSession];
+                               if ([session activationState] != WCSessionActivationStateActivated)
+                               {
+                                   [session activateSession];
+                               }else
+                               {
+                                   if ([session isReachable])
+                                   {
+                                       [session sendMessage:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation] replyHandler:nil errorHandler:^(NSError *error)
+                                        {
+                                            JZLog(@"%@",[error localizedDescription]);
+                                        }];
+                                   }
+                                   [session transferUserInfo:[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] dictionaryRepresentation]];
+                               }
+                           }
+                           dispatch_async(dispatch_get_main_queue(), ^
+                                          {
+                                              
+                                          });
+                       });
         
     }
     
@@ -551,7 +561,7 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
     if (textField == self.githubIdInputField)
     {
-        return [string containsString:@" "];
+        return ![string containsString:@" "];
     }
     
     return YES;
