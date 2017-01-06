@@ -212,6 +212,7 @@
         self.githubIdInputField.text = name;
     }
     self.githubIdInputField.delegate = self;
+    self.githubIdInputField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.githubIdInputField.font = [UIFont fontWithName:@"Avenir-Medium" size:30];
     self.githubIdInputField.adjustsFontSizeToFitWidth = YES;
     self.githubIdInputField.minimumFontSize = 0.02;
@@ -525,6 +526,7 @@
         dispatch_queue_t gqueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
         dispatch_async(gqueue, ^(void)
                        {
+                           [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] removeObjectForKey:@"GitHubContributionsArray"];
                            NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
                            if (array)
                            {

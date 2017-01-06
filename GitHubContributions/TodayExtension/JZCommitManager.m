@@ -51,7 +51,7 @@
     [_commits removeAllObjects];
     NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsName"];
     
-    if (name == nil)
+    if (name == nil || [name isEqualToString:@""])
     {
         return nil;
     }
@@ -59,6 +59,10 @@
     NSMutableArray *tempArray = [NSMutableArray array];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://github.com/users/%@/contributions",name]];
     NSString *webData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    if (!webData)
+    {
+        return nil;
+    }
     NSRange   searchedRange = NSMakeRange(0, [webData length]);
     NSString *pattern = @"(fill=\")(#[^\"]{6})(\" data-count=\")([^\"]{1,})(\" data-date=\")([^\"]{10})(\"/>)";
     NSError  *error = nil;
