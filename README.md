@@ -1,6 +1,6 @@
 # GitHubContributionsiOS  
 
-[![chatroom](https://patrolavia.github.io/telegram-badge/chat.png)](https://telegram.me/joinchat/BTmd1AvGiL2H24I8WFI_2g)
+[![chatroom](https://patrolavia.github.io/telegram-badge/chat.png)](https://telegram.me/joinchat/BTmd1EDcXVRwEzazY1CeWQ)
 
 Simple app to monitor your GitHub Contributions Graph in Today Extension and Apple Watch.  
 Will fix issues when I am available.
