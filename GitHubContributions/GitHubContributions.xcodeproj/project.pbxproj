@@ -567,6 +567,7 @@
 				794B7EF0240FD54F964B2E51 /* [CP] Copy Pods Resources */,
 				0D6BD12D1D86AF470041C5FD /* ShellScript */,
 				0D14EAEB1DF76D3D002AF0C3 /* ShellScript */,
+				0DD4E3EF1E21029900E9FFFF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -781,6 +782,19 @@
 			shellScript = "version=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$PROJECT_DIR/$INFOPLIST_FILE\")\nbuild=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$PROJECT_DIR/$INFOPLIST_FILE\")\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:0:DefaultValue $version ($build)\" \"$CODESIGNING_FOLDER_PATH/Settings.bundle/Root.plist\"";
 		};
 		0DBA3E8D1E0C060F00C1D8DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" a16b406fd4e2436ed428a29739ef5d3c14fb0569 c8d93fa2d50501a4777180b0094f40eaa2e24282ffe23af26ca2448d10487bc5";
+		};
+		0DD4E3EF1E21029900E9FFFF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

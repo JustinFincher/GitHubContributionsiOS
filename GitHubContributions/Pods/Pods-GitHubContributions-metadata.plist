@@ -139,7 +139,7 @@ SOFTWARE.
 			<key>summary</key>
 			<string>Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView.</string>
 			<key>version</key>
-			<string>4.0.3</string>
+			<string>4.0.8</string>
 		</dict>
 		<dict>
 			<key>authors</key>

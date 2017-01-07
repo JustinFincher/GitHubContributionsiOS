@@ -32,11 +32,12 @@
 #if DEBUG
 #warning comment this when production
     [Fabric with:@[[Crashlytics class],[Answers class]]];
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
 #else
     [Fabric with:@[[Crashlytics class],[Answers class]]];
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:17280];
 #endif
     
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
     if ([WCSession isSupported])
     {
         WCSession* session = [WCSession defaultSession];

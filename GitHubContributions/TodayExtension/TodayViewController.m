@@ -10,7 +10,8 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import "JZCommitImageView.h"
 #import "JZCommitSceneView.h"
-
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 #import "JZCommitManager.h"
 #import "JZHeader.h"
 
@@ -33,6 +34,16 @@
     
     
 }
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [Fabric with:@[CrashlyticsKit]];
+    }
+    return self;
+}
 #pragma mark - UI
 - (IBAction)goSettingsButtonPressed:(UIButton *)sender
 {
@@ -42,6 +53,15 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if (self.extensionContext.widgetActiveDisplayMode == NCWidgetDisplayModeCompact)
+    {
+        _commitImageView.alpha = 1.0f;
+        _commitSceneView.alpha = 0.0f;
+    }else
+    {
+        _commitImageView.alpha = 0.0f;
+        _commitSceneView.alpha = 1.0f;
+    }
     [_settingsButton setTitle:@"" forState:UIControlStateNormal];
     
     NSMutableArray *weeks;
@@ -92,7 +112,16 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+    if (self.extensionContext.widgetActiveDisplayMode == NCWidgetDisplayModeCompact)
+    {
+        _commitSceneView.scene = nil;
+    }else
+    {
+        _commitImageView.image = nil;
+    }
+    [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.TodayExtension.MemoryWarning"
+                   customAttributes:@{}];
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
@@ -114,26 +143,28 @@
     {
         self.preferredContentSize = maxSize;
         _commitSceneViewTopConstraint.constant = -210.0f;
-        [UIView animateWithDuration:0.2
+        [UIView animateWithDuration:0.1
                          animations:^{
                              _commitImageView.alpha = 1.0f;
                              _commitSceneView.alpha = 0.0f;
                              [self.view layoutIfNeeded]; // Called on parent view
                          } completion:^(BOOL finished)
          {
+//             _commitSceneView.scene = nil;
              [_commitImageView refreshData];
          }];
     }
     else {
         self.preferredContentSize = CGSizeMake(0, 200.0);
         _commitSceneViewTopConstraint.constant = - 0.0;
-        [UIView animateWithDuration:0.2
+        [UIView animateWithDuration:0.1
                          animations:^{
                              _commitImageView.alpha = 0.0f;
                              _commitSceneView.alpha = 1.0f;
                              [self.view layoutIfNeeded]; // Called on parent view
                          }completion:^(BOOL finished)
          {
+//             _commitImageView.image = nil;
              [_commitSceneView refreshData];
          }];
 
@@ -143,4 +174,5 @@
 {
     return UIEdgeInsetsZero;
 }
+
 @end

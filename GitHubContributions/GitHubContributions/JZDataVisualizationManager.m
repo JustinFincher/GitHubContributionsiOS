@@ -175,7 +175,7 @@
             }else
             {
                 count = weeks.count;
-                cameraNode.camera.orthographicScale = 11 - (rect.size.width - 320)/55.0f;
+                cameraNode.camera.orthographicScale = 11 - (rect.size.width - 320)/80.0f;
                 cameraNode.position = SCNVector3Make(M_PI_4 * 50 - 15 * 1.5f, M_PI / 6.0f * 50 + 2,  M_PI_4 * 50);
             }
             for (int weekFromNow = 0; weekFromNow < count; weekFromNow ++)
