@@ -18,7 +18,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "JZNotificationManager.h"
 
-@interface AppDelegate ()<WCSessionDelegate>
+@interface AppDelegate ()<WCSessionDelegate,UNUserNotificationCenterDelegate>
 
 @property (nonatomic) Reachability *hostReachability;
 
@@ -52,6 +52,8 @@
     [self.hostReachability startNotifier];
     [self updateInterfaceWithReachability:self.hostReachability];
     
+    
+    [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
     return YES;
 }
 
@@ -188,6 +190,26 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark -
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+didReceiveNotificationResponse:(UNNotificationResponse *)response
+         withCompletionHandler:(void (^)(void))completionHandler
+{
+    if ([response.actionIdentifier isEqualToString:@"shareCommits"])
+    {
+        UIImage *img = [[JZDataVisualizationManager sharedManager] commitImageWithRect:CGRectMake(0, 0, 2000, 500) OS:JZDataVisualizationOSType_iOS_Notification];
+        NSString *string = @"My GitHub contributions graph via #contributionsapp";
+        NSMutableArray *activityItems = [NSMutableArray arrayWithObjects:string,img, nil];
+        
+        UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+        activityViewController.excludedActivityTypes = @[];
+        
+        
+        [self.window.rootViewController presentViewController:activityViewController animated:YES completion:nil];
+    }
+    completionHandler();
 }
 
 #pragma mark - WCSessionDelegate

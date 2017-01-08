@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MaG-3Z-9fA">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MaG-3Z-9fA">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
@@ -44,7 +44,7 @@
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <label width="1" alignment="left" numberOfLines="0" id="JxM-bP-joV">
-                            <string key="text">A : Open Contributions For GitHub on both your watch and iOS Device. Press "Update Info" from your iOS Device, wait for a while and swipe to 2D / 3D view to see if data have been updated. If commits data is updated but complications is not, try force touch this page and press "refresh" menu. </string>
+                            <string key="text">A : Open Contributions For GitHub on both your watch and iOS Device. Update your username from your iOS Device, wait for a while and swipe to 2D / 3D view to see if data have been updated. If commits data is updated but complications is not, try force touch this page and press "refresh" menu. </string>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
                     </items>

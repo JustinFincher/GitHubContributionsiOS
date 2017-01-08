@@ -64,7 +64,18 @@
             {
                 CGRect bounds = rect;
                 UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0);
-                [[UIColor clearColor] setFill];
+                switch (osType)
+                {
+                    case JZDataVisualizationOSType_iOS_Notification:
+                    {
+                        [[UIColor whiteColor] set];
+                        UIRectFill(CGRectMake(0.0, 0.0, bounds.size.width, bounds.size.height));
+                    }
+                        break;
+                    default:
+                        [[UIColor clearColor] setFill];
+                        break;
+                }
                 
                 float squarenBlankSize = (bounds.size.height - topMargin - bottomMargin) / COMMIT_VERTIAL_TILE_NUM;
                 float squareSize = squarenBlankSize * COMMIT_TILE_SIZE_PERCETAGE ;
