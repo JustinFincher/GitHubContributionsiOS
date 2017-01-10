@@ -14,6 +14,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import <Shimmer/FBShimmeringView.h>
 #import "JZNotificationManager.h"
+#import "JZDataVisualizationManager.h"
 
 #define INTRO_TOTAL_PAGE_NUM 7
 
@@ -145,7 +146,7 @@
     self.setupLabel.textColor = UIColorFromRGB(0x676767);
     UITapGestureRecognizer *setupLabelTapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(navigatePageTwo)];
+                                            action:@selector(showUserIDPage)];
     [self.setupLabel addGestureRecognizer:setupLabelTapGesture];
     [self.setupLabelContainerView addSubview:self.setupLabel];
     [self.setupLabel mas_makeConstraints:^(MASConstraintMaker *make)
@@ -500,10 +501,6 @@
      }];
 }
 
-- (void)navigatePageTwo
-{
-    [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width*1, 0.0f) animated:YES];
-}
 
 - (void)notificationSwitchValueChanged:(id)sender{
     if([sender isOn])
@@ -567,6 +564,24 @@
     }
     
     return YES;
+}
+
+- (void)showShareSheet
+{
+    UIImage *img = [[JZDataVisualizationManager sharedManager] commitImageWithRect:CGRectMake(0, 0, 2000, 500) OS:JZDataVisualizationOSType_iOS_Notification];
+    NSString *string = @"My GitHub contributions graph via #contributionsapp";
+    NSMutableArray *activityItems = [NSMutableArray arrayWithObjects:string,img, nil];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewController.excludedActivityTypes = @[];
+    
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (void)showUserIDPage
+{
+    [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width*1, 0.0f) animated:YES];
+    [self.pageControl setCurrentPage:1];
 }
 
 - (void)didReceiveMemoryWarning {

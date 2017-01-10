@@ -17,6 +17,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import <UserNotifications/UserNotifications.h>
 #import "JZNotificationManager.h"
+#import "JZIntroViewController.h"
 
 @interface AppDelegate ()<WCSessionDelegate,UNUserNotificationCenterDelegate>
 
@@ -52,11 +53,50 @@
     [self.hostReachability startNotifier];
     [self updateInterfaceWithReachability:self.hostReachability];
     
+    // add refresh when launched
+    NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
+    if (array)
+    {
+        [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Success"
+                       customAttributes:@{}];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
+        [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
+        
+        JZLog(@"UIBackgroundFetchResultNewData");
+        [self syncUserDefaultToWatch];
+    }
     
     [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
+    [self HandleShortcutItems];
     return YES;
 }
 
+#pragma mark - Short Cuts
+- (void)HandleShortcutItems
+{
+    NSMutableArray *items = [NSMutableArray array];
+    if (![[JZCommitManager sharedManager] haveUserID])
+    {
+        UIApplicationShortcutItem *setUserNameItem = [[UIApplicationShortcutItem alloc]initWithType:@"Setup" localizedTitle:@"Setup"];
+        [items addObject:setUserNameItem];
+    }else if ([[JZCommitManager sharedManager] haveUserCommits])
+    {
+        UIApplicationShortcutItem *shareItem = [[UIApplicationShortcutItem alloc]initWithType:@"Share" localizedTitle:@"Share"];
+        [items addObject:shareItem];
+    }
+    [[UIApplication sharedApplication] setShortcutItems:items];
+}
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
+{
+    if ([shortcutItem.type isEqualToString:@"Setup"])
+    {
+        [(JZIntroViewController *)self.window.rootViewController showUserIDPage];
+    }
+    if ([shortcutItem.type isEqualToString:@"Share"])
+    {
+        [(JZIntroViewController *)self.window.rootViewController showShareSheet];
+    }
+}
 
 /*!
  * Called by Reachability whenever status changes.
@@ -142,6 +182,7 @@
         
         JZLog(@"UIBackgroundFetchResultNewData");
         [self syncUserDefaultToWatch];
+        [self HandleShortcutItems];
         completionHandler(UIBackgroundFetchResultNewData);
     }
     else
@@ -175,6 +216,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+     [self HandleShortcutItems];
 }
 
 
@@ -188,26 +230,19 @@
 }
 
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+- (void)applicationWillTerminate:(UIApplication *)application
+{
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark -
+#pragma mark - Notification
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)(void))completionHandler
 {
     if ([response.actionIdentifier isEqualToString:@"shareCommits"])
-    {
-        UIImage *img = [[JZDataVisualizationManager sharedManager] commitImageWithRect:CGRectMake(0, 0, 2000, 500) OS:JZDataVisualizationOSType_iOS_Notification];
-        NSString *string = @"My GitHub contributions graph via #contributionsapp";
-        NSMutableArray *activityItems = [NSMutableArray arrayWithObjects:string,img, nil];
-        
-        UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
-        activityViewController.excludedActivityTypes = @[];
-        
-        
-        [self.window.rootViewController presentViewController:activityViewController animated:YES completion:nil];
+    {        
+        [(JZIntroViewController *)self.window.rootViewController showShareSheet];
     }
     completionHandler();
 }

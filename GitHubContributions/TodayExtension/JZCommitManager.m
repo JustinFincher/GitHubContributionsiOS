@@ -45,13 +45,32 @@
     // Should never be called, but just here for clarity really.
 }
 
+#pragma mark Helper
+- (BOOL)haveUserID
+{
+    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsName"];
+    if (name == nil || [name isEqualToString:@""])
+    {
+        return NO;
+    }
+    return YES;
+}
+- (BOOL)haveUserCommits
+{
+    if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsArray"])
+    {
+        return YES;
+    }
+    return NO;
+}
+
 #pragma mark Web Task
 - (NSMutableArray *)refresh
 {
     [_commits removeAllObjects];
     NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsName"];
     
-    if (name == nil || [name isEqualToString:@""])
+    if (![self haveUserID])
     {
         return nil;
     }

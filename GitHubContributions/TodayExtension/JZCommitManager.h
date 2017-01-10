@@ -16,4 +16,6 @@
 - (NSMutableArray *)getCommits;
 - (NSMutableArray *)refresh;
 
+- (BOOL)haveUserID;
+- (BOOL)haveUserCommits;
 @end
