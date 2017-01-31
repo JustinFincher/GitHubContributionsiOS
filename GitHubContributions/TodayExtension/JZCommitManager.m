@@ -46,6 +46,16 @@
 }
 
 #pragma mark Helper
+- (NSString *)getUserID
+{
+    if ([self haveUserID])
+    {
+        return [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsName"];
+    }else
+    {
+        return nil;
+    }
+}
 - (BOOL)haveUserID
 {
     NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsName"];
@@ -62,6 +72,51 @@
         return YES;
     }
     return NO;
+}
+- (NSInteger)getDayContributionNum
+{
+    JZCommitDataModel* today = [self getLastDay];
+    int todayNum = 0;
+    todayNum = today.dataCount ? [today.dataCount intValue] : 0;
+    return todayNum;
+}
+- (NSInteger)getWeekContributionNum
+{
+    NSMutableArray *weeks;
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
+    if (data != nil)
+    {
+        weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
+    NSMutableArray *week = [weeks objectAtIndex:0];
+    int weekNum = 0;
+    if (week)
+    {
+        for (JZCommitDataModel* day in week)
+        {
+            if (day)
+            {
+                weekNum += (day.dataCount ? [day.dataCount intValue] : 0);
+            }
+        }
+    }
+    return weekNum;
+}
+- (JZCommitDataModel *)getLastDay
+{
+    NSMutableArray *weeks;
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
+    if (data != nil)
+    {
+        weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
+    NSMutableArray *week = [weeks objectAtIndex:0];
+    JZCommitDataModel* today;
+    if (week)
+    {
+        today = [week lastObject];
+    }
+    return today;
 }
 
 #pragma mark Web Task

@@ -18,6 +18,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "JZNotificationManager.h"
 #import "JZIntroViewController.h"
+#import "JZAppSearchManager.h"
 
 @interface AppDelegate ()<WCSessionDelegate,UNUserNotificationCenterDelegate>
 
@@ -64,6 +65,7 @@
         
         JZLog(@"UIBackgroundFetchResultNewData");
         [self syncUserDefaultToWatch];
+        [[JZAppSearchManager sharedManager] updateAppSearchResult];
     }
     
     [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
@@ -81,8 +83,11 @@
         [items addObject:setUserNameItem];
     }else if ([[JZCommitManager sharedManager] haveUserCommits])
     {
-        UIApplicationShortcutItem *shareItem = [[UIApplicationShortcutItem alloc]initWithType:@"Share" localizedTitle:@"Share"];
+        UIApplicationShortcutItem *shareItem = [[UIApplicationShortcutItem alloc]initWithType:@"Share" localizedTitle:@"Share Graph"];
         [items addObject:shareItem];
+    }else
+    {
+        
     }
     [[UIApplication sharedApplication] setShortcutItems:items];
 }
@@ -183,6 +188,7 @@
         JZLog(@"UIBackgroundFetchResultNewData");
         [self syncUserDefaultToWatch];
         [self HandleShortcutItems];
+        [[JZAppSearchManager sharedManager] updateAppSearchResult];
         completionHandler(UIBackgroundFetchResultNewData);
     }
     else

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JZCommitDataModel.h"
 
 @interface JZCommitManager : NSObject
 
@@ -17,5 +18,9 @@
 - (NSMutableArray *)refresh;
 
 - (BOOL)haveUserID;
+- (NSString *)getUserID;
 - (BOOL)haveUserCommits;
+- (NSInteger)getWeekContributionNum;
+- (NSInteger)getDayContributionNum;
+- (JZCommitDataModel *)getLastDay;
 @end

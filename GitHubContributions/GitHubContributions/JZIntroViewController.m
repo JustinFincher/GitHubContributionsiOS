@@ -137,7 +137,13 @@
     [self keepView:self.setupLabelContainerView onPages:@[@(0)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
     self.setupLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.setupLabel.text = @"SETUP";
+    if (![[JZCommitManager sharedManager] haveUserID])
+    {
+        self.setupLabel.text = @"SETUP";
+    }else
+    {
+        self.setupLabel.text = @"SETTINGS";
+    }
     self.setupLabel.userInteractionEnabled = YES;
     self.setupLabel.minimumScaleFactor = 0.1;
     self.setupLabel.adjustsFontSizeToFitWidth = YES;

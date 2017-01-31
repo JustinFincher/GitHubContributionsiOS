@@ -31,6 +31,9 @@
 		0D565F9D1D85CAC5006C0324 /* JZCommitSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */; };
 		0D7703FC1E1C19A00019F507 /* JZDataVisualizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */; };
 		0D7703FF1E1D52910019F507 /* JZIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7703FE1E1D52910019F507 /* JZIntroViewController.m */; };
+		0D9044081E40D983002F9A61 /* JZAppSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9044071E40D983002F9A61 /* JZAppSearchManager.m */; };
+		0D90440A1E40D9CA002F9A61 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9044091E40D9CA002F9A61 /* CoreSpotlight.framework */; };
+		0D90440C1E40D9DB002F9A61 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D90440B1E40D9DB002F9A61 /* MobileCoreServices.framework */; };
 		0D96B1E81E1A9746001C1228 /* JZNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1E71E1A9746001C1228 /* JZNotificationManager.m */; };
 		0D96B1EB1E1A9C9A001C1228 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D96B1EA1E1A9C9A001C1228 /* Settings.bundle */; };
 		0D96B1EF1E1B87A3001C1228 /* JZDataVisualizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */; };
@@ -162,6 +165,10 @@
 		0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitSceneView.m; sourceTree = "<group>"; };
 		0D7703FD1E1D52910019F507 /* JZIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZIntroViewController.h; sourceTree = "<group>"; };
 		0D7703FE1E1D52910019F507 /* JZIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZIntroViewController.m; sourceTree = "<group>"; };
+		0D9044061E40D983002F9A61 /* JZAppSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZAppSearchManager.h; sourceTree = "<group>"; };
+		0D9044071E40D983002F9A61 /* JZAppSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZAppSearchManager.m; sourceTree = "<group>"; };
+		0D9044091E40D9CA002F9A61 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
+		0D90440B1E40D9DB002F9A61 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0D96B1E61E1A9746001C1228 /* JZNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNotificationManager.h; sourceTree = "<group>"; };
 		0D96B1E71E1A9746001C1228 /* JZNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZNotificationManager.m; sourceTree = "<group>"; };
 		0D96B1EA1E1A9C9A001C1228 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -234,6 +241,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D90440C1E40D9DB002F9A61 /* MobileCoreServices.framework in Frameworks */,
+				0D90440A1E40D9CA002F9A61 /* CoreSpotlight.framework in Frameworks */,
 				0D0BA8071DF79E1100A893AB /* WatchConnectivity.framework in Frameworks */,
 				036F632D267B073666A2AE01 /* libPods-GitHubContributions.a in Frameworks */,
 			);
@@ -342,6 +351,8 @@
 				0D96B1EE1E1B87A3001C1228 /* JZDataVisualizationManager.m */,
 				0D96B1E61E1A9746001C1228 /* JZNotificationManager.h */,
 				0D96B1E71E1A9746001C1228 /* JZNotificationManager.m */,
+				0D9044061E40D983002F9A61 /* JZAppSearchManager.h */,
+				0D9044071E40D983002F9A61 /* JZAppSearchManager.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -428,6 +439,8 @@
 		0DB556881D859A430042275E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D90440B1E40D9DB002F9A61 /* MobileCoreServices.framework */,
+				0D9044091E40D9CA002F9A61 /* CoreSpotlight.framework */,
 				0D10F0EA1DF9F52E00904A8B /* WatchConnectivity.framework */,
 				0D0BA80A1DF7AECD00A893AB /* SceneKit.framework */,
 				0D0BA8061DF79E1100A893AB /* WatchConnectivity.framework */,
@@ -967,6 +980,7 @@
 				0DEF7A481D85FE7D00761555 /* JZCommitDataModel.m in Sources */,
 				0D7703FF1E1D52910019F507 /* JZIntroViewController.m in Sources */,
 				0DEF7A471D85FE7A00761555 /* JZCommitManager.m in Sources */,
+				0D9044081E40D983002F9A61 /* JZAppSearchManager.m in Sources */,
 				0D96B1EF1E1B87A3001C1228 /* JZDataVisualizationManager.m in Sources */,
 				0DB556711D859A120042275E /* AppDelegate.m in Sources */,
 				0DEF7A521D86812000761555 /* Reachability.m in Sources */,
