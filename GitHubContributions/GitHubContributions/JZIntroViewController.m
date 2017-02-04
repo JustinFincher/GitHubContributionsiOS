@@ -580,6 +580,10 @@
     
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.excludedActivityTypes = @[];
+    if ( [activityViewController respondsToSelector:@selector(popoverPresentationController)] )
+    {
+        activityViewController.popoverPresentationController.sourceView = self.view;
+    }
     
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
