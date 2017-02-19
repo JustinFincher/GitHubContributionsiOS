@@ -32,8 +32,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
 #if DEBUG
-#warning comment this when production
-    [Fabric with:@[[Crashlytics class],[Answers class]]];
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
 #else
     [Fabric with:@[[Crashlytics class],[Answers class]]];

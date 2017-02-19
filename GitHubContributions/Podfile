@@ -27,8 +27,6 @@ end
 
 target 'ContributionsOnWatch Extension' do
 
-pod 'DateTools'
-
 end
 
 plugin 'cocoapods-acknowledgements', :settings_bundle => true

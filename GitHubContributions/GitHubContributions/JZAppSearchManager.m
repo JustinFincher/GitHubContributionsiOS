@@ -52,7 +52,7 @@
         attributeSet.contentDescription = [NSString stringWithFormat:@"Contributions: Today: %ld | This Week: %ld",(long)todayNum,(long)weekNum];
         attributeSet.keywords = [NSArray arrayWithObjects:@"git",@"GitHub",@"Contributions",userID, nil];
         
-        CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:@"com.JustZht.GitHubContributions.Spotlight.Stats" domainIdentifier:@"spotlight.sample" attributeSet:attributeSet];
+        CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:@"com.JustZht.GitHubContributions.Spotlight.Stats" domainIdentifier:@"spotlight.contributions.dayandweek" attributeSet:attributeSet];
         
         [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[item] completionHandler:^(NSError *err)
          {
