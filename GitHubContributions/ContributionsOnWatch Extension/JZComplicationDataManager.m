@@ -39,38 +39,9 @@
 - (CLKComplicationTemplate *)getComplicationFrom:(CLKComplication *)complication
                                         isSample:(BOOL)sampleBool
 {
-    NSMutableArray *weeks;
-    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
-    if (data != nil)
-    {
-        weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-        if (!weeks)
-        {
-            JZLog(@"NSUserDefaults DO NOT HAVE weeks DATA");
-        }else
-        {
-            JZLog(@"NSUserDefaults DO HAVE weeks DATA");
-        }
-    }
-    NSMutableArray *week = [weeks objectAtIndex:0];
-    JZCommitDataModel* today;
-    int todayNum = 0;
-    int weekNum = 0;
-    if (week)
-    {
-        today = [week lastObject];
-        if (today)
-        {
-            todayNum = today.dataCount ? [today.dataCount intValue] : 0;
-        }
-        for (JZCommitDataModel* day in week)
-        {
-            if (day)
-            {
-                weekNum += (day.dataCount ? [today.dataCount intValue] : 0);
-            }
-        }
-    }
+    JZCommitDataModel* today = [[JZCommitManager sharedManager] getLastDay];
+    int todayNum = [[JZCommitManager sharedManager] getDayContributionNum];
+    int weekNum = [[JZCommitManager sharedManager] getWeekContributionNum];
     
     switch (complication.family)
     {

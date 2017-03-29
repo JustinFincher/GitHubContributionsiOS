@@ -9,8 +9,9 @@
 #import "ExtensionDelegate.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "JZHeader.h"
+#import <UserNotifications/UserNotifications.h>
 
-@interface ExtensionDelegate()<WCSessionDelegate>
+@interface ExtensionDelegate()<WCSessionDelegate,UNUserNotificationCenterDelegate>
 
 @property (nonatomic,strong) NSMutableArray *wcBackgroundTasks;
 
@@ -131,6 +132,8 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"JZ_WATCH_USERDEFAULT_UPDATED" object:nil];
         [self updateComplications];
     }
+    
+    
 }
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
 {
@@ -154,6 +157,15 @@
     {
         [[CLKComplicationServer sharedInstance] reloadTimelineForComplication:complication];
     }
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler
+{
+    if ([response.actionIdentifier isEqualToString:@"shareCommits"])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"" object:nil];
+    }
+    completionHandler();
 }
 
 @end

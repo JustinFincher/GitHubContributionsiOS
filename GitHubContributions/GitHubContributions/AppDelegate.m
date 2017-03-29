@@ -17,8 +17,10 @@
 #import <Crashlytics/Crashlytics.h>
 #import <UserNotifications/UserNotifications.h>
 #import "JZNotificationManager.h"
+#import "JZIntroViewController.h"
+#import "JZAppSearchManager.h"
 
-@interface AppDelegate ()<WCSessionDelegate>
+@interface AppDelegate ()<WCSessionDelegate,UNUserNotificationCenterDelegate>
 
 @property (nonatomic) Reachability *hostReachability;
 
@@ -30,13 +32,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
 #if DEBUG
-#warning comment this when production
-    [Fabric with:@[[Crashlytics class],[Answers class]]];
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
 #else
     [Fabric with:@[[Crashlytics class],[Answers class]]];
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:17280];
 #endif
     
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
     if ([WCSession isSupported])
     {
         WCSession* session = [WCSession defaultSession];
@@ -51,9 +52,54 @@
     [self.hostReachability startNotifier];
     [self updateInterfaceWithReachability:self.hostReachability];
     
+    // add refresh when launched
+    NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
+    if (array)
+    {
+        [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Success"
+                       customAttributes:@{}];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
+        [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
+        
+        JZLog(@"UIBackgroundFetchResultNewData");
+        [self syncUserDefaultToWatch];
+        [[JZAppSearchManager sharedManager] updateAppSearchResult];
+    }
+    
+    [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
+    [self HandleShortcutItems];
     return YES;
 }
 
+#pragma mark - Short Cuts
+- (void)HandleShortcutItems
+{
+    NSMutableArray *items = [NSMutableArray array];
+    if (![[JZCommitManager sharedManager] haveUserID])
+    {
+        UIApplicationShortcutItem *setUserNameItem = [[UIApplicationShortcutItem alloc]initWithType:@"Setup" localizedTitle:@"Setup"];
+        [items addObject:setUserNameItem];
+    }else if ([[JZCommitManager sharedManager] haveUserCommits])
+    {
+        UIApplicationShortcutItem *shareItem = [[UIApplicationShortcutItem alloc]initWithType:@"Share" localizedTitle:@"Share Graph"];
+        [items addObject:shareItem];
+    }else
+    {
+        
+    }
+    [[UIApplication sharedApplication] setShortcutItems:items];
+}
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
+{
+    if ([shortcutItem.type isEqualToString:@"Setup"])
+    {
+        [(JZIntroViewController *)self.window.rootViewController showUserIDPage];
+    }
+    if ([shortcutItem.type isEqualToString:@"Share"])
+    {
+        [(JZIntroViewController *)self.window.rootViewController showShareSheet];
+    }
+}
 
 /*!
  * Called by Reachability whenever status changes.
@@ -139,6 +185,8 @@
         
         JZLog(@"UIBackgroundFetchResultNewData");
         [self syncUserDefaultToWatch];
+        [self HandleShortcutItems];
+        [[JZAppSearchManager sharedManager] updateAppSearchResult];
         completionHandler(UIBackgroundFetchResultNewData);
     }
     else
@@ -172,6 +220,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+     [self HandleShortcutItems];
 }
 
 
@@ -185,8 +234,21 @@
 }
 
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+- (void)applicationWillTerminate:(UIApplication *)application
+{
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Notification
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+didReceiveNotificationResponse:(UNNotificationResponse *)response
+         withCompletionHandler:(void (^)(void))completionHandler
+{
+    if ([response.actionIdentifier isEqualToString:@"shareCommits"])
+    {        
+        [(JZIntroViewController *)self.window.rootViewController showShareSheet];
+    }
+    completionHandler();
 }
 
 #pragma mark - WCSessionDelegate

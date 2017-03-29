@@ -69,7 +69,7 @@ SOFTWARE.</string>
 			<key>summary</key>
 			<string>Dates and time made easy in Objective-C</string>
 			<key>version</key>
-			<string>1.7.0</string>
+			<string>2.0.0</string>
 		</dict>
 		<dict>
 			<key>authors</key>
@@ -139,7 +139,7 @@ SOFTWARE.
 			<key>summary</key>
 			<string>Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView.</string>
 			<key>version</key>
-			<string>4.0.3</string>
+			<string>4.0.8</string>
 		</dict>
 		<dict>
 			<key>authors</key>

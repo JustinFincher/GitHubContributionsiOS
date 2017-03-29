@@ -7,6 +7,29 @@
 		<dict>
 			<key>authors</key>
 			<dict>
+				<key>Twitter</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>homepage</key>
+			<string>https://get.fabric.io/crashlytics</string>
+			<key>licenseText</key>
+			<string>Fabric: Copyright 2016 Twitter, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Fabric Software and Services Agreement located at https://fabric.io/terms. Crashlytics Kit: Copyright 2016 Crashlytics, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Crashlytics Terms of Service located at http://try.crashlytics.com/terms/terms-of-service.pdf and the Crashlytics Privacy Policy located at http://try.crashlytics.com/terms/privacy-policy.pdf. OSS: http://get.fabric.io/terms/opensource.txt</string>
+			<key>licenseType</key>
+			<string>Commercial</string>
+			<key>name</key>
+			<string>Crashlytics</string>
+			<key>socialMediaURL</key>
+			<string></string>
+			<key>summary</key>
+			<string>Best and lightest-weight crash reporting for mobile, desktop and tvOS.</string>
+			<key>version</key>
+			<string>3.8.3</string>
+		</dict>
+		<dict>
+			<key>authors</key>
+			<dict>
 				<key>Matthew York</key>
 				<string>my3681@gmail.com</string>
 			</dict>
@@ -46,7 +69,30 @@ SOFTWARE.</string>
 			<key>summary</key>
 			<string>Dates and time made easy in Objective-C</string>
 			<key>version</key>
-			<string>1.7.0</string>
+			<string>2.0.0</string>
+		</dict>
+		<dict>
+			<key>authors</key>
+			<dict>
+				<key>Twitter</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>homepage</key>
+			<string>https://fabric.io</string>
+			<key>licenseText</key>
+			<string>Fabric: Copyright 2016 Twitter, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Fabric Software and Services Agreement located at https://fabric.io/terms. OSS: http://get.fabric.io/terms/opensource.txt</string>
+			<key>licenseType</key>
+			<string>Commercial</string>
+			<key>name</key>
+			<string>Fabric</string>
+			<key>socialMediaURL</key>
+			<string></string>
+			<key>summary</key>
+			<string>Fabric by Twitter, Inc.</string>
+			<key>version</key>
+			<string>1.6.11</string>
 		</dict>
 	</array>
 </dict>

@@ -10,4 +10,8 @@
 
 @interface JZIntroViewController : IFTTTAnimatedPagingScrollViewController
 
+
+- (void)showShareSheet;
+- (void)showUserIDPage;
+
 @end

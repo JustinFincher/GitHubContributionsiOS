@@ -14,6 +14,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import <Shimmer/FBShimmeringView.h>
 #import "JZNotificationManager.h"
+#import "JZDataVisualizationManager.h"
 
 #define INTRO_TOTAL_PAGE_NUM 7
 
@@ -62,11 +63,11 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
 }
 - (BOOL)prefersStatusBarHidden
 {
-    return YES;
+    return NO;
 }
 
 - (void)viewDidLoad {
@@ -136,7 +137,13 @@
     [self keepView:self.setupLabelContainerView onPages:@[@(0)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
     self.setupLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.setupLabel.text = @"SETUP";
+    if (![[JZCommitManager sharedManager] haveUserID])
+    {
+        self.setupLabel.text = @"SETUP";
+    }else
+    {
+        self.setupLabel.text = @"SETTINGS";
+    }
     self.setupLabel.userInteractionEnabled = YES;
     self.setupLabel.minimumScaleFactor = 0.1;
     self.setupLabel.adjustsFontSizeToFitWidth = YES;
@@ -145,7 +152,7 @@
     self.setupLabel.textColor = UIColorFromRGB(0x676767);
     UITapGestureRecognizer *setupLabelTapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(navigatePageTwo)];
+                                            action:@selector(showUserIDPage)];
     [self.setupLabel addGestureRecognizer:setupLabelTapGesture];
     [self.setupLabelContainerView addSubview:self.setupLabel];
     [self.setupLabel mas_makeConstraints:^(MASConstraintMaker *make)
@@ -212,6 +219,7 @@
         self.githubIdInputField.text = name;
     }
     self.githubIdInputField.delegate = self;
+    self.githubIdInputField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.githubIdInputField.font = [UIFont fontWithName:@"Avenir-Medium" size:30];
     self.githubIdInputField.adjustsFontSizeToFitWidth = YES;
     self.githubIdInputField.minimumFontSize = 0.02;
@@ -499,10 +507,6 @@
      }];
 }
 
-- (void)navigatePageTwo
-{
-    [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width*1, 0.0f) animated:YES];
-}
 
 - (void)notificationSwitchValueChanged:(id)sender{
     if([sender isOn])
@@ -525,6 +529,7 @@
         dispatch_queue_t gqueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
         dispatch_async(gqueue, ^(void)
                        {
+                           [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] removeObjectForKey:@"GitHubContributionsArray"];
                            NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
                            if (array)
                            {
@@ -565,6 +570,28 @@
     }
     
     return YES;
+}
+
+- (void)showShareSheet
+{
+    UIImage *img = [[JZDataVisualizationManager sharedManager] commitImageWithRect:CGRectMake(0, 0, 2000, 500) OS:JZDataVisualizationOSType_iOS_Notification];
+    NSString *string = @"My GitHub contributions graph via #contributionsapp";
+    NSMutableArray *activityItems = [NSMutableArray arrayWithObjects:string,img, nil];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewController.excludedActivityTypes = @[];
+    if ( [activityViewController respondsToSelector:@selector(popoverPresentationController)] )
+    {
+        activityViewController.popoverPresentationController.sourceView = self.view;
+    }
+    
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (void)showUserIDPage
+{
+    [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width*1, 0.0f) animated:YES];
+    [self.pageControl setCurrentPage:1];
 }
 
 - (void)didReceiveMemoryWarning {

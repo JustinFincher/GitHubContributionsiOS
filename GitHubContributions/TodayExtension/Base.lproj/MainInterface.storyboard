@@ -26,9 +26,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
                             </imageView>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" loops="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgV-S2-IQL" customClass="JZCommitSceneView">
-                                <rect key="frame" x="0.0" y="-210" width="320" height="210"/>
+                                <rect key="frame" x="0.0" y="-210" width="320" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="Jis-nb-mVa"/>
+                                    <constraint firstAttribute="height" constant="200" id="Jis-nb-mVa"/>
                                 </constraints>
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6j-Fd-9NN">

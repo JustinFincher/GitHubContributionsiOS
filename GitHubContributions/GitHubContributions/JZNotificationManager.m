@@ -80,6 +80,7 @@
     UNNotificationAction *shareAction = [UNNotificationAction actionWithIdentifier:@"shareCommits" title:@"I want share this! 😎" options:UNNotificationActionOptionForeground];
     UNNotificationCategory *category = [UNNotificationCategory categoryWithIdentifier:@"JZNotificationCategoryIdentifer" actions:@[shareAction] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
     [[UNUserNotificationCenter currentNotificationCenter] setNotificationCategories:[NSSet setWithObjects:category, nil]];
+    content.categoryIdentifier = @"JZNotificationCategoryIdentifer";
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"CommitImage.png"];

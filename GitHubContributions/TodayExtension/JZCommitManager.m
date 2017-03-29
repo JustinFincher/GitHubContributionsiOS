@@ -9,7 +9,7 @@
 
 #import "JZCommitManager.h"
 #import "JZCommitDataModel.h"
-#import "DateTools.h"
+#import <DateTools/DateTools.h>
 #import "JZHeader.h"
 
 
@@ -45,13 +45,87 @@
     // Should never be called, but just here for clarity really.
 }
 
+#pragma mark Helper
+- (NSString *)getUserID
+{
+    if ([self haveUserID])
+    {
+        return [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsName"];
+    }else
+    {
+        return nil;
+    }
+}
+- (BOOL)haveUserID
+{
+    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsName"];
+    if (name == nil || [name isEqualToString:@""])
+    {
+        return NO;
+    }
+    return YES;
+}
+- (BOOL)haveUserCommits
+{
+    if ([[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsArray"])
+    {
+        return YES;
+    }
+    return NO;
+}
+- (NSInteger)getDayContributionNum
+{
+    JZCommitDataModel* today = [self getLastDay];
+    int todayNum = 0;
+    todayNum = today.dataCount ? [today.dataCount intValue] : 0;
+    return todayNum;
+}
+- (NSInteger)getWeekContributionNum
+{
+    NSMutableArray *weeks;
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
+    if (data != nil)
+    {
+        weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
+    NSMutableArray *week = [weeks objectAtIndex:0];
+    int weekNum = 0;
+    if (week)
+    {
+        for (JZCommitDataModel* day in week)
+        {
+            if (day)
+            {
+                weekNum += (day.dataCount ? [day.dataCount intValue] : 0);
+            }
+        }
+    }
+    return weekNum;
+}
+- (JZCommitDataModel *)getLastDay
+{
+    NSMutableArray *weeks;
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
+    if (data != nil)
+    {
+        weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
+    NSMutableArray *week = [weeks objectAtIndex:0];
+    JZCommitDataModel* today;
+    if (week)
+    {
+        today = [week lastObject];
+    }
+    return today;
+}
+
 #pragma mark Web Task
 - (NSMutableArray *)refresh
 {
     [_commits removeAllObjects];
     NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsName"];
     
-    if (name == nil)
+    if (![self haveUserID])
     {
         return nil;
     }
@@ -59,6 +133,10 @@
     NSMutableArray *tempArray = [NSMutableArray array];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://github.com/users/%@/contributions",name]];
     NSString *webData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    if (!webData)
+    {
+        return nil;
+    }
     NSRange   searchedRange = NSMakeRange(0, [webData length]);
     NSString *pattern = @"(fill=\")(#[^\"]{6})(\" data-count=\")([^\"]{1,})(\" data-date=\")([^\"]{10})(\"/>)";
     NSError  *error = nil;
