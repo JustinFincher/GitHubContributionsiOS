@@ -32,10 +32,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
 #if DEBUG
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:900];
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
 #else
     [Fabric with:@[[Crashlytics class],[Answers class]]];
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:17280];
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
 #endif
     
     if ([WCSession isSupported])
@@ -146,57 +146,66 @@
 
     [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle"];
     
-    NetworkStatus netStatus = [self.hostReachability currentReachabilityStatus];
-    switch (netStatus)
+    NSDate *lastFetchDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"GitHubContributionsLastFetchDate"];
+    if (!lastFetchDate || [lastFetchDate timeIntervalSinceNow] > 21600)
     {
-        case NotReachable:
+        NetworkStatus netStatus = [self.hostReachability currentReachabilityStatus];
+        switch (netStatus)
         {
-            JZLog(@"NetworkStatus NotReachable");
+            case NotReachable:
+            {
+                JZLog(@"NetworkStatus NotReachable");
+                JZLog(@"UIBackgroundFetchResultNoData");
+                completionHandler(UIBackgroundFetchResultFailed);
+                return;
+                break;
+            }
+            case ReachableViaWWAN:
+            {
+                JZLog(@"NetworkStatus ReachableViaWWAN");
+                break;
+            }
+            case ReachableViaWiFi:
+            {
+                JZLog(@"NetworkStatus ReachableViaWiFi");
+                break;
+            }
+        }
+        NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
+        if (array)
+        {
+            [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Success"
+                           customAttributes:@{}];
+            
+            [[JZNotificationManager sharedManager] triggerSuccessNotificationWithData:array];
+            
+            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
+            [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastSuccessFetchTimeTitle"];
+            
+            JZLog(@"UIBackgroundFetchResultNewData");
+            [self syncUserDefaultToWatch];
+            [self HandleShortcutItems];
+            [[JZAppSearchManager sharedManager] updateAppSearchResult];
+            
+           [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"GitHubContributionsLastFetchDate"];
+            
+            completionHandler(UIBackgroundFetchResultNewData);
+        }
+        else
+        {
+            [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Fail"
+                           customAttributes:@{}];
+            
+            [[JZNotificationManager sharedManager] triggerFailedNotification];
+            
             JZLog(@"UIBackgroundFetchResultNoData");
-            completionHandler(UIBackgroundFetchResultNoData);
-            return;
-            break;
+            completionHandler(UIBackgroundFetchResultFailed);
         }
-        case ReachableViaWWAN:
-        {
-            JZLog(@"NetworkStatus ReachableViaWWAN");
-            break;
-        }
-        case ReachableViaWiFi:
-        {
-            JZLog(@"NetworkStatus ReachableViaWiFi");
-            break;
-        }
-    }
-    
-    
-    NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
-    if (array)
+        
+    }else
     {
-        [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Success"
-                       customAttributes:@{}];
-        
-        [[JZNotificationManager sharedManager] triggerSuccessNotificationWithData:array];
-        
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
-        [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
-        
-        [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastSuccessFetchTimeTitle"];
-        
-        JZLog(@"UIBackgroundFetchResultNewData");
-        [self syncUserDefaultToWatch];
-        [self HandleShortcutItems];
-        [[JZAppSearchManager sharedManager] updateAppSearchResult];
-        completionHandler(UIBackgroundFetchResultNewData);
-    }
-    else
-    {
-        [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Fail"
-                       customAttributes:@{}];
-        
-        [[JZNotificationManager sharedManager] triggerFailedNotification];
-        
-        JZLog(@"UIBackgroundFetchResultNoData");
         completionHandler(UIBackgroundFetchResultNoData);
     }
 }
