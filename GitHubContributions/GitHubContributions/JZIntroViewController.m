@@ -72,7 +72,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.scrollView.alpha = 0.0;
     [self configureViews];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (self.scrollView.alpha != 1.0)
+    {
+        [UIView animateWithDuration:0.2f animations:^(void)
+         {
+             self.scrollView.alpha = 1.0;
+         }];
+    }
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
