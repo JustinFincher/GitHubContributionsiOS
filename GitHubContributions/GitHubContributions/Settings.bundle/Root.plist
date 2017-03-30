@@ -50,11 +50,21 @@
             <key>Type</key>
             <string>PSTitleValueSpecifier</string>
             <key>Title</key>
-            <string>Last Attempt</string>
+            <string>Last Fetch Called</string>
             <key>DefaultValue</key>
             <string>nil</string>
             <key>Key</key>
             <string>com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSTitleValueSpecifier</string>
+            <key>Title</key>
+            <string>Last Attempt</string>
+            <key>DefaultValue</key>
+            <string>nil</string>
+            <key>Key</key>
+            <string>com.JustZht.GitHubContributions.Bundle.Settings.LastAttemptTimeTitle</string>
         </dict>
         <dict>
             <key>Type</key>
