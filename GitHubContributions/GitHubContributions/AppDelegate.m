@@ -146,7 +146,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle"];
     
     NSDate *lastFetchDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"GitHubContributionsLastFetchDate"];
-    if (!lastFetchDate || [lastFetchDate timeIntervalSinceNow] > 21600)
+    if (!lastFetchDate || [lastFetchDate timeIntervalSinceNow] < -21600)
     {
         [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastAttemptTimeTitle"];
         NetworkStatus netStatus = [self.hostReachability currentReachabilityStatus];
