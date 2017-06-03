@@ -32,7 +32,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
 #if DEBUG
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:120];
 #else
     [Fabric with:@[[Crashlytics class],[Answers class]]];
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
@@ -143,10 +143,16 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+#if DEBUG
+    
+#endif
+    [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Called"
+                   customAttributes:@{}];
     [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastFetchTimeTitle"];
     
     NSDate *lastFetchDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"GitHubContributionsLastFetchDate"];
-    if (!lastFetchDate || [lastFetchDate timeIntervalSinceNow] < -21600)
+    if (!lastFetchDate || [lastFetchDate timeIntervalSinceNow] < -17280)
     {
         [[NSUserDefaults standardUserDefaults] setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle] forKey:@"com.JustZht.GitHubContributions.Bundle.Settings.LastAttemptTimeTitle"];
         NetworkStatus netStatus = [self.hostReachability currentReachabilityStatus];
@@ -177,7 +183,10 @@
             [Answers logCustomEventWithName:@"com.JustZht.GitHubContributions.BackgroundFetch.Success"
                            customAttributes:@{}];
             
-            [[JZNotificationManager sharedManager] triggerSuccessNotificationWithData:array];
+            if (!lastFetchDate || [lastFetchDate timeIntervalSinceNow] < -21600)
+            {
+                [[JZNotificationManager sharedManager] triggerSuccessNotificationWithData:array];
+            }
             
             NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
             [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:data forKey:@"GitHubContributionsArray"];
@@ -206,7 +215,7 @@
         
     }else
     {
-        completionHandler(UIBackgroundFetchResultNoData);
+        completionHandler(UIBackgroundFetchResultNewData);
     }
 }
 

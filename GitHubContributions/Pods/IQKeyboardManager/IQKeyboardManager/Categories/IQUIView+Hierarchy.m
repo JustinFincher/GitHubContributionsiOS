@@ -24,7 +24,7 @@
 #import "IQUIView+Hierarchy.h"
 
 #import <UIKit/UICollectionView.h>
-
+#import <UIKit/UIAlertController.h>
 #import <UIKit/UITableView.h>
 #import <UIKit/UITextView.h>
 #import <UIKit/UITextField.h>
@@ -38,16 +38,9 @@
 
 @implementation UIView (IQ_UIView_Hierarchy)
 
-
--(void)_setIsAskingCanBecomeFirstResponder:(BOOL)isAskingCanBecomeFirstResponder
-{
-    objc_setAssociatedObject(self, @selector(isAskingCanBecomeFirstResponder), @(isAskingCanBecomeFirstResponder), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
 -(BOOL)isAskingCanBecomeFirstResponder
 {
-    NSNumber *isAskingCanBecomeFirstResponder = objc_getAssociatedObject(self, @selector(isAskingCanBecomeFirstResponder));
-    return [isAskingCanBecomeFirstResponder boolValue];
+    return NO;
 }
 
 -(UIViewController*)viewController
@@ -103,24 +96,26 @@
     
     while (superview)
     {
-        static Class UITableViewCellScrollViewClass = Nil;   //UITableViewCell
-        static Class UITableViewWrapperViewClass = Nil;      //UITableViewCell
-        static Class UIQueuingScrollViewClass = Nil;         //UIPageViewController
-
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            UITableViewCellScrollViewClass      = NSClassFromString(@"UITableViewCellScrollView");
-            UITableViewWrapperViewClass         = NSClassFromString(@"UITableViewWrapperView");
-            UIQueuingScrollViewClass            = NSClassFromString(@"_UIQueuingScrollView");
-        });
-        if ([superview isKindOfClass:classType] &&
-            ([superview isKindOfClass:UITableViewCellScrollViewClass] == NO) &&
-            ([superview isKindOfClass:UITableViewWrapperViewClass] == NO) &&
-            ([superview isKindOfClass:UIQueuingScrollViewClass] == NO))
+        if ([superview isKindOfClass:classType])
         {
-            return superview;
+            //If it's UIScrollView, then validating for special cases
+            if ([superview isKindOfClass:[UIScrollView class]])
+            {
+                NSString *classNameString = NSStringFromClass([superview class]);
+                
+                //UITableViewCellScrollView, UITableViewWrapperView, _UIQueuingScrollView
+                if ((([classNameString hasPrefix:@"UITableView"] && ([classNameString hasSuffix:@"CellScrollView"] || [classNameString hasSuffix:@"WrapperView"])) || [classNameString hasPrefix:@"_"]) == NO)
+                {
+                    return superview;
+                }
+            }
+            else
+            {
+                return superview;
+            }
         }
-        else    superview = superview.superview;
+        
+        superview = superview.superview;
     }
     
     return nil;
@@ -128,22 +123,21 @@
 
 -(BOOL)_IQcanBecomeFirstResponder
 {
-    [self _setIsAskingCanBecomeFirstResponder:YES];
-    BOOL _IQcanBecomeFirstResponder = ([self canBecomeFirstResponder] && [self isUserInteractionEnabled] && ![self isHidden] && [self alpha]!=0.0 && ![self isAlertViewTextField]  && ![self isSearchBarTextField]);
+    BOOL _IQcanBecomeFirstResponder = NO;
     
+    if ([self isKindOfClass:[UITextField class]])
+    {
+        _IQcanBecomeFirstResponder = [(UITextField*)self isEnabled];
+    }
+    else if ([self isKindOfClass:[UITextView class]])
+    {
+        _IQcanBecomeFirstResponder = [(UITextView*)self isEditable];
+    }
+
     if (_IQcanBecomeFirstResponder == YES)
     {
-        if ([self isKindOfClass:[UITextField class]])
-        {
-            _IQcanBecomeFirstResponder = [(UITextField*)self isEnabled];
-        }
-        else if ([self isKindOfClass:[UITextView class]])
-        {
-            _IQcanBecomeFirstResponder = [(UITextView*)self isEditable];
-        }
+        _IQcanBecomeFirstResponder = ([self isUserInteractionEnabled] && ![self isHidden] && [self alpha]!=0.0 && ![self isAlertViewTextField]  && ![self isSearchBarTextField]);
     }
-    
-    [self _setIsAskingCanBecomeFirstResponder:NO];
     
     return _IQcanBecomeFirstResponder;
 }
@@ -314,28 +308,44 @@
 
 -(BOOL)isSearchBarTextField
 {
-    static Class UISearchBarTextFieldClass = Nil;        //UISearchBar
-
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        UISearchBarTextFieldClass           = NSClassFromString(@"UISearchBarTextField");
-    });
-    return ([self isKindOfClass:UISearchBarTextFieldClass] || [self isKindOfClass:[UISearchBar class]]);
+    UIResponder *searchBar = [self nextResponder];
+    
+    BOOL isSearchBarTextField = NO;
+    while (searchBar && isSearchBarTextField == NO)
+    {
+        if ([searchBar isKindOfClass:[UISearchBar class]])
+        {
+            isSearchBarTextField = YES;
+            break;
+        }
+        else if ([searchBar isKindOfClass:[UIViewController class]])    //If found viewcontroller but still not found UISearchBar then it's not the search bar textfield
+        {
+            break;
+        }
+        
+        searchBar = [searchBar nextResponder];
+    }
+    
+    return isSearchBarTextField;
 }
 
 -(BOOL)isAlertViewTextField
 {
-    //Special textFields,textViews,scrollViews
-    static Class UIAlertSheetTextFieldClass = Nil;       //UIAlertView
-    static Class UIAlertSheetTextFieldClass_iOS8 = Nil;  //UIAlertView
-
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        UIAlertSheetTextFieldClass          = NSClassFromString(@"UIAlertSheetTextField");
-        UIAlertSheetTextFieldClass_iOS8     = NSClassFromString(@"_UIAlertControllerTextField");
-    });
+    UIResponder *alertViewController = [self viewController];
     
-    return ([self isKindOfClass:UIAlertSheetTextFieldClass] || [self isKindOfClass:UIAlertSheetTextFieldClass_iOS8]);
+    BOOL isAlertViewTextField = NO;
+    while (alertViewController && isAlertViewTextField == NO)
+    {
+        if ([alertViewController isKindOfClass:[UIAlertController class]])
+        {
+            isAlertViewTextField = YES;
+            break;
+        }
+
+        alertViewController = [alertViewController nextResponder];
+    }
+    
+    return isAlertViewTextField;
 }
 
 @end
