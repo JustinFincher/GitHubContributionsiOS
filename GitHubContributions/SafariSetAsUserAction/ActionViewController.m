@@ -8,6 +8,7 @@
 
 #import "ActionViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#define JZSuiteName @"group.com.JustZht.GitHubContributions"
 
 @interface ActionViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -37,7 +38,11 @@
 					if ([self isValidGitHubURLFrom:url])
 					{
 						self.successView.hidden = NO;
-						self.userNameLabel.text = [self getGitHubUserNameFrom:url];
+						NSString *trimmedName = [[self getGitHubUserNameFrom:url] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+						self.userNameLabel.text = trimmedName;
+						[[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:trimmedName forKey:@"GitHubContributionsName"];
+						
+						
 					}else
 					{
 						self.failView.hidden = NO;
@@ -68,8 +73,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)openApp:(id)sender
+{
+	UIResponder* responder = self;
+	while ((responder = [responder nextResponder]) != nil)
+	{
+		NSLog(@"responder = %@", responder);
+		if([responder respondsToSelector:@selector(openURL:)] == YES)
+		{
+			[responder performSelector:@selector(openURL:) withObject: [NSURL URLWithString:@"com.JustZht.GitHubContributions://" ]];
+		}
+	}
+	[self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];
+}
 
-- (IBAction)done {
+- (IBAction)done:(id)sender
+{
     // Return any edited content to the host app.
     // This template doesn't do anything, so we just echo the passed in items.
     [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];

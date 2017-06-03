@@ -181,6 +181,7 @@
 		0D2CD5811EE253DB005E48CB /* ActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
 		0D2CD5841EE253DB005E48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		0D2CD5861EE253DB005E48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D2CD5911EE2684D005E48CB /* SafariSetAsUserAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafariSetAsUserAction.entitlements; sourceTree = "<group>"; };
 		0D565F9B1D85CAC5006C0324 /* JZCommitSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCommitSceneView.h; sourceTree = "<group>"; };
 		0D565F9C1D85CAC5006C0324 /* JZCommitSceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZCommitSceneView.m; sourceTree = "<group>"; };
 		0D7703FD1E1D52910019F507 /* JZIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZIntroViewController.h; sourceTree = "<group>"; };
@@ -387,6 +388,7 @@
 		0D2CD57F1EE253DB005E48CB /* SafariSetAsUserAction */ = {
 			isa = PBXGroup;
 			children = (
+				0D2CD5911EE2684D005E48CB /* SafariSetAsUserAction.entitlements */,
 				0D2CD5801EE253DB005E48CB /* ActionViewController.h */,
 				0D2CD5811EE253DB005E48CB /* ActionViewController.m */,
 				0D2CD5831EE253DB005E48CB /* MainInterface.storyboard */,
@@ -691,6 +693,11 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 9QJ8M25J77;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0DB556681D859A120042275E = {
 						CreatedOnToolsVersion = 8.0;
@@ -1254,6 +1261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = SafariSetAsUserAction/SafariSetAsUserAction.entitlements;
 				DEVELOPMENT_TEAM = 9QJ8M25J77;
 				INFOPLIST_FILE = SafariSetAsUserAction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1268,6 +1276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = SafariSetAsUserAction/SafariSetAsUserAction.entitlements;
 				DEVELOPMENT_TEAM = 9QJ8M25J77;
 				INFOPLIST_FILE = SafariSetAsUserAction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

@@ -51,6 +51,7 @@
 @property (nonatomic,strong) UIImageView *watchImageView;
 @property (nonatomic,strong) UILabel *watchLabel;
 
+@property (nonatomic) BOOL hasSetup;
 
 @end
 
@@ -70,9 +71,11 @@
     return NO;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.scrollView.alpha = 0.0;
+	self.hasSetup = NO;
     [self configureViews];
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -84,6 +87,15 @@
              self.scrollView.alpha = 1.0;
          }];
     }
+	
+	if (self.hasSetup)
+	{
+		NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsName"];
+		if (name)
+		{
+			self.githubIdInputField.text = name;
+		}
+	}
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -516,6 +528,8 @@
      {
          make.center.mas_equalTo(self.effectContainerView);
      }];
+	
+	self.hasSetup = YES;
 }
 
 
