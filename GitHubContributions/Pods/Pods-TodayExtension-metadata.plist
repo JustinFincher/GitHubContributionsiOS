@@ -7,15 +7,15 @@
 		<dict>
 			<key>authors</key>
 			<dict>
-				<key>Twitter</key>
+				<key>Google</key>
 				<string></string>
 			</dict>
 			<key>description</key>
 			<string></string>
 			<key>homepage</key>
-			<string>https://get.fabric.io/crashlytics</string>
+			<string>http://try.crashlytics.com/</string>
 			<key>licenseText</key>
-			<string>Fabric: Copyright 2016 Twitter, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Fabric Software and Services Agreement located at https://fabric.io/terms. Crashlytics Kit: Copyright 2016 Crashlytics, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Crashlytics Terms of Service located at http://try.crashlytics.com/terms/terms-of-service.pdf and the Crashlytics Privacy Policy located at http://try.crashlytics.com/terms/privacy-policy.pdf. OSS: http://get.fabric.io/terms/opensource.txt</string>
+			<string>Fabric: Copyright 2017 Google, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Fabric Software and Services Agreement located at https://fabric.io/terms. Crashlytics Kit: Copyright 2017 Crashlytics, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Crashlytics Terms of Service located at http://try.crashlytics.com/terms/terms-of-service.pdf and the Crashlytics Privacy Policy located at http://try.crashlytics.com/terms/privacy-policy.pdf. OSS: http://get.fabric.io/terms/opensource.txt</string>
 			<key>licenseType</key>
 			<string>Commercial</string>
 			<key>name</key>
@@ -25,7 +25,7 @@
 			<key>summary</key>
 			<string>Best and lightest-weight crash reporting for mobile, desktop and tvOS.</string>
 			<key>version</key>
-			<string>3.8.4</string>
+			<string>3.8.5</string>
 		</dict>
 		<dict>
 			<key>authors</key>
@@ -74,7 +74,7 @@ SOFTWARE.</string>
 		<dict>
 			<key>authors</key>
 			<dict>
-				<key>Twitter</key>
+				<key>Google</key>
 				<string></string>
 			</dict>
 			<key>description</key>
@@ -82,7 +82,7 @@ SOFTWARE.</string>
 			<key>homepage</key>
 			<string>https://fabric.io</string>
 			<key>licenseText</key>
-			<string>Fabric: Copyright 2016 Twitter, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Fabric Software and Services Agreement located at https://fabric.io/terms. OSS: http://get.fabric.io/terms/opensource.txt</string>
+			<string>Fabric: Copyright 2017 Google, Inc. All Rights Reserved. Use of this software is subject to the terms and conditions of the Fabric Software and Services Agreement located at https://fabric.io/terms. OSS: http://get.fabric.io/terms/opensource.txt</string>
 			<key>licenseType</key>
 			<string>Commercial</string>
 			<key>name</key>
@@ -90,9 +90,9 @@ SOFTWARE.</string>
 			<key>socialMediaURL</key>
 			<string></string>
 			<key>summary</key>
-			<string>Fabric by Twitter, Inc.</string>
+			<string>Fabric by Google, Inc.</string>
 			<key>version</key>
-			<string>1.6.11</string>
+			<string>1.6.12</string>
 		</dict>
 	</array>
 </dict>

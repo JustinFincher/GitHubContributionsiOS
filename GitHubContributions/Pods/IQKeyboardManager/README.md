@@ -20,7 +20,7 @@ Often while developing an app, We ran into an issues where the iPhone keyboard s
 [![Issue Stats](http://issuestats.com/github/hackiftekhar/iqkeyboardmanager/badge/pr?style=flat)](http://issuestats.com/github/hackiftekhar/iqkeyboardmanager)
 [![Issue Stats](http://issuestats.com/github/hackiftekhar/iqkeyboardmanager/badge/issue?style=flat)](http://issuestats.com/github/hackiftekhar/iqkeyboardmanager)
 
-1) `**CODELESS**, Zero Line Of Code`
+1) `**CODELESS**, Zero Lines Of Code`
 
 2) `Works Automatically`
 
@@ -71,7 +71,7 @@ Minimum Xcode Version: Xcode 8.0
 
 #### Demo Project:-
 
-Minimum Xcode Version: Xcode 8.3
+Minimum Xcode Version: Xcode 8.3.2
 
 
 Installation
@@ -100,7 +100,9 @@ it simply add the following line to your Podfile: ([#236](https://github.com/hac
 
 *Or*
 
-`pod 'IQKeyboardManagerSwift', '4.0.9'`
+`pod 'IQKeyboardManagerSwift', '4.0.10'`
+
+*Swift 3.1 (Xcode 8.3)* `pod 'IQKeyboardManagerSwift', '4.0.10'`
 
 *Swift 3.0(3.0.2) (Xcode 8.2)* `pod 'IQKeyboardManagerSwift', '4.0.8'`
 
@@ -188,8 +190,11 @@ You can find some manual management tweaks & examples [here](https://github.com/
 
 
 
-## Control Flow Diagram
-[![IQKeyboardManager CFD](https://raw.githubusercontent.com/hackiftekhar/IQKeyboardManager/v3.3.0/Screenshot/IQKeyboardManagerCFD.jpg)](https://raw.githubusercontent.com/hackiftekhar/IQKeyboardManager/v3.3.0/Screenshot/IQKeyboardManagerCFD.jpg)
+## Flow Diagram
+[![IQKeyboardManager CFD](https://raw.githubusercontent.com/hackiftekhar/IQKeyboardManager/master/Screenshot/IQKeyboardManagerFlowDiagram.jpg)](https://raw.githubusercontent.com/hackiftekhar/IQKeyboardManager/master/Screenshot/IQKeyboardManagerFlowDiagram.jpg)
+
+If you would like to see detailed Flow diagram then see [here](https://raw.githubusercontent.com/hackiftekhar/IQKeyboardManager/v3.3.0/Screenshot/IQKeyboardManagerCFD.jpg).
+
 
 
 ## Properties and functions usage:-
