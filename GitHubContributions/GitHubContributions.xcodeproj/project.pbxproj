@@ -1276,6 +1276,7 @@
 		0D2CD58A1EE253DB005E48CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = SafariSetAsUserAction/SafariSetAsUserAction.entitlements;
 				DEVELOPMENT_TEAM = 9QJ8M25J77;
@@ -1291,6 +1292,7 @@
 		0D2CD58B1EE253DB005E48CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = SafariSetAsUserAction/SafariSetAsUserAction.entitlements;
 				DEVELOPMENT_TEAM = 9QJ8M25J77;

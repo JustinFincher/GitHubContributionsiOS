@@ -22,11 +22,7 @@
     [super viewDidLoad];
 	self.successView.hidden = YES;
 	self.failView.hidden = YES;
-	
-    // Get the item[s] we're handling from the extension context.
-    
-    // For example, look for an image and place it into an image view.
-    // Replace this with something appropriate for the type[s] your extension supports.
+
     BOOL urlFound = NO;
     for (NSExtensionItem *item in self.extensionContext.inputItems) {
         for (NSItemProvider *itemProvider in item.attachments) {
@@ -62,11 +58,24 @@
 
 - (BOOL)isValidGitHubURLFrom:(NSURL *)url
 {
-	return YES;
+    
+    NSArray *arr = [[url absoluteString] componentsSeparatedByString:@"github.com/"];
+    NSString *lastString = [arr objectAtIndex:1];
+    if (lastString != nil && ![lastString isEqualToString:@""])
+    {
+        return YES;
+    }
+    return NO;
 }
 - (NSString *)getGitHubUserNameFrom:(NSURL *)url
 {
-	return @"JustinFincher";
+    NSArray *arr = [[url absoluteString] componentsSeparatedByString:@"github.com/"];
+    NSString *lastString = [arr objectAtIndex:1];
+    if (lastString != nil && ![lastString isEqualToString:@""])
+    {
+        return [[lastString componentsSeparatedByString:@"/"] firstObject];
+    }
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {
