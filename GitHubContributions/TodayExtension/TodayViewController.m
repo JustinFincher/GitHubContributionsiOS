@@ -31,8 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
-    
-    
+    self.view.layer.contentsFormat = kCAContentsFormatRGBA8Uint;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
