@@ -15,7 +15,9 @@
 typedef NS_ENUM(NSInteger, JZDataVisualizationOSType) {
     JZDataVisualizationOSType_iOS_Widget,
     JZDataVisualizationOSType_iOS_Notification,
+    JZDataVisualizationOSType_iOS_ARScene,
     JZDataVisualizationOsType_watchOS
+    
 };
 
 + (id)sharedManager;
@@ -27,3 +29,4 @@ typedef NS_ENUM(NSInteger, JZDataVisualizationOSType) {
 
 
 @end
+
