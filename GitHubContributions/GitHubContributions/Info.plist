@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key></key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -32,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>984</string>
+	<string>1023</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -49,6 +51,12 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>To use AR Camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>To use AR Camera</string>
+	<key>NSMotionUsageDescription</key>
+	<string>To use AR Mode</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To save commits image</string>
 	<key>UIBackgroundModes</key>

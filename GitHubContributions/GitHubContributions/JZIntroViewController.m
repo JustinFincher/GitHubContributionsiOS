@@ -15,6 +15,8 @@
 #import <Shimmer/FBShimmeringView.h>
 #import "JZNotificationManager.h"
 #import "JZDataVisualizationManager.h"
+#import "JZARViewController.h"
+@import ARKit;
 
 #define INTRO_TOTAL_PAGE_NUM 7
 
@@ -120,7 +122,6 @@
     self.scrollView.delegate = self;
     
     
-    
     self.iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro_icon"]];
     [self.contentView addSubview:self.iconImageView];
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make)
@@ -149,13 +150,16 @@
     [self keepView:self.iconLabel onPages:@[@(0)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
     self.setupLabelContainerView = [[FBShimmeringView alloc] initWithFrame:CGRectZero];
+    self.setupLabelContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [self.contentView addSubview:self.setupLabelContainerView];
     [self.setupLabelContainerView mas_makeConstraints:^(MASConstraintMaker *make)
     {
-        //make.centerX.mas_equalTo(self.contentView);
-        make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.75);
+//        make.centerX.mas_equalTo(self.iconLabel.mas_centerX);
+        make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.8);
+        make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.2);
+//        make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.75);
         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.12);
-        make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.9);
+//        make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.9);
     }];
     self.setupLabelContainerView.shimmering = YES;
     [self keepView:self.setupLabelContainerView onPages:@[@(0)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
@@ -445,7 +449,7 @@
     self.notificationLabel.adjustsFontSizeToFitWidth = YES;
     self.notificationLabel.minimumScaleFactor = 0.02;
     self.notificationLabel.textColor = UIColorFromRGB(0x272727);
-    self.notificationLabel.text = @"NOTIFICATION CAN BE TRIGGERED ONCE BACKGROUND FETCH IS DONE (MAX 4 TIMES A DAY)";
+    self.notificationLabel.text = NSLocalizedString(@"NOTIFICATIONCANBETRIGGEREDONCEBACKGROUNDFETCHISDONE", nil);
     self.notificationLabel.textAlignment = NSTextAlignmentCenter;
     self.notificationLabel.numberOfLines = 0;
     [self.notificationLabel mas_makeConstraints:^(MASConstraintMaker *make)
@@ -475,7 +479,7 @@
     self.watchLabel.adjustsFontSizeToFitWidth = YES;
     self.watchLabel.minimumScaleFactor = 0.02;
     self.watchLabel.textColor = UIColorFromRGB(0x272727);
-    self.watchLabel.text = @"DON'T FORGET TO CHECK CONTRIBUTIONS FOR APPLE WATCH WITH COMPLICATIONS";
+    self.watchLabel.text = NSLocalizedString(@"DONTFORGETTOCHECKCONTRIBUTIONSFORAPPLEWATCH", nil);
     self.watchLabel.textAlignment = NSTextAlignmentCenter;
     self.watchLabel.numberOfLines = 0;
     [self.watchLabel mas_makeConstraints:^(MASConstraintMaker *make)
@@ -512,8 +516,29 @@
      {
          make.center.mas_equalTo(self.effectContainerView);
      }];
+    
+    self.arVCNaviButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [self.arVCNaviButton setTintColor:[UIColor blackColor]];
+    [self.arVCNaviButton setImage: [UIImage imageNamed:@"AR"] forState:UIControlStateNormal];
+    [self.effectContainerView.contentView addSubview:self.arVCNaviButton];
+    [self.arVCNaviButton mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.height.mas_equalTo(self.effectContainerView.mas_height).multipliedBy(0.7);
+         make.width.mas_equalTo(self.effectContainerView.mas_height).multipliedBy(0.7);
+         make.centerY.mas_equalTo(self.effectContainerView.mas_centerY);
+         make.trailing.mas_equalTo(self.effectContainerView.mas_trailing).multipliedBy(0.9);
+     }];
+    
+    [self.arVCNaviButton addTarget:self action:@selector(arModeOn) forControlEvents:UIControlEventTouchUpInside];
+    self.arVCNaviButton.enabled = [ARConfiguration isSupported];
 	
 	self.hasSetup = YES;
+}
+
+- (void)arModeOn
+{
+    JZARViewController *arVC = [[JZARViewController alloc] init];
+    [self presentViewController:arVC animated:YES completion:nil];
 }
 
 
