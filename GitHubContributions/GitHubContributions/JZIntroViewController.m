@@ -22,6 +22,7 @@
 
 @property (nonatomic,strong) UIVisualEffectView *effectContainerView;
 @property (nonatomic,strong) UIPageControl *pageControl;
+@property (nonatomic,strong) UIButton *arVCNaviButton;
 
 @property (nonatomic,strong) UIImageView *iconImageView;
 @property (nonatomic,strong) UILabel *iconLabel;
@@ -124,7 +125,7 @@
     [self.contentView addSubview:self.iconImageView];
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make)
     {
-        make.centerX.mas_equalTo(self.contentView);
+        //make.centerX.mas_equalTo(self.contentView);
         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.25);
         make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.2);
         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.2);
@@ -141,7 +142,7 @@
     [self.contentView addSubview:self.iconLabel];
     [self.iconLabel mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.45);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.22);
      }];
@@ -151,7 +152,7 @@
     [self.contentView addSubview:self.setupLabelContainerView];
     [self.setupLabelContainerView mas_makeConstraints:^(MASConstraintMaker *make)
     {
-        make.centerX.mas_equalTo(self.contentView);
+        //make.centerX.mas_equalTo(self.contentView);
         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.75);
         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.12);
         make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.9);
@@ -162,10 +163,10 @@
     self.setupLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     if (![[JZCommitManager sharedManager] haveUserID])
     {
-        self.setupLabel.text = @"SETUP";
+        self.setupLabel.text = NSLocalizedString(@"SETUP", nil);
     }else
     {
-        self.setupLabel.text = @"SETTINGS";
+        self.setupLabel.text = NSLocalizedString(@"SETTINGS", nil);
     }
     self.setupLabel.userInteractionEnabled = YES;
     self.setupLabel.minimumScaleFactor = 0.1;
@@ -193,7 +194,7 @@
     [self.contentView addSubview:self.githubIdImageView];
     [self.githubIdImageView mas_makeConstraints:^(MASConstraintMaker *make)
     {
-        make.centerX.mas_equalTo(self.contentView);
+        //make.centerX.mas_equalTo(self.contentView);
         make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
         make.bottom.mas_equalTo(self.contentView.mas_bottom);
@@ -208,13 +209,13 @@
     self.githubIdFindLabel.minimumScaleFactor = 0.1;
     self.githubIdFindLabel.textColor = UIColorFromRGB(0x676767);
     self.githubIdFindLabel.textAlignment = NSTextAlignmentCenter;
-    self.githubIdFindLabel.text = @"DON'T KNOW YOUR GITHUB ID? GO TO YOUR GITHUB PROFILE AND FIND YOUR ID BY URL";
+    self.githubIdFindLabel.text = NSLocalizedString(@"DONTKNOWGITHUBIDSEEGITHUBURL", @"");
     [self.githubIdFindLabel mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.45);
-         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.4);
-         make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.55);
+         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.35);
+         make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.5);
      }];
     [self keepView:self.githubIdFindLabel onPages:@[@(1)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
 
@@ -224,10 +225,10 @@
     self.githubIdInputNoticeLabel.adjustsFontSizeToFitWidth = YES;
     self.githubIdInputNoticeLabel.textColor = UIColorFromRGB(0x676767);
     self.githubIdInputNoticeLabel.textAlignment = NSTextAlignmentCenter;
-    self.githubIdInputNoticeLabel.text = @"INPUT YOUR GITHUB ID";
+    self.githubIdInputNoticeLabel.text = NSLocalizedString(@"INPUTYOURGITHUBID",nil);
     [self.githubIdInputNoticeLabel mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
          make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.05);
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.15);
@@ -247,11 +248,11 @@
     self.githubIdInputField.adjustsFontSizeToFitWidth = YES;
     self.githubIdInputField.minimumFontSize = 0.02;
     self.githubIdInputField.textColor = UIColorFromRGB(0x272727);
-    self.githubIdInputField.placeholder = @"YOUR ID";
+    self.githubIdInputField.placeholder = NSLocalizedString(@"YOUR ID",nil);
     self.githubIdInputField.textAlignment = NSTextAlignmentCenter;
     [self.githubIdInputField mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
          make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.20);
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.25);
@@ -264,7 +265,7 @@
     [self.contentView addSubview:self.notificationSwitch];
     [self.notificationSwitch mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.5);
      }];
     [self keepView:self.notificationSwitch onPages:@[@(2),@(3),@(4),@(5)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
@@ -279,7 +280,7 @@
     [self.contentView addSubview:self.phoneBodyImageView];
     [self.phoneBodyImageView mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.9);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5623*0.9);
      }];
@@ -339,12 +340,12 @@
     self.phoneScreenTodayUnAddedLabel.adjustsFontSizeToFitWidth = YES;
     self.phoneScreenTodayUnAddedLabel.minimumScaleFactor = 0.02;
     self.phoneScreenTodayUnAddedLabel.textColor = UIColorFromRGB(0x272727);
-    self.phoneScreenTodayUnAddedLabel.text = @"AFTER SETTING GITHUB ID, NAVIGATE TO TODAY VIEW AND PRESS 'EDIT'";
+    self.phoneScreenTodayUnAddedLabel.text = NSLocalizedString(@"AFTERSETTINGGITHUBIDNAVIGATETOTODAY",nil);
     self.phoneScreenTodayUnAddedLabel.textAlignment = NSTextAlignmentCenter;
     self.phoneScreenTodayUnAddedLabel.numberOfLines = 0;
     [self.phoneScreenTodayUnAddedLabel mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
          make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.1);
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.4);
@@ -375,35 +376,18 @@
     [phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation addKeyframeForTime:4 multiplier:2.f];
     [self.animator addAnimation:phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation];
     
-    [self.contentView addSubview:self.phoneScreenTodayUnAddedLabel];
-    self.phoneScreenTodayUnAddedLabel.font = [UIFont fontWithName:@"Avenir-Light" size:50];
-    self.phoneScreenTodayUnAddedLabel.adjustsFontSizeToFitWidth = YES;
-    self.phoneScreenTodayUnAddedLabel.minimumScaleFactor = 0.02;
-    self.phoneScreenTodayUnAddedLabel.textColor = UIColorFromRGB(0x272727);
-    self.phoneScreenTodayUnAddedLabel.text = @"AFTER SETTING GITHUB ID, NAVIGATE TO TODAY VIEW AND PRESS 'EDIT'";
-    self.phoneScreenTodayUnAddedLabel.textAlignment = NSTextAlignmentCenter;
-    self.phoneScreenTodayUnAddedLabel.numberOfLines = 0;
-    [self.phoneScreenTodayUnAddedLabel mas_makeConstraints:^(MASConstraintMaker *make)
-     {
-         make.centerX.mas_equalTo(self.contentView);
-         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
-         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.1);
-         make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.4);
-     }];
-    [self keepView:self.phoneScreenTodayUnAddedLabel onPages:@[@(2)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
-    
     self.phoneScreenTodayAddingLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentView addSubview:self.phoneScreenTodayAddingLabel];
     self.phoneScreenTodayAddingLabel.font = [UIFont fontWithName:@"Avenir-Light" size:50];
     self.phoneScreenTodayAddingLabel.adjustsFontSizeToFitWidth = YES;
     self.phoneScreenTodayAddingLabel.minimumScaleFactor = 0.02;
     self.phoneScreenTodayAddingLabel.textColor = UIColorFromRGB(0x272727);
-    self.phoneScreenTodayAddingLabel.text = @"ADD 'GITHUB CONTRIBUTIONS' TO WIDGET LIST BY TAPPING ADD SYMBOL";
+    self.phoneScreenTodayAddingLabel.text = NSLocalizedString(@"ADDTOWIDGETLISTBYTAPPINGADDSYMBOL", nil);
     self.phoneScreenTodayAddingLabel.textAlignment = NSTextAlignmentCenter;
     self.phoneScreenTodayAddingLabel.numberOfLines = 0;
     [self.phoneScreenTodayAddingLabel mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
          make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.1);
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.4);
@@ -417,12 +401,12 @@
     self.phoneScreenTodayAddedLabel.adjustsFontSizeToFitWidth = YES;
     self.phoneScreenTodayAddedLabel.minimumScaleFactor = 0.02;
     self.phoneScreenTodayAddedLabel.textColor = UIColorFromRGB(0x272727);
-    self.phoneScreenTodayAddedLabel.text = @"AND YOU'RE ALL SET. YOU CAN VIEW 2D/3D GRAPH FROM TODAY VIEW";
+    self.phoneScreenTodayAddedLabel.text = NSLocalizedString(@"ANDYOUREALLSETYOUCANVIEW2D3DGRAPH",nil);
     self.phoneScreenTodayAddedLabel.textAlignment = NSTextAlignmentCenter;
     self.phoneScreenTodayAddedLabel.numberOfLines = 0;
     [self.phoneScreenTodayAddedLabel mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
          make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.1);
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.4);
@@ -466,7 +450,7 @@
     self.notificationLabel.numberOfLines = 0;
     [self.notificationLabel mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
          make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.1);
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.45);
@@ -478,7 +462,7 @@
     [self.contentView addSubview:self.watchImageView];
     [self.watchImageView mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
          make.top.mas_equalTo(self.contentView);
@@ -496,7 +480,7 @@
     self.watchLabel.numberOfLines = 0;
     [self.watchLabel mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.35);
          make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.5);
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.9);
@@ -512,14 +496,14 @@
     [self.effectContainerView mas_makeConstraints:^(MASConstraintMaker *make)
      {
          make.bottom.mas_equalTo(self.contentView.mas_bottom);
-         make.centerX.mas_equalTo(self.contentView);
+         //make.centerX.mas_equalTo(self.contentView);
          make.width.mas_equalTo(self.view.mas_width);
          make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.1);
      }];
     [self keepView:self.effectContainerView onPages:@[@(0),@(1),@(2),@(3),@(4),@(5),@(6)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
     self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
-    [self.effectContainerView addSubview:self.pageControl];
+    [self.effectContainerView.contentView addSubview:self.pageControl];
     self.pageControl.numberOfPages = INTRO_TOTAL_PAGE_NUM;
     self.pageControl.currentPage = 0;
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];

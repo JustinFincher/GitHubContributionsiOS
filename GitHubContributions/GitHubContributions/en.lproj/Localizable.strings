@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  GitHubContributions
+
+  Created by Justin Fincher on 2017/9/2.
+  Copyright © 2017年 JustZht. All rights reserved.
+*/
+
+"SETUP" = "SETUP";
+"SETTINGS" = "SETTINGS";
+"DONTKNOWGITHUBIDSEEGITHUBURL" = "@DON'T KNOW YOUR GITHUB ID? GO TO YOUR GITHUB PROFILE AND FIND YOUR ID BY URL";

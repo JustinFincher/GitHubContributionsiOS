@@ -1,0 +1,16 @@
+/*
+ Localizable.strings
+ GitHubContributions
+ 
+ Created by Justin Fincher on 2017/9/2.
+ Copyright © 2017年 JustZht. All rights reserved.
+ */
+
+"SETUP" = "初始设置";
+"SETTINGS" = "设定";
+"DONTKNOWGITHUBIDSEEGITHUBURL" = "不清楚您的 GITHUB ID? 请查看您的 GITHUB 主页地址后缀";
+"INPUTYOURGITHUBID" = "输入您的 GITHUB ID";
+"YOURID" = "您的 ID";
+"AFTERSETTINGGITHUBIDNAVIGATETOTODAY" = "输入 GITHUB ID 后, 请进入今日视图底部点击'编辑'";
+"ADDTOWIDGETLISTBYTAPPINGADDSYMBOL" = "点击加号将 'GITHUB CONTRIBUTIONS' 添加到挂件列表";
+"ANDYOUREALLSETYOUCANVIEW2D3DGRAPH" = "然后您可以从今日视图查看二维/三维图表";

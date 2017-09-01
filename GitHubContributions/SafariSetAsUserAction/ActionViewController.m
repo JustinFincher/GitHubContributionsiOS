@@ -87,7 +87,7 @@
 	UIResponder* responder = self;
 	while ((responder = [responder nextResponder]) != nil)
 	{
-		NSLog(@"responder = %@", responder);
+//		NSLog(@"responder = %@", responder);
 		if([responder respondsToSelector:@selector(openURL:)] == YES)
 		{
 			[responder performSelector:@selector(openURL:) withObject: [NSURL URLWithString:@"com.JustZht.GitHubContributions://" ]];
