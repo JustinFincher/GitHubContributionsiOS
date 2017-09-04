@@ -13,6 +13,7 @@ pod 'Crashlytics'
 pod "JazzHands"
 pod 'Masonry'
 pod 'Shimmer'
+pod 'MaterialComponents/Snackbar'
 end
 
 target 'TodayExtension' do

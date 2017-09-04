@@ -6,6 +6,69 @@ PODS:
   - IQKeyboardManager (4.0.13)
   - JazzHands (2.0.8)
   - Masonry (1.0.2)
+  - MaterialComponents/AnimationTiming (34.0.1)
+  - MaterialComponents/Buttons (34.0.1):
+    - MaterialComponents/Buttons/ColorThemer (= 34.0.1)
+    - MaterialComponents/Buttons/Component (= 34.0.1)
+    - MaterialComponents/Buttons/TitleColorAccessibilityMutator (= 34.0.1)
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFTextAccessibility
+  - MaterialComponents/Buttons/ColorThemer (34.0.1):
+    - MaterialComponents/Buttons/Component
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Themes
+    - MaterialComponents/Typography
+    - MDFTextAccessibility
+  - MaterialComponents/Buttons/Component (34.0.1):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFTextAccessibility
+  - MaterialComponents/Buttons/TitleColorAccessibilityMutator (34.0.1):
+    - MaterialComponents/Buttons/Component
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (34.0.1):
+    - MaterialComponents/Ink/ColorThemer (= 34.0.1)
+    - MaterialComponents/Ink/Component (= 34.0.1)
+  - MaterialComponents/Ink/ColorThemer (34.0.1):
+    - MaterialComponents/Ink/Component
+    - MaterialComponents/Themes
+  - MaterialComponents/Ink/Component (34.0.1)
+  - MaterialComponents/OverlayWindow (34.0.1):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Application (34.0.1)
+  - MaterialComponents/private/KeyboardWatcher (34.0.1):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (34.0.1)
+  - MaterialComponents/private/Overlay (34.0.1)
+  - MaterialComponents/ShadowElevations (34.0.1)
+  - MaterialComponents/ShadowLayer (34.0.1)
+  - MaterialComponents/Snackbar (34.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/Themes (34.0.1)
+  - MaterialComponents/Typography (34.0.1):
+    - MaterialComponents/private/Application
+  - MDFTextAccessibility (1.2.0)
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
@@ -15,6 +78,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JazzHands
   - Masonry
+  - MaterialComponents/Snackbar
   - Shimmer
 
 SPEC CHECKSUMS:
@@ -24,8 +88,10 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
   JazzHands: 355dc5c2b6fc38ee460d0ed7836c69539263f477
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MaterialComponents: 46edbf3696a742c20fcb55623667aa36f5a39b60
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: e53840ab22c76ff0e931633fc4e0b952e0e4c5d6
+PODFILE CHECKSUM: 4d6877823b160813afce56941700526ec9ca0a53
 
 COCOAPODS: 1.3.1

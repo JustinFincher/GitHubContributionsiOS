@@ -9,7 +9,10 @@
 #import "JZARViewController.h"
 #import <Masonry/Masonry.h>
 #import "JZHeader.h"
+#import "JZARView.h"
 #import "JZCommitDataModel.h"
+#import "MaterialSnackbar.h"
+#import "JZARPlane.h"
 @import ARKit;
 @import SceneKit;
 
@@ -17,6 +20,14 @@
 @property (strong) ARSCNView* arView;
 @property (strong) SCNScene * arScene;
 @property (strong) ARSession* arSession;
+
+@property (strong) UIVisualEffectView *effectView;
+@property (strong) UIButton *backButton;
+
+@property (strong) NSMutableDictionary *planes;
+
+
+@property (nonatomic) BOOL hasPlaneDetected;
 
 @end
 
@@ -29,15 +40,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.hasPlaneDetected = NO;
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    ARWorldTrackingConfiguration *conf = [[ARWorldTrackingConfiguration alloc] init];
-    conf.lightEstimationEnabled = YES;
-    conf.worldAlignment = ARWorldAlignmentGravityAndHeading;
-    conf.planeDetection = ARPlaneDetectionHorizontal;
-    
-    self.arView = [[ARSCNView alloc] initWithFrame:self.view.bounds];
+    self.arView = [[JZARView alloc] initWithFrame:self.view.bounds];
     self.arView.delegate = self;
     [self.view addSubview:self.arView];
     [self.arView mas_makeConstraints:^(MASConstraintMaker *make)
@@ -46,19 +53,52 @@
           make.width.mas_equalTo(self.view.mas_width);
           make.height.mas_equalTo(self.view.mas_height);
      }];
-    self.arView.automaticallyUpdatesLighting = true;
-//    self.arView.showsStatistics = true;
     
+   
     self.arSession = [[ARSession alloc] init];
-    [self.arSession runWithConfiguration:conf options:ARSessionRunOptionResetTracking | ARSessionRunOptionRemoveExistingAnchors];
     self.arView.session = self.arSession;
     
     self.arScene = [SCNScene scene];
-//    self.arScene = [[JZDataVisualizationManager sharedManager] commitSceneWithRect:self.view.bounds OS:JZDataVisualizationOSType_iOS_Widget];
     self.arView.scene = self.arScene;
+    self.arView.autoenablesDefaultLighting = YES;
+//    self.arView.debugOptions = ARSCNDebugOptionShowWorldOrigin | ARSCNDebugOptionShowFeaturePoints;
     
+    self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [self.backButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    [self.backButton setTintColor:[UIColor whiteColor]];
+    [self.backButton addTarget:self action:@selector(dismissSelf) forControlEvents:UIControlEventTouchUpInside];
+    [self.arView addSubview:self.backButton];
+    [self.backButton mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.left.mas_equalTo(self.arView.mas_left);
+         make.top.mas_equalTo(self.arView.mas_top);
+         make.height.mas_equalTo(self.view.mas_width).multipliedBy(0.1);
+         make.width.mas_equalTo(self.view.mas_width).multipliedBy(0.1);
+     }];
+}
+- (void)dismissSelf
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     
-    self.arView.debugOptions = ARSCNDebugOptionShowWorldOrigin | ARSCNDebugOptionShowFeaturePoints;
+    ARWorldTrackingConfiguration *conf = [[ARWorldTrackingConfiguration alloc] init];
+    conf.lightEstimationEnabled = YES;
+    conf.worldAlignment = ARWorldAlignmentGravity;
+    conf.planeDetection = ARPlaneDetectionHorizontal;
+    
+    [self.arSession runWithConfiguration:conf options:ARSessionRunOptionResetTracking | ARSessionRunOptionRemoveExistingAnchors];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.arSession pause];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,49 +106,88 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - ARSessionObserver
 - (void)session:(ARSession *)session cameraDidChangeTrackingState:(ARCamera *)camera
 {
-    NSLog(@"%ld",(long)camera.trackingState);
-}
-- (SCNNode *)renderer:(id<SCNSceneRenderer>)renderer nodeForAnchor:(ARAnchor *)anchor
-{
-    if ([anchor isKindOfClass: [ARPlaneAnchor class]])
+    NSLog(@"%@",[self trackStateString:camera.trackingState]);
+    
+    if (camera.trackingStateReason != ARTrackingStateReasonNone)
     {
-        ARPlaneAnchor *planeAnchor = (ARPlaneAnchor *)anchor;
-        SCNBox *box = [SCNBox boxWithWidth:planeAnchor.extent.x height:0.005 length:planeAnchor.extent.z chamferRadius:0.0];
-        box.firstMaterial.transparency = 0.1;
-        SCNNode *node = [SCNNode nodeWithGeometry:box];
-        node.position = SCNVector3Make(planeAnchor.center.x, -0.005, planeAnchor.center.z);
-        
-        [node addChildNode:[self commitNode]];
-        
-        return node;
-    }else
-    {
-        return nil;
+        MDCSnackbarMessage *message = [[MDCSnackbarMessage alloc] init];
+        switch (camera.trackingStateReason) {
+            case ARTrackingStateReasonInitializing:
+                message.text = [NSString stringWithFormat:@"AR Mode Initializing"];
+                break;
+            case ARTrackingStateReasonExcessiveMotion:
+                message.text = [NSString stringWithFormat:@"Please Slow Down"];
+                break;
+            case ARTrackingStateReasonInsufficientFeatures:
+                message.text = [NSString stringWithFormat:@"Please Find A Plane"];
+                break;
+            default:
+                break;
+        }
+        [MDCSnackbarManager showMessage:message];
     }
+   
 }
+- (void)sessionWasInterrupted:(ARSession *)session
+{
+    
+}
+- (void)sessionInterruptionEnded:(ARSession *)session
+{
+    
+}
+- (void)session:(ARSession *)session didFailWithError:(NSError *)error
+{
+    
+}
+
+#pragma mark -
+//- (SCNNode *)renderer:(id<SCNSceneRenderer>)renderer nodeForAnchor:(ARAnchor *)anchor
+//{
+//    return nil;
+//}
 - (void)renderer:(id<SCNSceneRenderer>)renderer didAddNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor
-{}
+{
+    if (![anchor isKindOfClass:[ARPlaneAnchor class]]) {
+        return;
+    }
+    JZARPlane *plane = [[JZARPlane alloc] initWithAnchor: (ARPlaneAnchor *)anchor];
+    [self.planes setObject:plane forKey:anchor.identifier];
+    [node addChildNode:plane];
+    
+    
+    [plane addChildNode:[self commitNode]];
+    self.hasPlaneDetected = YES;
+    
+    ARWorldTrackingConfiguration *conf = [[ARWorldTrackingConfiguration alloc] init];
+    conf.lightEstimationEnabled = YES;
+    conf.worldAlignment = ARWorldAlignmentGravity;
+    conf.planeDetection = ARPlaneDetectionNone;
+    
+    [self.arSession runWithConfiguration:conf options:0];
+    
+}
 - (void)renderer:(id<SCNSceneRenderer>)renderer didUpdateNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor
 {
-    if ([anchor isKindOfClass: [ARPlaneAnchor class]])
-    {
-        ARPlaneAnchor *planeAnchor = (ARPlaneAnchor *)anchor;
-        node.position = SCNVector3Make(planeAnchor.center.x, -0.005, planeAnchor.center.z);
-        SCNBox *box = (SCNBox *)node.geometry;
-        box.width = planeAnchor.extent.x;
-        box.length = planeAnchor.extent.z;
-        box.height = 0.005;
+    JZARPlane *plane = [self.planes objectForKey:anchor.identifier];
+    if (plane == nil) {
+        return;
     }
+    [plane update:(ARPlaneAnchor *)anchor];
 }
 - (void)renderer:(id<SCNSceneRenderer>)renderer didRemoveNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor
-{}
+{
+    [self.planes removeObjectForKey:anchor.identifier];
+    self.hasPlaneDetected = NO;
+}
 
 
 - (SCNNode *)commitNode
 {
-    float resize = 0.002;
+    float resize = 0.004;
     SCNNode *barNode = [SCNNode node];
     NSMutableArray *weeks;
     NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName]  objectForKey:@"GitHubContributionsArray"];
@@ -136,14 +215,26 @@
     }
     return barNode;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSString*)trackStateString:(ARTrackingState)formatType
+{
+    NSString *result = nil;
+    
+    switch(formatType) {
+        case ARTrackingStateNotAvailable:
+            result = @"NotAvailable";
+            break;
+        case ARTrackingStateLimited:
+            result = @"Limited";
+            break;
+        case ARTrackingStateNormal:
+            result = @"Normal";
+            break;
+        default:
+            [NSException raise:NSGenericException format:@"Unexpected FormatType."];
+    }
+    
+    return result;
 }
-*/
 
 @end

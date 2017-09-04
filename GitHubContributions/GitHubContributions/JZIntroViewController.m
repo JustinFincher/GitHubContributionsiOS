@@ -78,7 +78,7 @@
 {
     [super viewDidLoad];
     self.scrollView.alpha = 0.0;
-	self.hasSetup = NO;
+    self.hasSetup = NO;
     [self configureViews];
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -90,15 +90,15 @@
              self.scrollView.alpha = 1.0;
          }];
     }
-	
-	if (self.hasSetup)
-	{
-		NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsName"];
-		if (name)
-		{
-			self.githubIdInputField.text = name;
-		}
-	}
+    
+    if (self.hasSetup)
+    {
+        NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsName"];
+        if (name)
+        {
+            self.githubIdInputField.text = name;
+        }
+    }
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -125,12 +125,12 @@
     self.iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro_icon"]];
     [self.contentView addSubview:self.iconImageView];
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make)
-    {
-        //make.centerX.mas_equalTo(self.contentView);
-        make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.25);
-        make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.2);
-        make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.2);
-    }];
+     {
+         //make.centerX.mas_equalTo(self.contentView);
+         make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.25);
+         make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.2);
+         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.2);
+     }];
     [self keepView:self.iconImageView onPages:@[@(0)] atTimes:@[@(0)]];
     
     self.iconLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -153,14 +153,14 @@
     self.setupLabelContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [self.contentView addSubview:self.setupLabelContainerView];
     [self.setupLabelContainerView mas_makeConstraints:^(MASConstraintMaker *make)
-    {
-//        make.centerX.mas_equalTo(self.iconLabel.mas_centerX);
-        make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.8);
-        make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.2);
-//        make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.75);
-        make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.12);
-//        make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.9);
-    }];
+     {
+         //        make.centerX.mas_equalTo(self.iconLabel.mas_centerX);
+         make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.8);
+         make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.2);
+         //        make.top.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.75);
+         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.12);
+         //        make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.9);
+     }];
     self.setupLabelContainerView.shimmering = YES;
     [self keepView:self.setupLabelContainerView onPages:@[@(0)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
@@ -184,25 +184,25 @@
     [self.setupLabel addGestureRecognizer:setupLabelTapGesture];
     [self.setupLabelContainerView addSubview:self.setupLabel];
     [self.setupLabel mas_makeConstraints:^(MASConstraintMaker *make)
-    {
-        make.center.mas_equalTo(self.setupLabelContainerView);
-    }];
+     {
+         make.center.mas_equalTo(self.setupLabelContainerView);
+     }];
     self.setupLabelContainerView.contentView = self.setupLabel;
     self.setupLabelContainerView.shimmeringBeginFadeDuration = 0.3;
     self.setupLabelContainerView.shimmeringSpeed = 50;
     self.setupLabelContainerView.shimmeringOpacity = 0.3;
     self.setupLabelContainerView.shimmeringAnimationOpacity = 1.0f;
-
+    
     
     self.githubIdImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro_github_id_screenshot"]];
     [self.contentView addSubview:self.githubIdImageView];
     [self.githubIdImageView mas_makeConstraints:^(MASConstraintMaker *make)
-    {
-        //make.centerX.mas_equalTo(self.contentView);
-        make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
-        make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
-        make.bottom.mas_equalTo(self.contentView.mas_bottom);
-    }];
+     {
+         //make.centerX.mas_equalTo(self.contentView);
+         make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
+         make.width.mas_equalTo(self.contentView.mas_height).multipliedBy(0.5);
+         make.bottom.mas_equalTo(self.contentView.mas_bottom);
+     }];
     [self keepView:self.githubIdImageView onPages:@[@(1)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
     self.githubIdFindLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -222,7 +222,7 @@
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.5);
      }];
     [self keepView:self.githubIdFindLabel onPages:@[@(1)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
-
+    
     self.githubIdInputNoticeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentView addSubview:self.githubIdInputNoticeLabel];
     self.githubIdInputNoticeLabel.font = [UIFont fontWithName:@"Avenir-Light" size:50];
@@ -238,7 +238,7 @@
          make.bottom.mas_equalTo(self.contentView.mas_bottom).multipliedBy(0.15);
      }];
     [self keepView:self.githubIdInputNoticeLabel onPages:@[@(1)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
-
+    
     self.githubIdInputField = [[UITextField alloc] initWithFrame:CGRectZero];
     [self.contentView addSubview:self.githubIdInputField];
     NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] objectForKey:@"GitHubContributionsName"];
@@ -291,16 +291,16 @@
     [self keepView:self.phoneBodyImageView onPages:@[@(2),@(3),@(4),@(5)] withAttribute:IFTTTHorizontalPositionAttributeCenterX];
     
     NSLayoutConstraint *phoneBodyImageViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.phoneBodyImageView
-                                                                                          attribute:NSLayoutAttributeCenterY
-                                                                                          relatedBy:NSLayoutRelationEqual
-                                                                                             toItem:self.contentView
-                                                                                          attribute:NSLayoutAttributeTop
-                                                                                         multiplier:1.0f constant:0.f];
+                                                                                       attribute:NSLayoutAttributeCenterY
+                                                                                       relatedBy:NSLayoutRelationEqual
+                                                                                          toItem:self.contentView
+                                                                                       attribute:NSLayoutAttributeTop
+                                                                                      multiplier:1.0f constant:0.f];
     [self.contentView addConstraint:phoneBodyImageViewTopConstraint];
     IFTTTConstraintMultiplierAnimation *phoneBodyImageViewTopConstraintMultiplierAnimation = [IFTTTConstraintMultiplierAnimation animationWithSuperview:self.contentView
-                                                                                                                                                constraint:phoneBodyImageViewTopConstraint
-                                                                                                                                                 attribute:IFTTTLayoutAttributeHeight
-                                                                                                                                             referenceView:self.contentView];
+                                                                                                                                             constraint:phoneBodyImageViewTopConstraint
+                                                                                                                                              attribute:IFTTTLayoutAttributeHeight
+                                                                                                                                          referenceView:self.contentView];
     [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:4 multiplier:0.9f withEasingFunction:IFTTTEasingFunctionEaseOutCubic];
     [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:5 multiplier:1.03f];
     [phoneBodyImageViewTopConstraintMultiplierAnimation addKeyframeForTime:6 multiplier:1.6f];
@@ -310,10 +310,10 @@
     self.phoneScreenMaskView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.phoneBodyImageView addSubview:self.phoneScreenMaskView];
     [self.phoneScreenMaskView mas_makeConstraints:^(MASConstraintMaker *make)
-    {
-        make.center.mas_equalTo(self.phoneBodyImageView);
-        make.size.mas_equalTo(self.phoneBodyImageView).multipliedBy(0.7136);
-    }];
+     {
+         make.center.mas_equalTo(self.phoneBodyImageView);
+         make.size.mas_equalTo(self.phoneBodyImageView).multipliedBy(0.7136);
+     }];
     self.phoneScreenMaskView.backgroundColor = [UIColor blackColor];
     self.phoneScreenMaskView.layer.masksToBounds = YES;
     
@@ -365,16 +365,16 @@
          make.size.mas_equalTo(self.phoneScreenMaskView);
      }];
     NSLayoutConstraint *phoneScreenTodayAddingImageViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.phoneScreenTodayAddingImageView
-                                                                                                     attribute:NSLayoutAttributeCenterY
-                                                                                                     relatedBy:NSLayoutRelationEqual
-                                                                                                        toItem:self.phoneScreenMaskView
-                                                                                                     attribute:NSLayoutAttributeTop
-                                                                                                    multiplier:1.0f constant:0.f];
+                                                                                                    attribute:NSLayoutAttributeCenterY
+                                                                                                    relatedBy:NSLayoutRelationEqual
+                                                                                                       toItem:self.phoneScreenMaskView
+                                                                                                    attribute:NSLayoutAttributeTop
+                                                                                                   multiplier:1.0f constant:0.f];
     [self.phoneScreenMaskView addConstraint:phoneScreenTodayAddingImageViewTopConstraint];
     IFTTTConstraintMultiplierAnimation *phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation = [IFTTTConstraintMultiplierAnimation animationWithSuperview:self.phoneScreenMaskView
-                                                                                                                      constraint:phoneScreenTodayAddingImageViewTopConstraint
-                                                                                                                       attribute:IFTTTLayoutAttributeHeight
-                                                                                                                   referenceView:self.phoneScreenMaskView];
+                                                                                                                                                          constraint:phoneScreenTodayAddingImageViewTopConstraint
+                                                                                                                                                           attribute:IFTTTLayoutAttributeHeight
+                                                                                                                                                       referenceView:self.phoneScreenMaskView];
     [phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation addKeyframeForTime:2 multiplier:2.f withEasingFunction:IFTTTEasingFunctionEaseOutCubic];
     [phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation addKeyframeForTime:3 multiplier:0.5f];
     [phoneScreenTodayAddingImageViewTopConstraintMultiplierAnimation addKeyframeForTime:4 multiplier:2.f];
@@ -427,16 +427,16 @@
          make.height.mas_equalTo(self.phoneScreenMaskView.mas_width).multipliedBy(0.3144);
      }];
     NSLayoutConstraint *notificationImageViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.notificationImageView
-                                                                                                    attribute:NSLayoutAttributeCenterY
-                                                                                                    relatedBy:NSLayoutRelationEqual
-                                                                                                       toItem:self.phoneScreenMaskView
-                                                                                                    attribute:NSLayoutAttributeTop
-                                                                                                   multiplier:1.0f constant:0.f];
+                                                                                          attribute:NSLayoutAttributeCenterY
+                                                                                          relatedBy:NSLayoutRelationEqual
+                                                                                             toItem:self.phoneScreenMaskView
+                                                                                          attribute:NSLayoutAttributeTop
+                                                                                         multiplier:1.0f constant:0.f];
     [self.phoneScreenMaskView addConstraint:notificationImageViewTopConstraint];
     IFTTTConstraintMultiplierAnimation *notificationImageViewTopConstraintMultiplierAnimation = [IFTTTConstraintMultiplierAnimation animationWithSuperview:self.phoneScreenMaskView
-                                                                                                                                                          constraint:notificationImageViewTopConstraint
-                                                                                                                                                           attribute:IFTTTLayoutAttributeHeight
-                                                                                                                                                       referenceView:self.phoneScreenMaskView];
+                                                                                                                                                constraint:notificationImageViewTopConstraint
+                                                                                                                                                 attribute:IFTTTLayoutAttributeHeight
+                                                                                                                                             referenceView:self.phoneScreenMaskView];
     [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:4 multiplier:-0.2f withEasingFunction:IFTTTEasingFunctionEaseOutCubic];
     [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:5 multiplier:0.09f];
     [notificationImageViewTopConstraintMultiplierAnimation addKeyframeForTime:6 multiplier:-0.2f];
@@ -531,8 +531,8 @@
     
     [self.arVCNaviButton addTarget:self action:@selector(arModeOn) forControlEvents:UIControlEventTouchUpInside];
     self.arVCNaviButton.enabled = [ARConfiguration isSupported];
-	
-	self.hasSetup = YES;
+    
+    self.hasSetup = YES;
 }
 
 - (void)arModeOn
@@ -542,15 +542,63 @@
 }
 
 
-- (void)notificationSwitchValueChanged:(id)sender{
+- (void)notificationSwitchValueChanged:(id)sender
+{
     if([sender isOn])
     {
-        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
-                                                                            completionHandler:^(BOOL granted, NSError * _Nullable error)
-         {}];
+        [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *settings){
+            switch (settings.authorizationStatus) {
+                case UNAuthorizationStatusNotDetermined:
+                default:
+                {
+                    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                                                                                        completionHandler:^(BOOL granted, NSError * _Nullable error)
+                     {
+                         if (!granted)
+                         {
+                             [self showNotificationNotEnabledAlert];
+                         }
+                     }];
+                    
+                }
+                    break;
+                case UNAuthorizationStatusDenied:
+                {
+                    [self showNotificationNotEnabledAlert];
+                }
+                    break;
+                case UNAuthorizationStatusAuthorized:
+                {
+                    // do nothing!
+                }
+                    break;
+            }
+        }];
+        
     }
     [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:[NSNumber numberWithBool:[sender isOn]] forKey:@"NotificationEnabled"];
 }
+
+- (void)showNotificationNotEnabledAlert
+{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Notification Permission is denied! "
+                                                                   message:@"Please adjust it in system settings! "
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action)
+    {
+        NSURL *url = [[NSURL alloc] initWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:url options:[NSDictionary dictionary] completionHandler:^(BOOL isSucess){}];
+    }];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
@@ -559,7 +607,7 @@
         NSString *trimmedName = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [[[NSUserDefaults alloc] initWithSuiteName:JZSuiteName] setObject:trimmedName forKey:@"GitHubContributionsName"];
         
-
+        
         dispatch_queue_t gqueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
         dispatch_async(gqueue, ^(void)
                        {
@@ -634,13 +682,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
+
