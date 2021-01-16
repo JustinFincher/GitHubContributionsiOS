@@ -1,0 +1,14 @@
+/Users/fincher/Developer/Cocoa/GitHubContributionsSwiftUI
+Setting version of project Contributions to: 
+    1328.
+
+Also setting CFBundleVersion key (assuming it exists)
+
+Updating CFBundleVersion in Info.plist(s)...
+
+Updated CFBundleVersion in "Contributions.xcodeproj/../Contributions/Info.plist" to 1328
+Updated CFBundleVersion in "Contributions.xcodeproj/../WatchExt Extension/Info.plist" to 1328
+Updated CFBundleVersion in "Contributions.xcodeproj/../WatchExt/Info.plist" to 1328
+Updated CFBundleVersion in "Contributions.xcodeproj/../WidgetExt/Info.plist" to 1328
+
+

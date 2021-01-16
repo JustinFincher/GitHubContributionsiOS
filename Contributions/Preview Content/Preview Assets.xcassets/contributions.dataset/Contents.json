@@ -1,0 +1,14 @@
+{
+  "data" : [
+    {
+      "compression-type" : "none",
+      "filename" : "contributions.html",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.html"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
